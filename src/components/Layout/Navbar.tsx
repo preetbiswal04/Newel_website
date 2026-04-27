@@ -26,7 +26,7 @@ const NAV_LINKS = [
   { name: "Services", href: "/services", hasDropdown: true, data: SERVICES_DATA, type: "services" },
   { name: "Industries", href: "/industries", hasDropdown: true, data: INDUSTRIES_DATA, type: "industries" },
   { name: "Case Studies", href: "/case-studies" },
-  { name: "About Us", href: "#" },
+  { name: "About Us", href: "/about" },
   { name: "Careers", href: "/careers" },
   { name: "Contact Us", href: "/contact" },
 ];
