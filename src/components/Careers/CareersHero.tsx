@@ -1,0 +1,80 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import { MoveDown } from "lucide-react";
+
+export const CareersHero = () => {
+  const scrollToJobs = () => {
+    const element = document.getElementById("open-positions");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <section className="relative pt-32 pb-8 md:pt-40 md:pb-12">
+      <div className="container-page">
+        {/* Main Hero Card Container */}
+        <div className="relative w-full aspect-[21/9] md:aspect-[2.8/1] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl flex items-center justify-center">
+
+          {/* Background Video Container */}
+          <div className="absolute inset-0 z-0 bg-white">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover opacity-100"
+            >
+              <source src="/11904103_3840_2160_24fps.mp4" type="video/mp4" />
+            </video>
+
+            {/* Subtle Gradient for Readability without blurring */}
+            <div className="absolute inset-0 bg-black/10" />
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 text-center px-6 max-w-4xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-gray-900 text-3xl md:text-5xl lg:text-[52px] font-bold leading-[1.2] mb-10 tracking-tight"
+            >
+              We’re on a mission to expand <br className="hidden md:block" />
+              human potential to do <br className="hidden md:block" />
+              extraordinary work.
+            </motion.h1>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="flex justify-center"
+            >
+              <button
+                onClick={scrollToJobs}
+                className="group relative flex items-center gap-2 px-8 py-3 rounded-full border border-purple-200 hover:border-purple-400 transition-all duration-300 text-purple-700 text-[13px] font-semibold"
+                style={{
+                  background: 'rgba(255, 255, 255, 0.8)',
+                  backdropFilter: 'blur(8px)'
+                }}
+              >
+                <span>See open positions</span>
+                <MoveDown size={14} className="group-hover:translate-y-0.5 transition-transform" />
+              </button>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Section Heading Below Hero (Matches Screenshot) */}
+        <div className="mt-20 mb-10">
+          <h2 className="text-2xl md:text-[32px] font-bold text-gray-900 tracking-tight">
+            Our values
+          </h2>
+        </div>
+      </div>
+    </section>
+  );
+};
