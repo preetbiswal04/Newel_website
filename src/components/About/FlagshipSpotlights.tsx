@@ -25,6 +25,7 @@ export default function FlagshipSpotlights() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
+          <div className="h-[100px] w-full" />
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400 mb-4">
             Our Flagship Products
           </p>
@@ -32,6 +33,7 @@ export default function FlagshipSpotlights() {
             Products That{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Redefine Enterprise
+              <div className="h-[70px] w-full" />
             </span>
           </h2>
         </motion.div>
@@ -47,6 +49,7 @@ export default function FlagshipSpotlights() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
               className="group relative bg-white/[0.03] backdrop-blur-sm border border-white/[0.08] rounded-3xl overflow-hidden hover:border-white/15 transition-all duration-500"
             >
+              <div className="h-[50px] w-full" />
               {/* Hover glow */}
               <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500`} />
 
@@ -67,18 +70,22 @@ export default function FlagshipSpotlights() {
                 </div>
 
                 {/* Description */}
+                <div className="h-[50px] w-full" />
                 <p className="text-base text-white/60 leading-relaxed mb-6">
                   {product.description}
                 </p>
+                <div className="h-[40px] w-full" />
 
                 {/* How it works */}
                 <div className="bg-white/[0.04] border border-white/[0.06] rounded-2xl p-6 mb-6">
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/40 mb-3">
                     How It Works
                   </p>
+                  <div className="h-[50px] w-full" />
                   <p className="text-sm text-white/50 leading-relaxed font-mono">
                     {product.howItWorks}
                   </p>
+                  <div className="h-[40px] w-full" />
                 </div>
 
                 {/* CTA */}
@@ -94,6 +101,7 @@ export default function FlagshipSpotlights() {
           ))}
         </div>
       </div>
+      <div className="h-[100px] w-full" />
     </section>
   );
 }

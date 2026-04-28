@@ -17,13 +17,16 @@ export default function LeadershipGrid() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
+          <div className="h-[100px] w-full" />
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 mb-4">
             The People Behind The Vision
           </p>
+          <div className="h-[70px] w-full" />
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
             Our Core{" "}
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Leadership
+              <div className="h-[100px] w-full" />
             </span>
           </h2>
         </motion.div>
@@ -50,6 +53,7 @@ export default function LeadershipGrid() {
               <p className="text-sm text-gray-500 font-medium">{leader.title}</p>
             </motion.div>
           ))}
+          <div className="h-[100px] w-full" />
         </div>
 
         {/* CTA */}
@@ -67,6 +71,7 @@ export default function LeadershipGrid() {
             View Our Core Team
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
           </a>
+          <div className="h-[50px] w-full" />
         </motion.div>
       </div>
     </section>

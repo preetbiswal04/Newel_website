@@ -47,6 +47,7 @@ export default function DecadeTimeline() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section header */}
+        <div className="h-[100px] w-full" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,6 +64,7 @@ export default function DecadeTimeline() {
               Relentless Innovation
             </span>
           </h2>
+          <div className="h-[100px] w-full" />
         </motion.div>
 
         {/* Content area */}
@@ -96,6 +98,7 @@ export default function DecadeTimeline() {
                 <span className="text-sm font-bold uppercase tracking-[0.2em] text-blue-600 mb-3">
                   {activeMilestone.year}
                 </span>
+                <div className="h-[15px] w-full" />
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5 leading-snug">
                   {activeMilestone.title}
                 </h3>
@@ -115,11 +118,10 @@ export default function DecadeTimeline() {
               <button
                 key={milestone.year}
                 onClick={() => handleYearClick(milestone.year)}
-                className={`relative flex-shrink-0 px-4 md:px-6 py-3 text-sm font-bold rounded-xl transition-all duration-300 ${
-                  isActive
-                    ? "text-white bg-gray-900"
-                    : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
-                }`}
+                className={`relative flex-shrink-0 px-4 md:px-6 py-3 text-sm font-bold rounded-xl transition-all duration-300 ${isActive
+                  ? "text-white bg-gray-900"
+                  : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+                  }`}
               >
                 {milestone.year}
                 {/* Progress bar for active tab */}
@@ -136,6 +138,7 @@ export default function DecadeTimeline() {
           })}
         </div>
       </div>
+      <div className="h-[100px] w-full" />
     </section>
   );
 }

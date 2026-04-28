@@ -17,15 +17,18 @@ export default function AwardsRecognition() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
+          <div className="h-[70px] w-full" />
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 mb-4">
             Awards & Accolades
           </p>
+          <div className="h-[75px] w-full" />
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
             Recognition That{" "}
             <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
               Speaks Volumes
             </span>
           </h2>
+          <div className="h-[70px] w-full" />
         </motion.div>
 
         {/* Awards Grid */}
@@ -58,6 +61,7 @@ export default function AwardsRecognition() {
 
               {/* Decorative corner glow on hover */}
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-blue-400/10 to-transparent rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="h-[25px] w-full" />
             </motion.div>
           ))}
         </div>

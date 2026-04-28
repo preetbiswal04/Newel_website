@@ -19,6 +19,7 @@ export default function SocietyWorkplace() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
+          <div className="h-[100px] w-full" />
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 mb-4">
             Beyond Business
           </p>
@@ -29,15 +30,14 @@ export default function SocietyWorkplace() {
             </span>
           </h2>
 
-          {/* Toggle switch */}
+          {/* Toggle witch */}
           <div className="inline-flex bg-gray-100 rounded-full p-1.5 gap-1">
             {(["society", "workplace"] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setMode(tab)}
-                className={`relative px-8 py-3 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 ${
-                  mode === tab ? "text-white" : "text-gray-500 hover:text-gray-700"
-                }`}
+                className={`relative px-8 py-3 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 ${mode === tab ? "text-white" : "text-gray-500 hover:text-gray-700"
+                  }`}
               >
                 {mode === tab && (
                   <motion.div
@@ -53,6 +53,7 @@ export default function SocietyWorkplace() {
             ))}
           </div>
         </motion.div>
+        <div className="h-[100px] w-full" />
 
         {/* Photo Mosaic Grid */}
         <AnimatePresence mode="wait">
@@ -70,9 +71,8 @@ export default function SocietyWorkplace() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className={`group relative rounded-2xl overflow-hidden ${
-                  i === 0 ? "sm:col-span-2 sm:row-span-2 min-h-[300px]" : "min-h-[200px]"
-                }`}
+                className={`group relative rounded-2xl overflow-hidden ${i === 0 ? "sm:col-span-2 sm:row-span-2 min-h-[300px]" : "min-h-[200px]"
+                  }`}
               >
                 {/* Gradient background (photo placeholder) */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${item.color}`} />
@@ -91,6 +91,7 @@ export default function SocietyWorkplace() {
               </motion.div>
             ))}
           </motion.div>
+          <div className="h-[100px] w-full" />
         </AnimatePresence>
       </div>
     </section>

@@ -20,6 +20,7 @@ export default function TestimonialsSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
+          <div className="h-[100px] w-full" />
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 mb-4">
             Voices That Matter
           </p>
@@ -28,6 +29,7 @@ export default function TestimonialsSection() {
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Thoughts Shared
             </span>
+            <div className="h-[50px] w-full" />
           </h2>
 
           {/* Tab toggle */}
@@ -36,11 +38,10 @@ export default function TestimonialsSection() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`relative px-8 py-3 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 ${
-                  activeTab === tab
-                    ? "text-white"
-                    : "text-gray-500 hover:text-gray-700"
-                }`}
+                className={`relative px-8 py-3 text-sm font-bold uppercase tracking-wider rounded-full transition-all duration-300 ${activeTab === tab
+                  ? "text-white"
+                  : "text-gray-500 hover:text-gray-700"
+                  }`}
               >
                 {activeTab === tab && (
                   <motion.div
@@ -55,6 +56,7 @@ export default function TestimonialsSection() {
               </button>
             ))}
           </div>
+          <div className="h-[100px] w-full" />
         </motion.div>
 
         {/* Cards */}
@@ -99,6 +101,7 @@ export default function TestimonialsSection() {
               </motion.div>
             ))}
           </motion.div>
+          <div className="h-[100px] w-full" />
         </AnimatePresence>
       </div>
     </section>

@@ -91,6 +91,7 @@ export default function AboutHero() {
           className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-14 leading-relaxed"
         >
           We are a digital engineering powerhouse trusted by enterprises and Fortune 500s to transform their boldest visions into market-leading realities.
+          <div className="h-[100px] w-full" />
         </motion.p>
 
         {/* Stats Row */}

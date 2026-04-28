@@ -19,13 +19,16 @@ export default function ClientLogos() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
+          <div className="h-[55px] w-full" />
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-600 mb-4">
             Trusted Worldwide
           </p>
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
             Transforming{" "}
+            <div className="h-[75px] w-full" />
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Global Leaders
+              <div className="h-[50px] w-full" />
             </span>
           </h2>
         </motion.div>
@@ -66,6 +69,7 @@ export default function ClientLogos() {
           ))}
         </div>
       </div>
+      <div className="h-[100px] w-full" />
     </section>
   );
 }

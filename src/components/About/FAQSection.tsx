@@ -15,6 +15,7 @@ export default function FAQSection() {
   return (
     <section id="about-faq" className="w-full py-24 md:py-32 bg-[#f9fafb]">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
+        <div className="h-[100px] w-full" />
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -31,6 +32,7 @@ export default function FAQSection() {
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
               Questions
             </span>
+            <div className="h-[65px] w-full" />
           </h2>
         </motion.div>
 
@@ -45,6 +47,7 @@ export default function FAQSection() {
               transition={{ duration: 0.4, delay: i * 0.06 }}
               className="bg-white border border-gray-100 rounded-2xl overflow-hidden hover:shadow-md transition-shadow duration-300"
             >
+              <div className="h-[15px] w-full" />
               {/* Question */}
               <button
                 onClick={() => toggle(i)}
@@ -63,6 +66,7 @@ export default function FAQSection() {
               </button>
 
               {/* Answer */}
+              <div className="h-[10px] w-full" />
               <AnimatePresence initial={false}>
                 {openIndex === i && (
                   <motion.div
@@ -85,6 +89,7 @@ export default function FAQSection() {
           ))}
         </div>
       </div>
+      <div className="h-[100px] w-full" />
     </section>
   );
 }

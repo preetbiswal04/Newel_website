@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ChevronRight, Cloud, Shield, Network, Layers, Zap, Database, Cpu, Activity, Briefcase, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { SERVICES_DATA, SubService } from "@/data/servicesData";
+import { SERVICES } from "@/data/servicesData";
 import { INDUSTRIES_DATA } from "@/data/industriesData";
 import { Logo } from "./Logo";
 
@@ -22,8 +22,23 @@ const ICON_MAP: Record<string, React.ReactNode> = {
   Briefcase: <Briefcase size={26} strokeWidth={1.5} />,
 };
 
+// Adapt flat SERVICES array into the category shape the MegaMenu expects
+const SERVICES_NAV = [
+  {
+    id: "all-services",
+    name: "All Services",
+    services: SERVICES.map((s) => ({
+      id: s.slug,
+      slug: s.slug,
+      title: s.title,
+      tagline: s.tagline,
+      icon: s.icon,          // emoji — NavItemCard falls back gracefully
+    })),
+  },
+];
+
 const NAV_LINKS = [
-  { name: "Services", href: "/services", hasDropdown: true, data: SERVICES_DATA, type: "services" },
+  { name: "Services", href: "/services", hasDropdown: true, data: SERVICES_NAV, type: "services" },
   { name: "Industries", href: "/industries", hasDropdown: true, data: INDUSTRIES_DATA, type: "industries" },
   { name: "Case Studies", href: "/case-studies" },
   { name: "About Us", href: "/about" },
@@ -36,19 +51,14 @@ function NavItemCard({ item, type }: { item: any; type: string }) {
   return (
     <Link
       href={`/${type}/${item.slug}`}
-      className="group/card flex flex-col items-start gap-4 p-4 hover:opacity-80 transition-all duration-200"
+      className="group/card flex items-center gap-3 p-4 hover:opacity-80 transition-all duration-200"
     >
       <div className="text-white">
-        {ICON_MAP[item.icon] ?? <Cloud size={32} strokeWidth={1} />}
+        {ICON_MAP[item.icon] ?? <Cloud size={22} strokeWidth={1.5} />}
       </div>
-      <div className="flex flex-col gap-1">
-        <p className="text-[13px] font-bold text-white uppercase tracking-wider leading-tight">
-          {item.title}
-        </p>
-        <p className="text-[13px] text-white/60 leading-relaxed font-light">
-          {item.tagline}
-        </p>
-      </div>
+      <p className="text-[13px] font-bold text-white uppercase tracking-wider leading-tight">
+        {item.title}
+      </p>
     </Link>
   );
 }
