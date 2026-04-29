@@ -1,197 +1,286 @@
 "use client";
 
-import React from "react";
+import React, { use } from "react";
 import { motion } from "framer-motion";
 import type { Easing } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { notFound } from "next/navigation";
+import { ArrowRight, CheckCircle2, ChevronRight } from "lucide-react";
 import { SERVICES } from "@/data/servicesData";
 
+/* ─── animation helpers ────────────────────────────────────────────────── */
 const EASE: Easing = "easeOut";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.1,
-    },
-  },
-};
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 } as const,
+  whileInView: { opacity: 1, y: 0 } as const,
+  viewport: { once: true } as const,
+  transition: { duration: 0.65, delay, ease: EASE },
+});
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1.0,
-      ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
-    },
-  },
-};
+/* ─── Page ──────────────────────────────────────────────────────────────── */
+export default function ServiceDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = use(params);
+  const service = SERVICES.find((s) => s.slug === slug);
+  const HERO_MEDIA: Record<string, { type: "image" | "video"; src: string }> = {
+    "staffing-recruiting": { type: "image", src: "/recuritment.png" },
+    "cloud-services": { type: "image", src: "/cloud.png" },
+    "data-analytics": { type: "image", src: "/data analysis.png" },
+    "quality-assurance": { type: "image", src: "/Qa.png" },
+    "robotic-process-automation": { type: "image", src: "/robotics.png" },
+    "application-re-engineering": { type: "video", src: "/application re engineer.mp4" },
+    "application-development": { type: "video", src: "/application.mp4" },
+    "outsystems": { type: "image", src: "/ecosystem.jpg" },
+    "it-staff-augmentation": { type: "image", src: "/recuritment.png" }
+  };
 
-export default function ServicesPage() {
+  const media = HERO_MEDIA[slug];
+  const hasMedia = !!media;
+
+  if (!service) notFound();
+
   return (
-    <main className="bg-[#06060A] min-h-screen text-white">
+    <main className="bg-white min-h-screen text-[#002D72]">
 
-      {/* ── Navbar spacer (same as case-studies) ──────────── */}
-      <div className="h-[150px] w-full" />
+      {/* ══════════════════════════════════════════════════════════
+          HERO SECTION — Redesigned to match neweltechnologies.com
+      ══════════════════════════════════════════════════════════ */}
+      <section className={`relative overflow-hidden border-b flex flex-col min-h-screen ${hasMedia ? 'bg-black border-white/10' : 'bg-gradient-to-b from-[#F0F4FF] to-white border-blue-100'}`}>
+        {hasMedia ? (
+          <div className="absolute inset-0 z-0">
+            {media.type === "video" ? (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-60"
+              >
+                <source src={media.src} type="video/mp4" />
+              </video>
+            ) : (
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+                style={{ backgroundImage: `url("${media.src}")` }}
+              />
+            )}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/10 to-black/80" />
+          </div>
+        ) : (
+          /* Subtle mesh background detail */
+          <div className="absolute inset-0 opacity-40 pointer-events-none"
+            style={{ backgroundImage: "radial-gradient(#002D72 0.5px, transparent 0.5px)", backgroundSize: "24px 24px" }} />
+        )}
 
-      {/* ═══════════════════════════════════════════════════════
-          HERO / HEADING SECTION
-      ═══════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden">
-        {/* Subtle gradient blob */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-600/8 rounded-full blur-[120px] pointer-events-none" />
+        {/* Navbar spacer */}
+        <div className="h-[120px] w-full" />
 
-        <div className="container-page relative text-center">
+        <div className="container-page relative flex-grow flex flex-col justify-start py-16 md:py-24 z-10">
+          <div className="max-w-5xl">
+            {/* Breadcrumb */}
+            <motion.nav
+              {...fadeUp(0)}
+              className={`flex items-center gap-2 text-sm mb-8 font-medium ${hasMedia ? 'text-white/80' : 'text-blue-600/60'}`}
+            >
+              <Link href="/" className={`transition-colors ${hasMedia ? 'hover:text-white' : 'hover:text-blue-600'}`}>Home</Link>
+              <ChevronRight size={13} className={hasMedia ? 'text-white/40' : 'text-blue-200'} />
+              <Link href="/services" className={`transition-colors ${hasMedia ? 'hover:text-white' : 'hover:text-blue-600'}`}>Services</Link>
+              <ChevronRight size={13} className={hasMedia ? 'text-white/40' : 'text-blue-200'} />
+              <span className={hasMedia ? 'text-white font-bold' : 'text-blue-900 font-semibold'}>{service.title}</span>
+            </motion.nav>
 
-          {/* Breadcrumb */}
-          <motion.nav
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.45 }}
-            className="flex items-center justify-center gap-2 text-sm text-white/35 mb-6"
-          >
-            <Link href="/" className="hover:text-white/70 transition-colors">Home</Link>
-            <ChevronRight size={13} className="text-white/20" />
-            <span className="text-white/60">Services</span>
-          </motion.nav>
-
-          {/* Main heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.08, ease: EASE }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-tight mb-5"
-          >
-            Our{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              Services
-            </span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.16, ease: EASE }}
-            className="text-white/45 text-base md:text-lg max-w-2xl mx-auto leading-relaxed"
-          >
-            From staffing and cloud to RPA and DOOH — Newel Technologies delivers
-            end-to-end technology and talent services that power your digital transformation.
-          </motion.p>
-
-          {/* Accent line */}
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.28, ease: EASE }}
-            className="w-16 h-[2px] bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto mt-8 rounded-full"
-          />
+            {/* Title */}
+            <motion.h1
+              {...fadeUp(0.05)}
+              className={`text-4xl sm:text-5xl md:text-7xl font-black tracking-tight leading-tight ${hasMedia ? 'text-white' : 'text-[#002D72]'}`}
+            >
+              {service.title}
+            </motion.h1>
+          </div>
         </div>
       </section>
 
-      {/* ── Spacer (same as case-studies) ─────────────────── */}
-      <div className="h-[150px] w-full" />
+      {/* ══════════════════════════════════════════════════════════
+          OVERVIEW SECTION — Moved from Hero for clarity
+      ══════════════════════════════════════════════════════════ */}
+      <section className="py-20 bg-white relative">
+        <div className="container-page">
+          <div className="max-w-5xl">
+            <motion.div {...fadeUp()}>
+              <div className="h-[100px] w-full" />
+              <h4 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-6">
+                Overview
+              </h4>
+              <div className="h-[40px] w-full" />
+              <p className="text-2xl md:text-4xl font-black text-[#002D72] leading-tight mb-8">
+                {service.tagline}
+              </p>
+              <div className="h-[50px] w-full" />
+              <div className="h-1.5 w-24 bg-blue-600 mb-10 rounded-full" />
+              <p className="text-lg md:text-xl text-blue-900/70 leading-relaxed font-medium max-w-4xl">
+                {service.heroDescription}
+              </p>
 
-      {/* ═══════════════════════════════════════════════════════
-          SERVICES CARD GRID (matches CaseStudyGrid layout)
-      ═══════════════════════════════════════════════════════ */}
-      <div className="container-page">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-24"
-        >
-          {SERVICES.map((service) => (
-            <motion.div key={service.slug} variants={itemVariants}>
-              <Link href={`/services/${service.slug}`} className="group block h-full">
-                <div
-                  className={[
-                    "relative flex flex-col h-full",
-                    "rounded-2xl border border-white/[0.08] bg-white/[0.025]",
-                    "p-8 overflow-hidden",
-                    "transition-all duration-500",
-                    "group-hover:-translate-y-2",
-                    "group-hover:border-blue-500/35 group-hover:bg-white/[0.05]",
-                    "group-hover:shadow-[0_12px_48px_rgba(59,130,246,0.12)]",
-                  ].join(" ")}
+              <div className="mt-12">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 bg-[#002D72] hover:bg-blue-800 text-white font-bold px-10 py-4 rounded-lg transition-all duration-300 shadow-lg shadow-blue-900/10"
                 >
-                  {/* Top accent line (slides in on hover) */}
-                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-500 to-cyan-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-t-2xl" />
-
-                  {/* Glow overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/[0.06] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl" />
-
-                  {/* Icon */}
-                  <div className="relative z-10 text-4xl mb-6">{service.icon}</div>
-
-                  {/* Title */}
-                  <h3 className="relative z-10 text-lg font-bold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300 leading-snug">
-                    {service.title}
-                  </h3>
-
-                  {/* Tagline */}
-                  <p className="relative z-10 text-sm text-white/40 leading-relaxed flex-grow">
-                    {service.tagline}
-                  </p>
-
-                  {/* Read More */}
-                  <div className="relative z-10 mt-8 flex items-center gap-2 text-sm font-semibold text-blue-400/80 group-hover:text-blue-300 transition-colors">
-                    <span>Read More</span>
-                    <ArrowRight
-                      size={14}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                  </div>
-                </div>
-              </Link>
+                  Contact Us <ArrowRight size={18} />
+                </Link>
+              </div>
             </motion.div>
-          ))}
-        </motion.div>
-      </div>
+            <div className="h-[40px] w-full" />
+          </div>
+        </div>
+      </section>
 
-      {/* ── Spacer ───────────────────────────────────────── */}
-      <div className="h-[150px] w-full" />
+      {/* ══════════════════════════════════════════════════════════
+          WHAT WE OFFER / SUPPORT SERVICES
+      ══════════════════════════════════════════════════════════ */}
+      <section className="py-16 md:py-24 bg-white border-b border-gray-50">
+        <div className="container-page">
+          <div className="max-w-5xl">
 
-      {/* ═══════════════════════════════════════════════════════
-          BOTTOM CTA
-      ═══════════════════════════════════════════════════════ */}
-      <div className="container-page pb-48">
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.65, ease: EASE }}
-          className="relative rounded-3xl bg-gradient-to-br from-blue-600/20 to-cyan-600/10 border border-blue-500/20 px-8 py-16 md:py-20 text-center overflow-hidden"
-        >
-          {/* Radial glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-600/12 via-transparent to-transparent pointer-events-none" />
+            <motion.div {...fadeUp()} className="mb-16">
+              <h4 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">
+                What we offer
+              </h4>
+              <div className="h-[15px] w-full" />
+              <h2 className="text-3xl md:text-5xl font-extrabold text-[#002D72] tracking-tight">
+                Support Services
+              </h2>
+              <div className="h-[75px] w-full" />
+            </motion.div>
 
-          <h2 className="relative text-2xl md:text-4xl font-black text-white mb-4 tracking-tight">
-            Ready to Get{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              Started?
-            </span>
-          </h2>
-          <p className="relative text-white/45 text-base max-w-xl mx-auto mb-8 leading-relaxed">
-            Talk to our experts and discover how Newel Technologies can accelerate
-            your business goals with the right service mix.
-          </p>
-          <Link
-            href="/contact"
-            className="relative inline-flex items-center gap-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_36px_rgba(59,130,246,0.4)] text-sm"
-          >
-            Contact Us
-            <ArrowRight size={16} />
-          </Link>
-        </motion.div>
-      </div>
+            <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
+              {service.whatWeOffer.map((item, idx) => (
+                <motion.div
+                  key={item}
+                  {...fadeUp(0.05 * idx)}
+                  className="flex items-start gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group border border-transparent hover:border-blue-100"
+                >
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-[#002D72] shrink-0 group-hover:bg-[#002D72] group-hover:text-white transition-all duration-300">
+                    <CheckCircle2 size={18} strokeWidth={2.5} />
+                  </div>
+                  <span className="text-blue-900/70 text-[16px] leading-relaxed font-medium group-hover:text-[#002D72] transition-colors">
+                    {item}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="h-[100px] w-full" />
+
+      {/* ══════════════════════════════════════════════════════════
+          METHODOLOGY (6-STEP FLOW)
+      ══════════════════════════════════════════════════════════ */}
+      <section className="py-24 bg-[#002D72] text-white overflow-hidden">
+        <div className="container-page">
+          <div className="h-[75px] w-full" />
+          <motion.div {...fadeUp()} className="mb-20 text-center">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight">
+              Our Methodology
+            </h2>
+            <div className="h-[100px] w-full" />
+          </motion.div>
+
+          <div className="relative">
+            {/* Connection line */}
+            <div className="hidden lg:block absolute top-[40px] left-0 right-0 h-[2px] bg-white/10 z-0" />
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 relative z-10">
+              {service.processSteps.map((step, idx) => (
+                <motion.div
+                  key={step.label}
+                  {...fadeUp(idx * 0.1)}
+                  className="group text-center"
+                >
+                  {/* Step bubble */}
+                  <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white text-[#002D72] flex items-center justify-center font-black text-xl shadow-xl group-hover:scale-110 transition-transform duration-300">
+                    {step.label.slice(0, 1)}
+                  </div>
+
+                  <h4 className="text-white font-black uppercase tracking-widest text-sm mb-3">
+                    {step.label}
+                  </h4>
+                  <p className="text-white/60 text-xs leading-relaxed">
+                    {step.description}
+                  </p>
+                  <div className="h-[100px] w-full" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="h-[100px] w-full" />
+
+      {/* ══════════════════════════════════════════════════════════
+          TECHNOLOGY STACK
+      ══════════════════════════════════════════════════════════ */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="container-page">
+          <motion.div {...fadeUp()} className="mb-20">
+            <h2 className="text-3xl md:text-5xl font-black text-[#002D72] tracking-tight">
+              Technologies
+            </h2>
+            <div className="h-[75px] w-full" />
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {service.techStack.map((group, idx) => (
+              <motion.div
+                key={group.category}
+                {...fadeUp(idx * 0.1)}
+                className="p-8 rounded-2xl bg-[#F8FAFF] border border-blue-50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/5 hover:-translate-y-1"
+              >
+                <h5 className="text-[#002D72] font-black text-sm uppercase tracking-wider mb-6 border-b border-blue-100 pb-4">
+                  {group.category}
+                </h5>
+                <div className="flex flex-wrap gap-2">
+                  {group.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="px-4 py-2 bg-white border border-blue-100 rounded-lg text-blue-900/70 text-sm font-semibold shadow-sm"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <div className="h-[100px] w-full" />
+
+      {/* ══════════════════════════════════════════════════════════
+          FOOTER CTA
+      ══════════════════════════════════════════════════════════ */}
+      <section className="py-24 bg-[#002D72]">
+        <div className="container-page text-center">
+          <div className="h-[70px] w-full" />
+          <motion.div {...fadeUp()}>
+            <h2 className="text-3xl md:text-6xl font-black text-white mb-8 tracking-tight">
+              Get Started
+            </h2>
+            <div className="h-[50px] w-full" />
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 bg-white text-[#002D72] font-bold px-12 py-5 rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-2xl"
+            >
+              Contact Us <ArrowRight size={20} />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
       <div className="h-[100px] w-full" />
 
     </main>
