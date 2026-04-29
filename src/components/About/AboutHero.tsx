@@ -84,7 +84,7 @@ export default function AboutHero() {
           One Vision.
         </motion.h1>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
@@ -92,7 +92,7 @@ export default function AboutHero() {
         >
           We are a digital engineering powerhouse trusted by enterprises and Fortune 500s to transform their boldest visions into market-leading realities.
           <div className="h-[100px] w-full" />
-        </motion.p>
+        </motion.div>
 
         {/* Stats Row */}
         <motion.div
