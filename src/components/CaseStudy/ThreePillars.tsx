@@ -26,10 +26,10 @@ export const ThreePillars = ({ overview, location, year, services, input, reason
   ];
 
   return (
-    <section className="py-48 px-8 md:px-16 min-h-[80vh] noise-overlay relative z-10">
-      <div className="w-full">
+    <section className="py-32 md:py-48 container-page noise-overlay relative z-10">
+      <div className="w-full max-w-7xl mx-auto">
         {overview && (
-          <div className="mb-48">
+          <div className="mb-32 md:mb-48">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -37,7 +37,7 @@ export const ThreePillars = ({ overview, location, year, services, input, reason
               transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
               className={cn("w-full mr-auto text-left", !isDark && "light-theme")}
             >
-              <h2 className="text-2xl md:text-3xl lg:text-5xl font-serif leading-[1.2] mb-12 tracking-tightest italic font-light animate-text-shine">
+              <h2 className="text-xl md:text-3xl lg:text-[2.5rem] font-sans leading-[1.4] mb-12 tracking-tight font-light animate-text-shine">
                 {overview}
               </h2>
             </motion.div>

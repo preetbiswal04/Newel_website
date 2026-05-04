@@ -56,11 +56,11 @@ export const CaseStudyCard = ({ slug, title, client, industry, image }: CaseStud
             <div className="h-px flex-grow bg-white/5 group-hover:bg-blue-500/20 transition-colors duration-700" />
           </div>
 
-          <h3 className="text-2xl md:text-3xl font-serif text-blue-950 leading-[1.25] tracking-tight group-hover:text-blue-700 transition-colors duration-300">
+          <h3 className="text-2xl md:text-3xl font-poppins font-semibold text-white leading-[1.25] tracking-tight group-hover:text-blue-400 transition-colors duration-300">
             {title}
           </h3>
 
-          <div className="flex items-center gap-2 text-blue-500/60 text-[10px] uppercase tracking-widest pt-2 group-hover:text-blue-600 transition-colors duration-500">
+          <div className="flex items-center gap-2 text-white/60 text-[10px] uppercase tracking-widest pt-2 group-hover:text-blue-400 transition-colors duration-500">
             <span>View Project</span>
             <ArrowRight size={12} className="-rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-500" />
           </div>

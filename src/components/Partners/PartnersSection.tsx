@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
@@ -52,7 +52,7 @@ const PARTNERS: Partner[] = [
 
 export const PartnersSection = () => {
   return (
-    <section className="relative w-full pb-32 pt-20 md:pb-64 md:pt-40">
+    <section className="relative w-full pb-10 pt-2 md:pb-16 md:pt-4">
       <div className="container-page">
         <div className="grid grid-cols-1 gap-20 md:grid-cols-[40%_60%] md:gap-0">
 
@@ -67,15 +67,15 @@ export const PartnersSection = () => {
               <span className="mb-6 inline-block text-[11px] font-bold tracking-[0.3em] text-blue-600 uppercase">
                 Collaborate with AI Partners
               </span>
-              <h2 className="mb-10 text-5xl font-bold leading-[1.1] tracking-tight text-blue-800 lg:text-7xl">
+              <h2 className="mb-6 text-5xl font-bold leading-[1.1] tracking-tight text-blue-800 lg:text-6xl">
                 Expertise that <br />
                 drives impact
               </h2>
-              <p className="mb-12 max-w-sm text-lg leading-relaxed text-blue-700/60">
+              <p className="mb-6 max-w-sm text-lg leading-relaxed text-blue-700/60">
                 Strategic collaboration with industry-leading pioneers to build, scale, and govern AI-first enterprises.
               </p>
 
-              <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-4">
                 {/* CTA */}
                 <button className="group relative flex w-fit items-center gap-3 overflow-hidden rounded-full border border-blue-600/20 bg-blue-600/5 px-8 py-4 font-semibold text-blue-800 transition-all hover:bg-blue-800 hover:text-white">
                   <span className="relative z-10 flex items-center gap-3">
@@ -145,3 +145,4 @@ const Card = ({ partner, index }: { partner: Partner; index: number }) => {
     </motion.div>
   );
 };
+

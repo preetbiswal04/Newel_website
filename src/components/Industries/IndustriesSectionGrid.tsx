@@ -98,19 +98,19 @@ const IndustryCard = ({ industry, index }: { industry: IndustryData; index: numb
           {industry.description}
         </p>
         <Link href={`/industries/${industry.id}`} className="flex items-center gap-2 text-[#001540] font-bold text-sm uppercase tracking-wider group/btn w-fit">
-          Read More 
+          Read More
           <span className="text-[#FFB800] text-xl transition-transform group-hover/btn:translate-x-1">→</span>
         </Link>
       </div>
 
       {/* Slanted Image Area */}
-      <div 
+      <div
         className="relative w-full h-[200px] sm:h-full sm:w-[50%] sm:absolute sm:right-0 sm:top-0 z-0 overflow-hidden sm:[clip-path:polygon(15%_0,100%_0,100%_100%,0%_100%)]"
       >
-        <img 
-          src={industry.image} 
-          alt={industry.title} 
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+        <img
+          src={industry.image}
+          alt={industry.title}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
         {/* Decorative Overlay */}
         <div className="absolute inset-0 bg-blue-900/5 group-hover:bg-transparent transition-colors duration-500" />

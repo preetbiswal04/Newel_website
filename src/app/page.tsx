@@ -1,5 +1,8 @@
+
 import { HeroSection } from "@/components/Hero/HeroSection";
 import { TrustedBy } from "@/components/Hero/TrustedBy";
+import { TransformationSection } from "@/components/Transformation/TransformationSection";
+import { InventivAISection } from "@/components/InventivAI/InventivAISection";
 import { PlatformSection } from "@/components/Platform/PlatformSection";
 import { IndustriesSection } from "@/components/Industries/IndustriesSection";
 import { WhyNewel } from "@/components/WhyNewel/WhyNewel";
@@ -12,25 +15,30 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center w-full bg-transparent">
       <HeroSection />
-      <div className="w-full py-20">
-        <TrustedBy />
-      </div>
 
-      <div className="space-y-32 md:space-y-48 w-full pb-32">
+      <div className="space-y-16 md:space-y-24 w-full pb-10">
+        <div className="w-full">
+          <TransformationSection />
+          <InventivAISection />
+        </div>
+        
+        <div className="w-full">
+          <TrustedBy />
+        </div>
+
         <PlatformSection />
         <IndustriesSection />
         <WhyNewel />
-        <div className="h-[300px] w-full" />
         <OnePlatform />
         <PartnersSection />
-        <div className="h-[300px] w-full" />
         <SuccessStoriesSection />
-        <div className="h-[100px] w-full" />
+
         <DemoSection />
-        <div className="h-[300px] w-full" />
+
       </div>
     </main>
   );
 }
+
 
 

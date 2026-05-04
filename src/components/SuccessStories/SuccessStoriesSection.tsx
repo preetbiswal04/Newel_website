@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -50,7 +50,7 @@ const STORIES: SuccessStory[] = [
 
 export const SuccessStoriesSection = () => {
   return (
-    <section className="relative z-20 pb-32 md:pb-64 pt-[400px] isolate">
+    <section className="relative z-20 isolate pb-14 pt-10 md:pb-20 md:pt-14">
       <div className="container-page">
         
         {/* Header Area */}
@@ -96,8 +96,8 @@ export const SuccessStoriesSection = () => {
         </div>
 
         {/* Native Horizontal Scroll Area */}
-        <div className="relative overflow-x-auto no-scrollbar pb-12 overflow-y-hidden">
-          <div className="flex gap-8 md:gap-12 min-w-max pr-12">
+        <div className="no-scrollbar relative overflow-x-auto overflow-y-hidden pb-4">
+          <div className="flex min-w-max snap-x snap-mandatory gap-8 pr-6 md:gap-10 md:pr-12">
             {STORIES.map((story, index) => (
               <StoryCard key={story.id} story={story} index={index} />
             ))}
@@ -120,23 +120,30 @@ export const SuccessStoriesSection = () => {
 };
 
 const StoryCard = ({ story, index }: { story: SuccessStory; index: number }) => {
+  const [imgFailed, setImgFailed] = useState(false);
+
   return (
     <motion.a
       href={story.link}
-      className="flex-shrink-0 w-[85vw] md:w-[450px] flex flex-col bg-white/40 backdrop-blur-md rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-blue-600/10"
+      className="group flex min-h-[520px] w-[84vw] max-w-[420px] flex-shrink-0 snap-start flex-col overflow-hidden rounded-3xl border border-blue-600/10 bg-white/40 shadow-sm backdrop-blur-md transition-all duration-500 hover:shadow-xl md:w-[400px] lg:w-[410px]"
     >
       {/* Thumbnail */}
-      <div className="aspect-[16/10] overflow-hidden">
-        <img
-          src={story.image}
-          alt={story.title}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-        />
+      <div className="relative aspect-[16/10] overflow-hidden rounded-t-3xl bg-slate-200/40">
+        {!imgFailed ? (
+          <img
+            src={story.image}
+            alt={story.title}
+            onError={() => setImgFailed(true)}
+            className="block h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+          />
+        ) : (
+          <div className="h-full w-full bg-gradient-to-br from-slate-300/70 to-slate-500/40" />
+        )}
       </div>
 
       {/* Content */}
-      <div className="p-8 md:p-10 flex flex-col flex-grow">
-        <div className="flex items-center gap-3 mb-6">
+      <div className="flex flex-grow flex-col px-8 pb-10 pt-7 md:px-9 md:pb-11 md:pt-8">
+        <div className="mb-5 flex items-center gap-3">
           <span className="px-3 py-1 bg-blue-600/10 text-[10px] font-bold uppercase tracking-widest text-blue-600">
             {story.industry}
           </span>
@@ -145,11 +152,11 @@ const StoryCard = ({ story, index }: { story: SuccessStory; index: number }) => 
           </span>
         </div>
 
-        <h3 className="text-xl md:text-2xl font-bold leading-tight text-blue-800 group-hover:text-blue-600 transition-colors mb-8">
+        <h3 className="mb-6 line-clamp-3 text-xl font-bold leading-tight text-blue-800 transition-colors group-hover:text-blue-600 md:text-2xl">
           {story.title}
         </h3>
 
-        <div className="mt-auto flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400 group-hover:text-gray-900 transition-colors">
+        <div className="mt-auto flex items-center gap-2 pt-3 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400 transition-colors group-hover:text-gray-900">
           View Case Study
           <ArrowRight size={14} className="opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
         </div>
@@ -157,3 +164,4 @@ const StoryCard = ({ story, index }: { story: SuccessStory; index: number }) => 
     </motion.a>
   );
 };
+

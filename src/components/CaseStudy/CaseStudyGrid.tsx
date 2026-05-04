@@ -61,7 +61,7 @@ export const CaseStudyGrid = () => {
 
       {/* Premium Pagination */}
       <div className="mt-48 flex flex-col md:flex-row justify-between items-center gap-12 pt-12 border-t border-white/5">
-        <div className="text-blue-600/60 text-[10px] uppercase tracking-[0.4em] font-mono">
+        <div className="text-white/60 text-[10px] uppercase tracking-[0.4em] font-mono">
           Page {currentPage} <span className="mx-4 text-blue-400/40">—</span> {totalPages}
         </div>
 
@@ -73,8 +73,8 @@ export const CaseStudyGrid = () => {
               window.scrollTo({ top: 400, behavior: "smooth" });
             }}
             className={cn(
-              "group flex items-center gap-4 px-8 py-4 border border-slate-200 rounded-full transition-all duration-500",
-              currentPage === 1 ? "opacity-20 cursor-not-allowed" : "hover:bg-slate-900 hover:text-white hover:border-slate-900"
+              "group flex items-center gap-4 px-8 py-4 border border-white/20 text-white rounded-full transition-all duration-500",
+              currentPage === 1 ? "opacity-20 cursor-not-allowed" : "hover:bg-white hover:text-black hover:border-white"
             )}
           >
             <ArrowRight size={16} className="rotate-180" />
@@ -88,8 +88,8 @@ export const CaseStudyGrid = () => {
               window.scrollTo({ top: 400, behavior: "smooth" });
             }}
             className={cn(
-              "group flex items-center gap-4 px-8 py-4 border border-slate-200 rounded-full transition-all duration-500",
-              currentPage === totalPages ? "opacity-20 cursor-not-allowed" : "hover:bg-slate-900 hover:text-white hover:border-slate-900"
+              "group flex items-center gap-4 px-8 py-4 border border-white/20 text-white rounded-full transition-all duration-500",
+              currentPage === totalPages ? "opacity-20 cursor-not-allowed" : "hover:bg-white hover:text-black hover:border-white"
             )}
           >
             <span className="text-[10px] font-bold uppercase tracking-widest">Next</span>

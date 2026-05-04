@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export const Logo = () => {
+export const Logo = ({ isScrolled = false }: { isScrolled?: boolean }) => {
   return (
     <div className="flex flex-col items-center gap-0 group cursor-pointer scale-90 origin-center">
       {/* Animated Icon */}
@@ -79,24 +79,24 @@ export const Logo = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 + i * 0.1, ease: "easeOut" }}
-              className="text-lg font-black tracking-tighter text-white inline-block"
+              className={`text-lg font-black tracking-tighter inline-block ${isScrolled ? 'text-black' : 'text-white'}`}
             >
               {char === "E" ? (
                 <div className="flex flex-col gap-[2px] py-1.5 px-0.5">
-                  <motion.div 
+                  <motion.div
                     animate={{ width: [10, 14, 10] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="h-[1.5px] bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full" 
+                    className="h-[1.5px] bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full"
                   />
-                  <motion.div 
+                  <motion.div
                     animate={{ width: [12, 8, 12] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-                    className="h-[1.5px] bg-indigo-500 rounded-full w-3" 
+                    className="h-[1.5px] bg-indigo-500 rounded-full w-3"
                   />
-                  <motion.div 
+                  <motion.div
                     animate={{ width: [10, 14, 10] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-                    className="h-[1.5px] bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full" 
+                    className="h-[1.5px] bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full"
                   />
                 </div>
               ) : (
@@ -111,7 +111,7 @@ export const Logo = () => {
           initial={{ opacity: 0, letterSpacing: "0.2em" }}
           animate={{ opacity: 0.6, letterSpacing: "0.4em" }}
           transition={{ duration: 1.5, delay: 1.5 }}
-          className="text-[6px] font-bold text-white/80 uppercase tracking-[0.4em] -mt-1"
+          className={`text-[6px] font-bold uppercase tracking-[0.4em] -mt-1 ${isScrolled ? 'text-black/80' : 'text-white/80'}`}
         >
           TECHNOLOGIES
         </motion.span>

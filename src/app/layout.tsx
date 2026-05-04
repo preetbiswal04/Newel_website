@@ -1,4 +1,4 @@
-import { Inter, JetBrains_Mono, DM_Serif_Display } from "next/font/google";
+import { Inter, Roboto, DM_Serif_Display, Poppins } from "next/font/google";
 import "./globals.css";
 
 import { Navbar } from "@/components/Layout/Navbar";
@@ -9,8 +9,9 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
+const roboto = Roboto({
+  variable: "--font-roboto",
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
 });
 
@@ -19,6 +20,14 @@ const dmSerif = DM_Serif_Display({
   variable: "--font-serif",
   subsets: ["latin"],
 });
+
+const poppins = Poppins({
+  weight: ["600", "700"],
+  variable: "--font-poppins",
+  subsets: ["latin"],
+});
+
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "Newel | High-End Digital Solutions",
@@ -32,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full scroll-smooth">
-      <body className={`${inter.variable} ${jetbrainsMono.variable} ${dmSerif.variable} font-sans antialiased relative`}>
+      <body className={`${inter.variable} ${roboto.variable} ${dmSerif.variable} ${poppins.variable} font-sans antialiased relative`}>
         {/* Global Background Image */}
         <div className="fixed inset-0 z-[-10]">
           <img 

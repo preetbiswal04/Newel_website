@@ -6,7 +6,7 @@ import { Play, ArrowRight } from "lucide-react";
 
 export const DemoSection = () => {
   return (
-    <section className="w-full py-24 md:py-40">
+    <section className="w-full pb-10 md:pb-16 pt-0">
       <div className="container-page">
         <div className="flex flex-col md:flex-row items-stretch border-t border-blue-600/10">
           

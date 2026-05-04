@@ -10,7 +10,7 @@ export const CaseStudyHero = () => {
   const featuredCase = CASE_STUDIES[0];
 
   return (
-    <section className="bg-transparent pt-48 pb-32 md:pt-64 md:pb-48 relative overflow-hidden noise-overlay">
+    <section className="bg-transparent pt-32 pb-24 md:pt-48 md:pb-32 relative overflow-hidden noise-overlay">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Glowing Orbs */}
@@ -58,10 +58,10 @@ export const CaseStudyHero = () => {
                   initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-6xl md:text-8xl lg:text-[110px] font-serif text-slate-900 leading-[0.95] tracking-tightest"
+                  className="text-6xl md:text-8xl lg:text-[110px] font-poppins font-bold text-white leading-[0.95] tracking-tightest"
                 >
                   Global <br />
-                  <span className="text-slate-900/40 italic font-light">Case</span> Studies
+                  <span className="text-white/40 italic font-light">Case</span> Studies
                 </motion.h1>
               </div>
             </div>
@@ -72,20 +72,20 @@ export const CaseStudyHero = () => {
               transition={{ duration: 1.4, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col gap-8"
             >
-              <p className="text-xl md:text-2xl text-slate-600 leading-relaxed max-w-xl font-light">
+              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-xl font-light">
                 Discover how we architect the future through AI, precision data engineering, 
                 and high-stakes digital transformation.
               </p>
               
               <div className="flex items-center gap-8 pt-4">
                 <div className="flex flex-col gap-1">
-                  <span className="text-slate-900 font-serif text-3xl">50+</span>
-                  <span className="text-slate-900/30 text-[10px] uppercase tracking-widest">Global Engagements</span>
+                  <span className="text-white font-poppins font-semibold text-3xl">50+</span>
+                  <span className="text-white/40 text-[10px] uppercase tracking-widest">Global Engagements</span>
                 </div>
                 <div className="w-px h-12 bg-white/10" />
                 <div className="flex flex-col gap-1">
-                  <span className="text-slate-900 font-serif text-3xl">$2B+</span>
-                  <span className="text-slate-900/30 text-[10px] uppercase tracking-widest">Client Impact Generated</span>
+                  <span className="text-white font-poppins font-semibold text-3xl">$2B+</span>
+                  <span className="text-white/40 text-[10px] uppercase tracking-widest">Client Impact Generated</span>
                 </div>
               </div>
             </motion.div>

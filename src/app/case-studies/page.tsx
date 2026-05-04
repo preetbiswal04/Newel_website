@@ -10,12 +10,10 @@ export const metadata: Metadata = {
 
 export default function CaseStudiesPage() {
   return (
-    <main className="min-h-screen bg-[#f8f5ff]">
-      <div className="h-[150px] w-full" />
+    <main className="min-h-screen bg-[#050505] text-white">
       <CaseStudyHero />
-      <div className="h-[150px] w-full" />
       <CaseStudyGrid />
-      <div className="h-[200px] w-full" />
+      <div className="h-[100px] w-full" />
     </main>
   );
 }
