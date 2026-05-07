@@ -13,8 +13,7 @@ export const metadata = {
 export default function CareersPage() {
   return (
     <main className="w-full min-h-screen relative overflow-hidden">
-      <div className="relative z-10 text-[#1a1a1a]">
-        <div className="h-[100px] w-full" />
+      <section className="relative pt-12 md:pt-16">
         <CareersHero />
         <div className="h-[100px] w-full" />
         <ValueCards />
@@ -25,7 +24,7 @@ export default function CareersPage() {
         <div className="h-[100px] w-full" />
         <BottomCTA />
         <div className="h-[100px] w-full" />
-      </div>
+      </section>
     </main>
   );
 }

@@ -34,8 +34,12 @@ export const TransformationSection = () => {
 
   return (
     <section
-      className="relative w-full py-24 bg-cover bg-center bg-fixed"
-      style={{ backgroundImage: "url('/abstract-textured-backgound%20(1).jpg')" }}
+      className="relative w-full py-24 bg-no-repeat bg-fixed"
+      style={{ 
+        backgroundImage: "url('/home-page-section2.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
     >
       {/* Background is fully visible */}
 
@@ -73,7 +77,7 @@ export const TransformationSection = () => {
                     scale: 1.05,
                   },
                 }}
-                className="relative h-[420px] w-full shrink-0 overflow-hidden rounded-xl bg-purple-500 p-8 shadow-lg cursor-pointer"
+                className="relative h-[420px] w-full shrink-0 overflow-hidden rounded-xl bg-[#c084fc] p-8 shadow-lg cursor-pointer"
               >
                 <div className="relative z-10 text-white flex flex-col h-full pointer-events-none">
                   <span className="mb-4 block w-fit rounded-full bg-white/30 p-2 text-white">

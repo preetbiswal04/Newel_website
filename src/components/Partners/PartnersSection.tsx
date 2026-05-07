@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
@@ -52,7 +52,14 @@ const PARTNERS: Partner[] = [
 
 export const PartnersSection = () => {
   return (
-    <section className="relative w-full pb-10 pt-2 md:pb-16 md:pt-4">
+    <section 
+      className="relative w-full pb-10 pt-2 md:pb-16 md:pt-4 bg-no-repeat bg-fixed"
+      style={{ 
+        backgroundImage: "url('/home-page-section2.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
       <div className="container-page">
         <div className="grid grid-cols-1 gap-20 md:grid-cols-[40%_60%] md:gap-0">
 

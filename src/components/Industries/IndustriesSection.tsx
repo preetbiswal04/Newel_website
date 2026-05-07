@@ -108,24 +108,10 @@ export const IndustriesSection = () => {
   const Icon = active.icon;
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f8faff] py-8 md:py-12">
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
-
-      <div
-        className="pointer-events-none absolute right-0 top-0 h-[560px] w-[560px] rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle at 70% 30%, rgba(219,234,254,0.6) 0%, transparent 70%)",
-        }}
-      />
-
+    <section 
+      className="relative w-full overflow-hidden pb-8 md:pb-12 bg-no-repeat bg-center bg-cover"
+      style={{ backgroundImage: 'url("/home-img-7.jpg")' }}
+    >
       <div className="container-page relative z-10 font-sans">
         <div className="mx-auto mb-8 w-full max-w-[1200px] text-left md:mb-10">
           <span className="mb-3 inline-flex items-center gap-3 font-sans text-[11px] font-semibold uppercase tracking-[0.28em] text-blue-500">

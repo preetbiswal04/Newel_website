@@ -78,7 +78,7 @@ export const JobBoard = () => {
               placeholder="Search job roles.."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-14 pr-8 py-5 rounded-full border border-purple-100 outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-base bg-white shadow-sm"
+              className="w-full pl-14 pr-8 h-[60px] rounded-full border border-purple-100 outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 transition-all text-base bg-white shadow-sm"
             />
           </div>
 
@@ -86,7 +86,7 @@ export const JobBoard = () => {
             <select
               value={deptFilter}
               onChange={(e) => setDeptFilter(e.target.value)}
-              className="px-8 py-4 rounded-full border border-purple-100 outline-none bg-white text-[15px] font-medium cursor-pointer hover:border-purple-200 transition-colors h-[60px] min-w-[200px] shadow-sm"
+              className="px-6 py-0 rounded-full border border-purple-100 outline-none bg-white text-[15px] font-medium cursor-pointer hover:border-purple-200 transition-colors h-[60px] min-w-[180px] shadow-sm appearance-none"
             >
               {DEPARTMENTS.map((dept) => (
                 <option key={dept} value={dept}>{dept}</option>
@@ -96,7 +96,7 @@ export const JobBoard = () => {
             <select
               value={locFilter}
               onChange={(e) => setLocFilter(e.target.value)}
-              className="px-8 py-4 rounded-full border border-purple-100 outline-none bg-white text-[15px] font-medium cursor-pointer hover:border-purple-200 transition-colors h-[60px] min-w-[200px] shadow-sm"
+              className="px-6 py-0 rounded-full border border-purple-100 outline-none bg-white text-[15px] font-medium cursor-pointer hover:border-purple-200 transition-colors h-[60px] min-w-[180px] shadow-sm appearance-none"
             >
               {LOCATIONS.map((loc) => (
                 <option key={loc} value={loc}>{loc}</option>

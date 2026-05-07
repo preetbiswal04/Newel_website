@@ -4,6 +4,7 @@ export interface SubService {
   title: string;
   tagline: string;
   icon: string; // Lucide icon name
+  subItems?: { title: string; slug: string }[];
 }
 
 export interface ServiceCategory {
@@ -14,95 +15,129 @@ export interface ServiceCategory {
 
 export const SERVICES_DATA: ServiceCategory[] = [
   {
-    id: "infrastructure",
-    name: "Infrastructure Services",
+    id: "recruitment",
+    name: "Staffing & Recruitment",
     services: [
       {
-        id: "cloud-ops",
-        slug: "cloud-operations",
-        title: "Cloud Operations",
-        tagline: "Managed hybrid-cloud environments with 99.9% uptime and auto-scaling.",
-        icon: "Cloud"
+        id: "contract-staffing",
+        slug: "contract-staffing",
+        title: "Contract Staffing / Third Party Hiring",
+        tagline: "Flexible and scalable contract staffing solutions tailored to your project needs.",
+        icon: "Briefcase"
       },
       {
-        id: "cyber-sec",
-        slug: "cyber-security",
-        title: "Cyber Security",
-        tagline: "Zero-trust architecture and real-time threat intelligence monitoring.",
-        icon: "Shield"
+        id: "staff-augmentation",
+        slug: "staff-augmentation",
+        title: "Staff Augmentation Support services",
+        tagline: "Scale your technical teams quickly with our expert specialized IT professionals.",
+        icon: "Users"
       },
       {
-        id: "network-edge",
-        slug: "network-edge",
-        title: "Network & Edge",
-        tagline: "Next-gen software-defined networking and edge computing solutions.",
-        icon: "Network"
+        id: "executive-search",
+        slug: "executive-search",
+        title: "Executive Search / Permanent Hiring",
+        tagline: "Strategic recruitment solutions to find and hire the best permanent talent for your organization.",
+        icon: "Briefcase"
       }
     ]
   },
   {
-    id: "application",
-    name: "Application Services",
+    id: "engineering",
+    name: "Software Engineering",
     services: [
       {
-        id: "app-mod",
-        slug: "application-modernization",
-        title: "Application Modernization",
-        tagline: "Transforming legacy monoliths into scalable microservices architectures.",
+        id: "app-dev",
+        slug: "application-development",
+        title: "Application Development",
+        tagline: "Custom-built software solutions designed to solve complex business challenges.",
         icon: "Layers"
       },
       {
-        id: "devops",
-        slug: "devops-automation",
-        title: "DevOps Automation",
-        tagline: "Continuous integration and delivery pipelines optimized for speed.",
+        id: "mobile-apps",
+        slug: "mobile-applications",
+        title: "Mobile Applications",
+        tagline: "Engaging and high-performance mobile experiences for iOS and Android.",
+        icon: "Zap"
+      },
+      {
+        id: "app-re-eng",
+        slug: "application-re-engineering",
+        title: "Application Re-engineering",
+        tagline: "Revitalizing legacy systems with modern architectures and improved performance.",
+        icon: "Layers"
+      },
+      {
+        id: "outsystems",
+        slug: "outsystems",
+        title: "Outsystems",
+        tagline: "Accelerating digital transformation with high-performance low-code development.",
         icon: "Zap"
       }
     ]
   },
   {
-    id: "data-analytics",
-    name: "Data & Analytics Services",
+    id: "modernization",
+    name: "Automation & QA",
     services: [
       {
-        id: "data-eng",
-        slug: "data-engineering",
-        title: "Data Engineering",
-        tagline: "Building robust data pipelines and lakehouse architectures.",
-        icon: "Database"
+        id: "quality-assurance",
+        slug: "quality-assurance",
+        title: "Quality Assurance",
+        tagline: "Rigorous testing and quality control to ensure flawless software delivery.",
+        icon: "Shield"
       },
       {
-        id: "ai-ml",
-        slug: "ai-ml-solutions",
-        title: "AI & ML Solutions",
-        tagline: "Custom machine learning models for predictive business intelligence.",
-        icon: "Cpu"
-      }
-    ]
-  },
-  {
-    id: "business-process",
-    name: "Business Process Services",
-    services: [
-      {
         id: "rpa",
-        slug: "rpa-automation",
-        title: "RPA Automation",
-        tagline: "Automating repetitive tasks with intelligent robotic process agents.",
+        slug: "robotic-process-automation",
+        title: "Robotic Process Automation",
+        tagline: "Intelligent automation to streamline repetitive tasks and boost productivity.",
         icon: "Activity"
       }
     ]
   },
   {
-    id: "professional",
-    name: "Professional Services",
+    id: "cloud-data",
+    name: "Cloud & Analytics",
     services: [
       {
-        id: "consulting",
-        slug: "it-consulting",
-        title: "IT Consulting",
-        tagline: "Strategic technology roadmaps aligned with business growth goals.",
-        icon: "Briefcase"
+        id: "cloud-services",
+        slug: "cloud-services",
+        title: "Cloud Services",
+        tagline: "Scalable, secure, and efficient cloud infrastructure solutions for the enterprise.",
+        icon: "Cloud"
+      },
+      {
+        id: "data-analytics",
+        slug: "data-analytics",
+        title: "Data Analytics",
+        tagline: "Unlocking business value through advanced data processing and visualization.",
+        icon: "Database"
+      }
+    ]
+  },
+  {
+    id: "specialized",
+    name: "Specialized Media",
+    services: [
+      {
+        id: "dooh",
+        slug: "dooh",
+        title: "DOOH",
+        tagline: "Innovative Digital Out-of-Home media solutions for modern brand engagement.",
+        icon: "Network"
+      }
+    ]
+  },
+  {
+    id: "ai-intelligence",
+    name: "AI & Intelligence",
+    services: [
+      {
+        id: "ai-solutions",
+        slug: "ai-solutions",
+        title: "Artificial Intelligence",
+        tagline: "Leveraging AI and machine learning to drive intelligent automation and insights.",
+        icon: "Cpu"
       }
     ]
   }

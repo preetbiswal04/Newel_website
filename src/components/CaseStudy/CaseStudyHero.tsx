@@ -1,121 +1,83 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { CASE_STUDIES } from "@/data/caseStudies";
-import { CaseStudyCard } from "./CaseStudyCard";
 
 export const CaseStudyHero = () => {
-  const featuredCase = CASE_STUDIES[0];
+  const featured = CASE_STUDIES[0];
 
   return (
-    <section className="bg-transparent pt-32 pb-24 md:pt-48 md:pb-32 relative overflow-hidden noise-overlay">
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        {/* Glowing Orbs */}
-        <motion.div
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-24 -left-24 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"
-        />
-        <motion.div
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 100, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/2 -right-24 w-[500px] h-[500px] bg-blue-400/5 rounded-full blur-[150px]"
-        />
+    <section className="w-full bg-black text-white">
 
-        {/* Subtle Grid lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+      {/* ─────────────────────────────────────────────────────
+          PART 1: Big Headline Header
+      ───────────────────────────────────────────────────── */}
+      <div className="container-page pt-40 md:pt-48 pb-16 md:pb-20">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="font-serif text-white leading-[1.1] tracking-[-0.01em] max-w-[680px]"
+          style={{ fontWeight: 400, fontSize: "clamp(2.8rem, 4.5vw, 4.2rem)" }}
+        >
+          Explore How Our Clients Are Thriving in the New Era of AI
+        </motion.h1>
       </div>
 
-      <div className="container-page relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-          
-          {/* Left Side: Content */}
-          <div className="lg:col-span-7 flex flex-col gap-10">
-            <div className="flex flex-col gap-6">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="flex items-center gap-4"
-              >
-                <div className="h-[1px] w-8 bg-blue-500" />
-                <span className="text-blue-400 font-mono text-[11px] tracking-[0.4em] uppercase">Impact & Insights</span>
-              </motion.div>
-
-              <div className="overflow-hidden">
-                <motion.h1
-                  initial={{ opacity: 0, y: 100 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="text-6xl md:text-8xl lg:text-[110px] font-poppins font-bold text-white leading-[0.95] tracking-tightest"
-                >
-                  Global <br />
-                  <span className="text-white/40 italic font-light">Case</span> Studies
-                </motion.h1>
-              </div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.4, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col gap-8"
-            >
-              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-xl font-light">
-                Discover how we architect the future through AI, precision data engineering, 
-                and high-stakes digital transformation.
-              </p>
-              
-              <div className="flex items-center gap-8 pt-4">
-                <div className="flex flex-col gap-1">
-                  <span className="text-white font-poppins font-semibold text-3xl">50+</span>
-                  <span className="text-white/40 text-[10px] uppercase tracking-widest">Global Engagements</span>
-                </div>
-                <div className="w-px h-12 bg-white/10" />
-                <div className="flex flex-col gap-1">
-                  <span className="text-white font-poppins font-semibold text-3xl">$2B+</span>
-                  <span className="text-white/40 text-[10px] uppercase tracking-widest">Client Impact Generated</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right Side: Featured Highlight */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95, rotateY: 10 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-            transition={{ duration: 1.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 relative perspective-1000"
+      {/* ─────────────────────────────────────────────────────
+          PART 2: Featured Case Study – Image Left, Content Right
+      ───────────────────────────────────────────────────── */}
+      <div className="container-page pb-16 md:pb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Link
+            href={`/case-studies/${featured.slug}`}
+            className="group grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center"
           >
-            <div className="relative group">
-              {/* Decorative Frame */}
-              <div className="absolute -inset-4 border border-white/5 rounded-[2.5rem] pointer-events-none group-hover:border-white/10 transition-colors duration-700" />
-              
-              <div className="scale-100 transform-gpu transition-all duration-700 group-hover:translate-y-[-10px]">
-                <CaseStudyCard {...featuredCase} />
-              </div>
+            {/* Image */}
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#111]">
+              {featured.industry && (
+                <span className="absolute top-4 left-4 z-10 bg-black/80 backdrop-blur-sm text-white text-[11px] font-semibold tracking-wide px-3 py-1.5 rounded-full">
+                  {featured.industry}
+                </span>
+              )}
+              <img
+                src={featured.image}
+                alt={featured.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
 
-              {/* Floating Label */}
-              <div className="absolute top-10 -left-6 bg-blue-600 text-white text-[9px] font-bold uppercase tracking-[0.2em] px-4 py-2 rounded-sm rotate-[-90deg] origin-left shadow-2xl z-20">
-                LATEST WORK
+            {/* Content */}
+            <div className="flex flex-col gap-5">
+              {featured.client && (
+                <p className="text-white/40 text-[13px] font-medium tracking-wide">
+                  {featured.client}
+                </p>
+              )}
+
+              <h2 className="font-poppins font-bold text-white text-2xl md:text-3xl lg:text-[2rem] leading-snug group-hover:text-white/75 transition-colors duration-300">
+                {featured.innerTitle || featured.title}
+              </h2>
+
+              <p className="text-white/50 text-[15px] leading-relaxed">
+                {featured.teaser}
+              </p>
+
+              <div className="flex items-center gap-2 text-white/50 text-[14px] font-medium group-hover:text-white transition-colors duration-300">
+                <span className="text-white/30 group-hover:text-white transition-colors">↳</span>
+                <span>Read more</span>
               </div>
             </div>
-          </motion.div>
-        </div>
+          </Link>
+        </motion.div>
       </div>
+
     </section>
   );
 };
-
-

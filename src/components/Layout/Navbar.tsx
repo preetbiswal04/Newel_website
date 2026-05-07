@@ -34,25 +34,27 @@ const NAV_LINKS = [
 
 function NavItemCard({ item, type }: { item: any; type: string }) {
   return (
-    <Link
-      href={`/${type}/${item.slug}`}
-      className="group/card flex items-start gap-4 p-4 rounded-[16px] hover:bg-white/60 transition-all duration-300"
-    >
-      <div className="w-12 h-12 shrink-0 rounded-[12px] bg-blue-50 flex items-center justify-center text-blue-600 group-hover/card:bg-blue-600 group-hover/card:text-white transition-all duration-300 shadow-sm">
-        <div className="[&>svg]:w-6 [&>svg]:h-6">
-          {ICON_MAP[item.icon] ?? <Cloud />}
+    <div className="relative group/card h-full">
+      <Link
+        href={`/${type}/${item.slug}`}
+        className="flex items-start gap-4 p-4 rounded-[16px] hover:bg-white/60 transition-all duration-300 h-full"
+      >
+        <div className="w-12 h-12 shrink-0 rounded-[12px] bg-blue-50 flex items-center justify-center text-blue-600 group-hover/card:bg-blue-600 group-hover/card:text-white transition-all duration-300 shadow-sm">
+          <div className="[&>svg]:w-6 [&>svg]:h-6">
+            {ICON_MAP[item.icon] ?? <Cloud />}
+          </div>
         </div>
-      </div>
 
-      <div className="flex flex-col gap-1.5 pt-0.5">
-        <p className="text-[15px] font-bold text-slate-950 leading-tight group-hover/card:text-blue-700 transition-colors">
-          {item.title}
-        </p>
-        <p className="text-[13px] text-slate-700 font-medium leading-relaxed max-w-[320px]">
-          {item.tagline}
-        </p>
-      </div>
-    </Link>
+        <div className="flex flex-col gap-1.5 pt-0.5">
+          <p className="text-[15px] font-bold text-slate-950 leading-tight group-hover/card:text-blue-700 transition-colors">
+            {item.title}
+          </p>
+          <p className="text-[13px] text-slate-700 font-medium leading-relaxed max-w-[320px]">
+            {item.tagline}
+          </p>
+        </div>
+      </Link>
+    </div>
   );
 }
 
@@ -71,7 +73,7 @@ function MegaMenu({ data, type, onMouseEnter, onMouseLeave }: any) {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="bg-white/90 backdrop-blur-xl rounded-[24px] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.15)] border border-slate-200/60 overflow-hidden w-full max-w-[1000px] flex min-h-[400px]">
+      <div className="bg-white/90 backdrop-blur-xl rounded-[24px] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.15)] border border-slate-200/60 overflow-hidden w-full max-w-[1140px] flex min-h-[400px]">
 
         {/* Left Section: Discover */}
         <div className="w-[320px] py-8 px-6 bg-white/50 border-r border-slate-200/40 flex flex-col">

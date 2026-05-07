@@ -64,8 +64,15 @@ export const WhyNewel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="w-full py-14 md:py-16">
-      <div className="container-page">
+    <section 
+      className="w-full py-14 md:py-16 bg-no-repeat bg-fixed"
+      style={{ 
+        backgroundImage: "url('/home-page-section2.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      <div className="container-page relative z-10">
         {/* Section Label */}
         <p className="mb-5 text-[11px] font-bold uppercase tracking-[0.4em] text-blue-600 opacity-60">
           WHY NEWEL
@@ -82,26 +89,26 @@ export const WhyNewel = () => {
           {/* LEFT: Vertical Tab Buttons */}
           <div className="w-full lg:w-[38%] lg:max-w-[430px] lg:shrink-0">
             <div className="flex flex-col gap-3.5 rounded-2xl border border-slate-200/50 bg-white/60 backdrop-blur-sm p-4 shadow-lg shadow-blue-600/5">
-            {WHY_ITEMS.map((item, idx) => (
-              <button
-                key={item.id}
-                onClick={() => setActiveIndex(idx)}
-                className={cn(
-                  "group flex min-h-[104px] w-full items-center gap-5 rounded-2xl border px-7 py-5 text-left transition-all duration-500",
-                  activeIndex === idx
-                    ? "bg-white border-blue-600 shadow-xl shadow-blue-600/5 text-blue-700 ring-1 ring-blue-600/10"
-                    : "bg-blue-600/5 border-transparent text-blue-900/60 hover:bg-blue-600/10 hover:text-blue-800"
-                )}
-              >
-                <div className={cn(
-                  "p-2.5 rounded-lg transition-colors duration-500",
-                  activeIndex === idx ? "bg-blue-600 text-white" : "bg-blue-100 text-blue-600 group-hover:bg-blue-200"
-                )}>
-                  {item.icon}
-                </div>
-                <span className="text-[1.02rem] font-bold tracking-tight">{item.label}</span>
-              </button>
-            ))}
+              {WHY_ITEMS.map((item, idx) => (
+                <button
+                  key={item.id}
+                  onClick={() => setActiveIndex(idx)}
+                  className={cn(
+                    "group flex min-h-[104px] w-full items-center gap-5 rounded-2xl border px-7 py-5 text-left transition-all duration-500",
+                    activeIndex === idx
+                      ? "bg-white border-blue-600 shadow-xl shadow-blue-600/5 text-blue-700 ring-1 ring-blue-600/10"
+                      : "bg-blue-600/5 border-transparent text-blue-900/60 hover:bg-blue-600/10 hover:text-blue-800"
+                  )}
+                >
+                  <div className={cn(
+                    "p-2.5 rounded-lg transition-colors duration-500",
+                    activeIndex === idx ? "bg-blue-600 text-white" : "bg-blue-100 text-blue-600 group-hover:bg-blue-200"
+                  )}>
+                    {item.icon}
+                  </div>
+                  <span className="text-[1.02rem] font-bold tracking-tight">{item.label}</span>
+                </button>
+              ))}
             </div>
           </div>
 
@@ -109,7 +116,7 @@ export const WhyNewel = () => {
           <div className="relative flex w-full flex-col justify-start overflow-hidden rounded-2xl border border-slate-200/50 bg-white p-6 shadow-2xl shadow-blue-600/10 md:p-8 lg:min-h-[460px] lg:max-w-[860px] lg:p-9">
             {/* Background Decorative Blur */}
             <div className="absolute -top-32 -right-32 w-80 h-80 bg-blue-100/50 blur-[100px] rounded-full pointer-events-none" />
-            
+
             <AnimatePresence mode="wait">
               <motion.div
                 key={WHY_ITEMS[activeIndex].id}

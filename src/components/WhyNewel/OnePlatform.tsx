@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { User, ShieldCheck, ArrowRight, Cpu, Laptop, Users } from "lucide-react";
@@ -57,7 +57,14 @@ const Card = ({ title, desc, icon, color, align = "left", className = "" }: Card
 
 export const OnePlatform = () => {
   return (
-    <section className="w-full overflow-hidden border-t border-blue-600/10 pt-2 pb-2 md:pt-4 md:pb-4">
+    <section 
+      className="w-full overflow-hidden border-t border-blue-600/10 pt-2 pb-2 md:pt-4 md:pb-4 bg-no-repeat bg-fixed"
+      style={{ 
+        backgroundImage: "url('/home-page-section2.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
       <div className="container-page">
         <div className="mb-8 px-4 text-center sm:px-6 md:mb-10 lg:px-0">
           <h2 className="text-4xl font-bold tracking-tight text-blue-800 md:text-5xl">

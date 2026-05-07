@@ -13,7 +13,7 @@ export const CareersHero = () => {
   };
 
   return (
-    <section className="relative pt-32 pb-8 md:pt-40 md:pb-12">
+    <section className="relative pt-24 pb-8 md:pt-28 md:pb-12">
       <div className="container-page">
         {/* Main Hero Card Container */}
         <div className="relative w-full aspect-[21/9] md:aspect-[2.8/1] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl flex items-center justify-center">
@@ -27,11 +27,11 @@ export const CareersHero = () => {
               playsInline
               className="w-full h-full object-cover opacity-100"
             >
-              <source src="/11904103_3840_2160_24fps.mp4" type="video/mp4" />
+              <source src="/careers-vd-1.mp4" type="video/mp4" />
             </video>
 
-            {/* Subtle Gradient for Readability without blurring */}
-            <div className="absolute inset-0 bg-black/10" />
+            {/* Subtle Gradient for Readability */}
+            <div className="absolute inset-0 bg-black/35" />
           </div>
 
           {/* Content */}
@@ -40,7 +40,7 @@ export const CareersHero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-gray-900 text-3xl md:text-5xl lg:text-[52px] font-bold leading-[1.2] mb-10 tracking-tight"
+              className="text-white text-2xl md:text-3xl lg:text-[38px] font-medium leading-[1.3] mb-10 tracking-tight drop-shadow-md"
             >
               We’re on a mission to expand <br className="hidden md:block" />
               human potential to do <br className="hidden md:block" />

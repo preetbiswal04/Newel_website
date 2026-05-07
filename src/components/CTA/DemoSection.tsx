@@ -6,18 +6,25 @@ import { Play, ArrowRight } from "lucide-react";
 
 export const DemoSection = () => {
   return (
-    <section className="w-full pb-10 md:pb-16 pt-0">
+    <section 
+      className="w-full pb-10 md:pb-16 pt-0 bg-no-repeat bg-fixed"
+      style={{ 
+        backgroundImage: "url('/home-page-section2.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
       <div className="container-page">
         <div className="flex flex-col md:flex-row items-stretch border-t border-blue-600/10">
           
           {/* Left Content */}
-          <div className="flex-1 py-16 md:py-24 md:pr-20 flex flex-col justify-center">
+          <div className="flex-1 py-16 md:py-24 md:pr-20 flex flex-col justify-center relative z-10">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold text-blue-800 mb-8 tracking-tighter"
+              className="text-5xl md:text-7xl font-bold text-blue-900 mb-8 tracking-tighter"
             >
               See Newel in action!
             </motion.h2>
@@ -27,7 +34,7 @@ export const DemoSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-xl text-blue-700/70 mb-12 max-w-xl leading-relaxed"
+              className="text-xl text-blue-900/80 mb-12 max-w-xl leading-relaxed font-medium"
             >
               Watch the 15 minute on-demand demo to get an overview of the Newel Enterprise AI Platform.
             </motion.p>
@@ -52,14 +59,12 @@ export const DemoSection = () => {
           </div>
 
           {/* Right Visual (Abstract Line Art) */}
-          <div className="md:w-1/2 relative bg-transparent overflow-hidden min-h-[400px] md:min-h-full">
+          <div className="md:w-1/2 relative overflow-hidden min-h-[400px] md:min-h-full flex items-center justify-center">
             <img 
               src="/demo_banner_abstract_1776844946313.png" 
               alt="Abstract AI Visualization"
               className="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-[10s] hover:scale-110"
             />
-            {/* Visual Polish: Side Gradient (Fade into white on desktop) */}
-            <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#d6d1f0] to-transparent hidden md:block" />
           </div>
 
         </div>
