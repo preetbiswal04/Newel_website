@@ -3,6 +3,8 @@
 import React from "react";
 import { User, ShieldCheck, ArrowRight, Cpu, Laptop, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/Utils/Button";
 
 type CardProps = {
   title: string;
@@ -15,60 +17,56 @@ type CardProps = {
 
 const Card = ({ title, desc, icon, color, align = "left", className = "" }: CardProps) => (
   <motion.div
-    initial={{ opacity: 0, x: align === "left" ? -20 : 20 }}
-    whileInView={{ opacity: 1, x: 0 }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8 }}
-    className={`relative flex h-[315px] w-full max-w-[320px] flex-col lg:h-[255px] lg:max-w-[360px]
-    rounded-[28px] border border-blue-900/10 bg-white/80 
-    px-7 pt-12 pb-6 
-    shadow-[0_14px_34px_rgba(51,76,149,0.10)] backdrop-blur-md 
-    transition-all hover:-translate-y-1 hover:shadow-[0_20px_44px_rgba(51,76,149,0.16)] ${className}`}
+    className={cn(
+      "relative flex h-[340px] w-full max-w-[320px] flex-col lg:h-[280px] lg:max-w-[380px]",
+      "rounded-[32px] border border-slate-200 bg-white p-8 pt-16",
+      "shadow-[0_20px_50px_rgba(51,76,149,0.08)] transition-all duration-700",
+      "hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(51,76,149,0.15)] group",
+      className
+    )}
   >
-    {/* ICON */}
-
-
+    {/* ICON Container with premium gradient */}
     <div
-      className="absolute -top-8 left-10 flex h-14 w-14 items-center justify-center 
-      rounded-full text-white shadow-[0_12px_24px_rgba(15,23,42,0.18)]"
-      style={{ backgroundColor: color }}
+      className="absolute -top-8 left-10 flex h-16 w-16 items-center justify-center 
+      rounded-2xl text-white shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-2xl"
+      style={{ 
+        background: `linear-gradient(135deg, ${color}, ${color}dd)`,
+        boxShadow: `0 12px 24px ${color}33`
+      }}
     >
       {icon}
     </div>
 
-
-    {/* Card content */}
+    {/* Card Content */}
     <div className="flex h-full flex-col gap-5 text-left">
-      <h3 className="text-xl sm:text-2xl font-semibold leading-tight text-blue-800">
+      <h3 className="text-2xl font-bold leading-tight text-[#002D72] group-hover:text-blue-600 transition-colors">
         {title}
       </h3>
 
-      <p className="text-sm sm:text-base leading-relaxed text-slate-600">
+      <p className="text-[15px] leading-relaxed text-slate-500 font-medium line-clamp-3">
         {desc}
       </p>
 
-      <button className="mt-auto flex items-center gap-2 pt-2 text-[0.75rem] font-bold uppercase tracking-[0.2em] text-blue-500/80 hover:text-blue-700">
-        <span>Learn more</span>
-        <ArrowRight size={14} style={{ color }} />
-      </button>
+      <div className="mt-auto pt-4">
+        <Button variant="ghost" size="sm" className="px-0 hover:bg-transparent text-blue-600 group-hover:text-blue-800">
+          Learn more
+        </Button>
+      </div>
     </div>
   </motion.div>
 );
 
 export const OnePlatform = () => {
   return (
-    <section 
-      className="w-full overflow-hidden border-t border-blue-600/10 pt-2 pb-2 md:pt-4 md:pb-4 bg-no-repeat bg-fixed"
-      style={{ 
-        backgroundImage: "url('/home-page-section2.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
-    >
+    <section className="w-full py-20 md:py-32">
       <div className="container-page">
-        <div className="mb-8 px-4 text-center sm:px-6 md:mb-10 lg:px-0">
-          <h2 className="text-4xl font-bold tracking-tight text-blue-800 md:text-5xl">
-            One platform across teams
+        <div className="mb-16 px-4 text-center sm:px-6 md:mb-20">
+          <h2 className="text-[2.5rem] md:text-[3.1rem] lg:text-[4.5rem] font-semibold leading-[1.06] tracking-[-0.03em] text-slate-950">
+            <span className="text-blue-500">One platform</span> across teams
           </h2>
         </div>
 
@@ -123,8 +121,8 @@ export const OnePlatform = () => {
           </div>
 
           {/* Desktop - cards around center ring */}
-          <div className="relative mx-auto hidden h-[620px] w-full max-w-[1200px] lg:block">
-            <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 flex h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+          <div className="relative mx-auto hidden h-[750px] w-full max-w-[1300px] lg:block">
+            <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 flex h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 items-center justify-center">
               <div className="absolute inset-0 rounded-full border border-blue-400/45" />
               <div className="absolute inset-[16%] rounded-full border border-blue-400/42" />
               <div className="absolute inset-[32%] rounded-full border border-blue-400/38" />
@@ -163,7 +161,7 @@ export const OnePlatform = () => {
               />
             </div>
 
-            <div className="absolute right-0 top-[42px] z-10">
+            <div className="absolute right-0 top-12 z-10">
               <Card
                 title="Data science leaders"
                 desc="Scale how you manage teams and projects, improve collaboration, and accelerate project delivery."
@@ -172,7 +170,7 @@ export const OnePlatform = () => {
               />
             </div>
 
-            <div className="absolute right-0 bottom-[42px] z-10">
+            <div className="absolute right-0 bottom-12 z-10">
               <Card
                 title="IT leaders"
                 desc="A single platform that delivers self-service access to tools and infrastructure that are secure and compliant."
@@ -186,4 +184,3 @@ export const OnePlatform = () => {
     </section>
   );
 };
-

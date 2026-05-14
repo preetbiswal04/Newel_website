@@ -38,8 +38,7 @@ const LOGOS: LogoItem[] = [
 export const TrustedBy = () => {
   return (
     <section
-      style={{ paddingTop: "16px", paddingBottom: "40px" }}
-      className="w-full bg-white/20 backdrop-blur-sm border-y border-white/20 overflow-hidden"
+      className="w-full bg-[#E5E7EB] py-16 md:py-24 border-y border-slate-200/50 overflow-hidden"
     >
       <div className="container-page">
         <div className="text-center mb-8">

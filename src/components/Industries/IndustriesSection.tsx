@@ -108,10 +108,16 @@ export const IndustriesSection = () => {
   const Icon = active.icon;
 
   return (
-    <section 
-      className="relative w-full overflow-hidden pb-8 md:pb-12 bg-no-repeat bg-center bg-cover"
-      style={{ backgroundImage: 'url("/home-img-7.jpg")' }}
+    <section
+      className="relative w-full overflow-hidden pb-8 md:pb-12"
+      style={{
+        backgroundImage: 'url("/home-img-7.jpg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
     >
+      <div className="absolute inset-0 bg-white/50 backdrop-blur-[1px]" />
       <div className="container-page relative z-10 font-sans">
         <div className="mx-auto mb-8 w-full max-w-[1200px] text-left md:mb-10">
           <span className="mb-3 inline-flex items-center gap-3 font-sans text-[11px] font-semibold uppercase tracking-[0.28em] text-blue-500">
@@ -175,16 +181,16 @@ export const IndustriesSection = () => {
               <div className="flex h-full w-full flex-col justify-between p-6 sm:p-8 lg:w-[55%] lg:px-9 lg:py-7">
                 <div className="flex flex-col gap-5">
                   <span
-                  className="inline-flex items-center gap-2 rounded-full border px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.24em]"
-                  style={{
-                    color: active.accent,
-                    borderColor: `${active.accent}22`,
-                    backgroundColor: `${active.accent}0d`,
-                  }}
-                >
-                  <Icon size={12} />
-                  {active.tag}
-                </span>
+                    className="inline-flex items-center gap-2 rounded-full border px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.24em]"
+                    style={{
+                      color: active.accent,
+                      borderColor: `${active.accent}22`,
+                      backgroundColor: `${active.accent}0d`,
+                    }}
+                  >
+                    <Icon size={12} />
+                    {active.tag}
+                  </span>
 
                   <div className="space-y-3">
                     <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-400">

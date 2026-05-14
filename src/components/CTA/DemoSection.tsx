@@ -3,16 +3,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Play, ArrowRight } from "lucide-react";
+import { Button } from "@/components/Utils/Button";
 
 export const DemoSection = () => {
   return (
     <section 
-      className="w-full pb-10 md:pb-16 pt-0 bg-no-repeat bg-fixed"
-      style={{ 
-        backgroundImage: "url('/home-page-section2.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
+      className="w-full pb-10 md:pb-16 pt-0"
     >
       <div className="container-page">
         <div className="flex flex-col md:flex-row items-stretch border-t border-blue-600/10">
@@ -24,9 +20,9 @@ export const DemoSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl font-bold text-blue-900 mb-8 tracking-tighter"
+              className="text-[2.5rem] md:text-[3.1rem] lg:text-[4.5rem] font-semibold leading-[1.06] tracking-[-0.03em] text-slate-950 mb-8"
             >
-              See Newel in action!
+              See Newel <span className="text-blue-500">in action!</span>
             </motion.h2>
             
             <motion.p 
@@ -34,28 +30,29 @@ export const DemoSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-xl text-blue-900/80 mb-12 max-w-xl leading-relaxed font-medium"
+              className="text-slate-600 text-[0.98rem] leading-8 md:text-[1.02rem] mb-12 max-w-xl"
             >
               Watch the 15 minute on-demand demo to get an overview of the Newel Enterprise AI Platform.
             </motion.p>
             
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-wrap gap-6"
-            >
-              <button className="flex items-center gap-3 bg-[#634cc9] hover:bg-[#523db0] text-white px-10 py-5 rounded-none font-bold transition-all shadow-lg hover:shadow-xl active:scale-95 uppercase text-xs tracking-widest">
-                <Play size={20} fill="currentColor" />
+            <div className="flex flex-col sm:flex-row gap-6 mt-4">
+              <Button 
+                variant="primary" 
+                size="lg" 
+                className="w-full sm:w-[240px]"
+                icon={<Play size={20} fill="currentColor" />}
+              >
                 Watch Demo
-              </button>
+              </Button>
               
-              <button className="flex items-center gap-2 border-2 border-[#634cc9] text-[#634cc9] hover:bg-[#634cc9] hover:text-white px-10 py-5 rounded-none font-bold transition-all active:scale-95 uppercase text-xs tracking-widest">
-                Explore the Platform
-                <ArrowRight size={20} />
-              </button>
-            </motion.div>
+              <Button 
+                variant="primary" 
+                size="lg"
+                className="w-full sm:w-[240px]"
+              >
+                Contact Us
+              </Button>
+            </div>
           </div>
 
           {/* Right Visual (Abstract Line Art) */}

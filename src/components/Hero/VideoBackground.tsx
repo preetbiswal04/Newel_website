@@ -9,43 +9,49 @@ interface VideoAsset {
   url: string;
   poster: string;
   title: string;
+  highlight: string;
   description: string;
 }
 
 const VIDEOS: VideoAsset[] = [
   {
     id: 1,
-    url: "/18069701-uhd_3840_2160_24fps.mp4", // Tech city
+    url: "/18069701-uhd_3840_2160_24fps.mp4",
     poster: "/18069701-uhd_3840_2160_24fps.mp4",
     title: "Your Path to Agentic AI Starts Here",
+    highlight: "Agentic AI",
     description: "Newel Technologies is a leading AI consultancy that delivers transformation services to guide organizations into the new era of AI.."
   },
   {
     id: 2,
-    url: "https://websitesapi.dataart.com/media/pbgfimzl/partners-for-data-11-24.mp4", // Data visualization
+    url: "https://websitesapi.dataart.com/media/pbgfimzl/partners-for-data-11-24.mp4",
     poster: "https://websitesapi.dataart.com/media/pbgfimzl/partners-for-data-11-24.mp4",
     title: "Quantum Intelligence",
+    highlight: "Intelligence",
     description: "Leveraging quantum computing and advanced analytics to solve complex problems."
   },
   {
     id: 3,
-    url: "https://websitesapi.dataart.com/media/whqffkoo/trends-2026-video-main-page.mp4", // Abstract blue network
+    url: "https://websitesapi.dataart.com/media/whqffkoo/trends-2026-video-main-page.mp4",
     poster: "https://websitesapi.dataart.com/media/whqffkoo/trends-2026-video-main-page.mp4",
     title: "Defining the Future",
+    highlight: "Future",
     description: "Driving digital transformation across global enterprises with AI-first strategies."
   },
   {
     id: 4,
-    url: "/18069232-uhd_3840_2160_24fps.mp4", // Modern office / team
+    url: "/18069232-uhd_3840_2160_24fps.mp4",
     poster: "/18069232-uhd_3840_2160_24fps.mp4",
     title: "Human-Centric Innovation",
+    highlight: "Innovation",
     description: "Putting people at the heart of every technological breakthrough we engineer."
   },
   {
     id: 5,
-    url: "/7774450-uhd_3840_2160_30fps (1).mp4", // Abstract light
+    url: "/7774450-uhd_3840_2160_30fps (1).mp4",
     poster: "/7774450-uhd_3840_2160_30fps (1).mp4",
     title: "Agile Excellence",
+    highlight: "Excellence",
     description: "Mastering the art of rapid iteration and seamless deployment at scale."
   }
 ];
@@ -134,8 +140,8 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({ currentIdx, is
       </div>
 
       {/* Hero Visual Polish: Subtle Gradient Overlay */}
-      <div className="absolute inset-0 z-10 hero-gradient-overlay pointer-events-none opacity-20" />
-      <div className="absolute inset-0 z-10 bg-white/5 pointer-events-none" />
+      <div className="absolute inset-0 z-10 hero-gradient-overlay pointer-events-none opacity-70" />
+      <div className="absolute inset-0 z-10 bg-black/10 pointer-events-none" />
     </div>
   );
 };

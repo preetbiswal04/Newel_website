@@ -66,10 +66,10 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="relative pt-24 pb-12 overflow-hidden border-t border-purple-500/20 bg-gradient-to-b from-[#21093f] via-[#0e001f] to-black">
+    <footer className="relative pt-24 pb-12 overflow-hidden border-t border-slate-900 bg-black">
       {/* Background Texture Overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
           backgroundSize: '40px 40px'
@@ -77,8 +77,8 @@ export const Footer = () => {
       />
 
       {/* Decorative Glow Elements */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/[0.03] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-600/[0.05] blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container-page relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
@@ -94,7 +94,7 @@ export const Footer = () => {
 
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <MapPin className="w-5 h-5 text-purple-400 shrink-0 mt-1" />
+                <MapPin className="w-5 h-5 text-blue-500 shrink-0 mt-1" />
                 <p className="text-sm text-white/70 leading-relaxed">
                   504, Sunrise Business Park, Rd Number 16,<br />
                   Neheru Nagar, Wagle Industrial Estate, Thane<br />
@@ -103,7 +103,7 @@ export const Footer = () => {
               </div>
 
               <div className="flex items-center gap-4">
-                <Mail className="w-5 h-5 text-purple-400 shrink-0" />
+                <Mail className="w-5 h-5 text-blue-500 shrink-0" />
                 <a href="mailto:enquiry@neweltechnologies.com" className="text-sm text-white/70 hover:text-white transition-colors">
                   enquiry@neweltechnologies.com
                 </a>
@@ -111,7 +111,7 @@ export const Footer = () => {
 
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-4">
-                  <Phone className="w-5 h-5 text-purple-400 shrink-0" />
+                  <Phone className="w-5 h-5 text-blue-500 shrink-0" />
                   <a href="tel:+919664323316" className="text-sm text-white/70 hover:text-white transition-colors">
                     +91 9664323316
                   </a>
@@ -202,8 +202,8 @@ export const Footer = () => {
             </p>
           </div>
           <div className="flex gap-8 text-xs font-bold uppercase tracking-widest text-white/40">
-            <a href="#" className="hover:text-purple-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-purple-400 transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

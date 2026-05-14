@@ -6,21 +6,13 @@ import { ServicePillars } from "./ServicePillars";
 
 export const PlatformSection = () => {
   return (
-    <section
-      style={{ 
-        paddingTop: '80px', 
-        paddingBottom: '0px',
-        backgroundImage: 'url("/purple-img.jpg")',
-        backgroundSize: '110%',
-        backgroundPosition: 'center 10%',
-        backgroundRepeat: 'no-repeat'
-      }}
-      className="w-full"
-    >
-      <div className="container-page flex flex-col gap-16 md:gap-24">
-        <PowerBlock />
-        <ServicePillars />
+    <div className="w-full">
+      <PowerBlock />
+      <div className="bg-[#E5E7EB] py-20 md:py-32">
+        <div className="container-page">
+          <ServicePillars />
+        </div>
       </div>
-    </section>
+    </div>
   );
 };

@@ -1,8 +1,9 @@
-import { Inter, Roboto, DM_Serif_Display, Poppins } from "next/font/google";
+import { Inter, Roboto, DM_Serif_Display, Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 import { Navbar } from "@/components/Layout/Navbar";
 import { Footer } from "@/components/Footer/Footer";
+import { ExitIntentPopup } from "@/components/Utils/ExitIntentPopup";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,6 +28,12 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -41,22 +48,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full scroll-smooth">
-      <body className={`${inter.variable} ${roboto.variable} ${dmSerif.variable} ${poppins.variable} font-sans antialiased relative`}>
-        {/* Global Background Image */}
-        <div className="fixed inset-0 z-[-10]">
-          <img 
-            src="/global-bg.jpg" 
-            alt="Global Background" 
-            className="w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px]" />
-        </div>
-        
-        <div className="noise-bg" />
-        <div className="cinematic-glow opacity-30" />
+      <body className={`${inter.variable} ${roboto.variable} ${dmSerif.variable} ${poppins.variable} ${plusJakarta.variable} font-sans antialiased relative bg-white`}>
         <Navbar />
         {children}
         <Footer />
+        <ExitIntentPopup />
       </body>
     </html>
   );

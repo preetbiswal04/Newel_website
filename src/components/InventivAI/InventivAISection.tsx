@@ -59,13 +59,13 @@ export const InventivAISection = () => {
 
           {/* Right Column - Content */}
           <div className="flex flex-col justify-center space-y-10">
-            <div className="space-y-4">
-              <h2 className="text-4xl md:text-[2.75rem] font-medium leading-tight text-gray-300">
+            <div className="space-y-6">
+              <h2 className="text-[2.5rem] md:text-[3.1rem] lg:text-[3.8rem] font-semibold leading-[1.06] tracking-[-0.03em] text-white">
                 Building AI Ecosystem
                 <br />
-                <span className="text-white font-bold">That Align With Your Organization</span>
+                <span className="text-blue-400">That Align With Your Organization</span>
               </h2>
-              <p className="text-gray-300 text-[1.1rem] leading-relaxed max-w-[95%]">
+              <p className="text-gray-300 text-[1rem] leading-8 md:text-[1.05rem] max-w-[95%]">
                 <strong className="text-white font-semibold">InventivAI</strong> is our dedicated center of excellence, to help enterprises navigate the AI revolution. From custom LLMs to automated workflows, we move your business beyond the hype into practical, revenue-generating AI implementation.
               </p>
             </div>

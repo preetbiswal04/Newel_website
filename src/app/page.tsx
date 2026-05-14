@@ -21,8 +21,8 @@ export default function Home() {
           <TransformationSection />
           <InventivAISection />
         </div>
-        
-        <div className="w-full py-16 md:py-24">
+
+        <div className="w-full">
           <TrustedBy />
         </div>
 

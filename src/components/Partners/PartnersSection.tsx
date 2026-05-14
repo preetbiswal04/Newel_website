@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
+import { Button } from "@/components/Utils/Button";
 
 interface Partner {
   id: number;
@@ -53,12 +54,7 @@ const PARTNERS: Partner[] = [
 export const PartnersSection = () => {
   return (
     <section 
-      className="relative w-full pb-10 pt-2 md:pb-16 md:pt-4 bg-no-repeat bg-fixed"
-      style={{ 
-        backgroundImage: "url('/home-page-section2.jpg')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
+      className="relative w-full pb-20 pt-10 md:pb-32 md:pt-16 bg-[#E5E7EB]"
     >
       <div className="container-page">
         <div className="grid grid-cols-1 gap-20 md:grid-cols-[40%_60%] md:gap-0">
@@ -71,25 +67,25 @@ export const PartnersSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="mb-6 inline-block text-[11px] font-bold tracking-[0.3em] text-blue-600 uppercase">
-                Collaborate with AI Partners
-              </span>
-              <h2 className="mb-6 text-5xl font-bold leading-[1.1] tracking-tight text-blue-800 lg:text-6xl">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="h-px w-8 bg-blue-500" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-blue-500">
+                  Collaborate with AI Partners
+                </span>
+              </div>
+              <h2 className="mb-6 text-[2.5rem] md:text-[3.1rem] lg:text-[4.5rem] font-semibold leading-[1.06] tracking-[-0.03em] text-slate-950">
                 Expertise that <br />
                 drives impact
               </h2>
-              <p className="mb-6 max-w-sm text-lg leading-relaxed text-blue-700/60">
+              <p className="mb-6 max-w-sm text-slate-600 text-[0.98rem] leading-8 md:text-[1.02rem]">
                 Strategic collaboration with industry-leading pioneers to build, scale, and govern AI-first enterprises.
               </p>
 
               <div className="flex flex-col gap-4">
                 {/* CTA */}
-                <button className="group relative flex w-fit items-center gap-3 overflow-hidden rounded-full border border-blue-600/20 bg-blue-600/5 px-8 py-4 font-semibold text-blue-800 transition-all hover:bg-blue-800 hover:text-white">
-                  <span className="relative z-10 flex items-center gap-3">
-                    About us
-                    <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                  </span>
-                </button>
+                <Button variant="primary" size="lg" className="min-w-[200px]">
+                  About us
+                </Button>
               </div>
             </motion.div>
           </div>
@@ -116,15 +112,15 @@ const Card = ({ partner, index }: { partner: Partner; index: number }) => {
       transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       className="relative w-full max-w-2xl group"
     >
-      <div className="relative overflow-hidden rounded-[2.5rem] bg-white/40 aspect-[4/5] md:aspect-[16/10]">
+      <div className="relative overflow-hidden rounded-[2.5rem] bg-white aspect-[4/5] md:aspect-[16/10]">
         <img
           src={partner.image}
           alt={partner.name}
           className="h-full w-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
         />
 
-        {/* Subtle Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-gray-900/10 to-transparent opacity-80" />
+        {/* Premium Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
 
         {/* Content Overlay on Card for Premium Look */}
         <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 text-white">
@@ -133,18 +129,23 @@ const Card = ({ partner, index }: { partner: Partner; index: number }) => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">{partner.name}</h3>
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-white/60 mb-6">
-              {partner.role}
-            </p>
+            <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-3 drop-shadow-2xl">
+              {partner.name}
+            </h3>
+            <div className="flex items-center gap-3">
+              <div className="h-px w-6 bg-blue-500" />
+              <p className="text-[11px] font-black uppercase tracking-[0.4em] text-blue-400">
+                {partner.role}
+              </p>
+            </div>
           </motion.div>
 
           <div className="absolute bottom-8 right-8 md:bottom-12 md:right-12">
             <a
               href={partner.linkedin}
-              className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-600/10 backdrop-blur-md text-blue-600 border border-blue-600/20 shadow-2xl hover:scale-110 transition-transform"
+              className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 shadow-2xl hover:bg-blue-600 hover:border-blue-500 hover:scale-110 transition-all duration-300"
             >
-              <ExternalLink size={24} />
+              <ExternalLink size={26} />
             </a>
           </div>
         </div>
