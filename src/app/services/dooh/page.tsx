@@ -2,15 +2,63 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { PhoneCall, Network, Sparkles, Activity, Share2, Workflow, Globe, Search, Zap, Monitor } from "lucide-react";
+import { 
+  PhoneCall, 
+  Network, 
+  Zap, 
+  Workflow, 
+  Search, 
+  Globe, 
+  Monitor, 
+  Sparkles,
+  CheckCircle2,
+  Activity
+} from "lucide-react";
 import Link from "next/link";
 
 export default function DOOHPage() {
+  const offerings = [
+    {
+      title: "Programmatic Ad Serving",
+      description: "Automate the buying and placement of your digital ads across a vast network of screens — ensuring maximum efficiency and reach.",
+      icon: <Network className="w-6 h-6" />,
+    },
+    {
+      title: "Dynamic Creative Optimization",
+      description: "Deliver highly relevant content that adapts in real-time based on environmental triggers — such as weather, time of day, or location.",
+      icon: <Zap className="w-6 h-6" />,
+    },
+    {
+      title: "Interactive Screen Experiences",
+      description: "Engage your audience through touch-screens, mobile-to-screen interactions, and immersive AR experiences in physical spaces.",
+      icon: <Workflow className="w-6 h-6" />,
+    },
+    {
+      title: "Audience Analytics & Insights",
+      description: "Gain deep insights into audience demographics, dwell times, and engagement metrics through advanced camera-based sensing technology.",
+      icon: <Search className="w-6 h-6" />,
+    },
+    {
+      title: "Global Screen Network",
+      description: "Access a massive, global network of premium digital displays in high-traffic locations — from airports to urban shopping centers.",
+      icon: <Globe className="w-6 h-6" />,
+    },
+    {
+      title: "Content Management Systems",
+      description: "Manage and schedule your creative assets across thousands of screens from a centralized, enterprise-grade cloud platform.",
+      icon: <Monitor className="w-6 h-6" />,
+    },
+  ];
+
+  const tags = [
+    "DOOH", "Digital Media", "Programmatic Advertising", "Brand Engagement", "Creative Tech", "Audience Analytics"
+  ];
+
   return (
-    <main className="min-h-screen overflow-hidden" style={{ fontFamily: 'RecklessNeue, sans-serif' }}>
+    <main className="min-h-screen bg-black text-white selection:bg-cyan-500/30 selection:text-cyan-200">
       {/* ── Section 1: Full-page Hero ── */}
       <section
-        className="relative w-full min-h-screen flex items-center justify-center"
+        className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: "url('/AI- img.jpg')",
           backgroundSize: "cover",
@@ -19,18 +67,18 @@ export default function DOOHPage() {
         }}
       >
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
 
         {/* Animated glow accents */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 blur-[150px] rounded-full animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-400/10 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-400/10 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
 
-        <div className="relative z-10 container-page mx-auto py-32 flex w-full justify-start">
+        <div className="relative z-10 container-page mx-auto py-32 flex w-full justify-end">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="space-y-8 w-full max-w-[640px] text-left"
+            className="space-y-8 w-full max-w-[720px] text-right flex flex-col items-end"
           >
             {/* Badge */}
             <motion.div
@@ -40,7 +88,7 @@ export default function DOOHPage() {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-cyan-300 text-sm font-bold tracking-wider uppercase"
             >
               <Monitor size={16} className="animate-pulse" />
-              Innovative Digital Out-of-Home Media Solutions
+              Immersive Real-World Media
             </motion.div>
 
             {/* Title */}
@@ -53,10 +101,8 @@ export default function DOOHPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-white/70 font-medium leading-relaxed max-w-2xl">
-              Captivate your audience in the real world. We provide innovative 
-              DOOH media solutions that leverage data and creative technology 
-              for modern brand engagement.
+            <p className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed max-w-2xl drop-shadow-md">
+              Captivate your audience in the real world. Data-driven creative technology for modern brand engagement.
             </p>
 
             {/* Stats row */}
@@ -64,16 +110,16 @@ export default function DOOHPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap justify-start gap-8 pt-4"
+              className="flex flex-wrap justify-end gap-10 pt-4"
             >
               {[
                 { value: "1M+", label: "Monthly Reach" },
-                { value: "Dynamic", label: "Content Delivery" },
+                { value: "Dynamic", label: "Content" },
                 { value: "Real-time", label: "Analytics" },
               ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-3xl md:text-4xl font-black text-white">{stat.value}</p>
-                  <p className="text-sm text-white/50 font-bold uppercase tracking-wider mt-1">{stat.label}</p>
+                <div key={stat.label} className="text-right">
+                  <p className="text-3xl md:text-4xl font-black text-white tracking-tighter">{stat.value}</p>
+                  <p className="text-[10px] text-cyan-400 font-black uppercase tracking-widest mt-1 opacity-80">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -83,7 +129,7 @@ export default function DOOHPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="pt-4"
+              className="pt-6"
             >
               <Link
                 href="/contact"
@@ -95,89 +141,135 @@ export default function DOOHPage() {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Bottom fade to black */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
       </section>
 
-      {/* ── Section 2: DOOH Details ── */}
-      <section className="bg-black py-24 relative">
-        {/* Subtle glow accents */}
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-blue-600/5 blur-[160px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-indigo-500/5 blur-[140px] rounded-full pointer-events-none" />
-
+      {/* ── Section 2: Overview ── */}
+      <section className="bg-black py-24 relative overflow-hidden border-t border-white/5">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-blue-600/10 blur-[160px] rounded-full pointer-events-none" />
+        
         <div className="container-page mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-white/[0.04] backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl shadow-black/40 overflow-hidden"
-          >
-            <div className="flex flex-col lg:flex-row">
-              {/* Left: Visual Content */}
-              <div className="lg:w-1/2 relative overflow-hidden group">
-                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-500/20 z-10 opacity-60 group-hover:opacity-40 transition-opacity duration-700" />
-                 <img 
-                   src="/home-img-7.jpg" 
-                   alt="DOOH Media Visual" 
-                   className="w-full h-full object-cover min-h-[400px] lg:min-h-[550px] grayscale group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100" 
-                 />
-              </div>
-
-              {/* Right: Content */}
-              <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center space-y-8">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+             <motion.div 
+               initial={{ opacity: 0, x: -40 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               className="lg:w-1/2 space-y-8"
+             >
                 <div className="space-y-4">
-                  <span className="inline-flex items-center gap-2 text-cyan-400 font-bold text-sm uppercase tracking-widest">
-                    <Activity size={18} />
-                    Immersive Brand Engagement
-                  </span>
-                  <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
-                    Beyond Static: <br /> Programmatic Real-World Media
+                  <div className="flex items-center gap-3">
+                    <div className="h-[2px] w-8 bg-cyan-400" />
+                    <span className="text-cyan-400 font-black text-xs uppercase tracking-[0.3em]">Overview</span>
+                  </div>
+                  <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
+                    Programmatic Real-World Media
                   </h2>
-                  <p className="text-white/60 text-base md:text-lg leading-relaxed font-medium">
-                    We bridge the digital and physical worlds. Our DOOH practice 
-                    utilizes programmatic ad serving and dynamic creative optimization 
-                    to deliver highly relevant content across a massive network of 
-                    premium digital displays.
+                </div>
+                <div className="space-y-6 text-white/70 text-lg leading-relaxed font-medium">
+                  <p>
+                    We bridge the digital and physical worlds. Our DOOH practice utilizes programmatic ad serving and dynamic creative optimization to deliver highly relevant content across a massive network of premium digital displays.
+                  </p>
+                  <p>
+                    Captivate your audience where they are — in airports, shopping centers, and urban hubs — leveraging data and creative technology to ensure your brand message is impactful and measurable.
                   </p>
                 </div>
+             </motion.div>
 
-                {/* Capability list */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    { icon: <Network size={20} />, text: "Programmatic Ad Serving" },
-                    { icon: <Zap size={20} />, text: "Dynamic Optimization" },
-                    { icon: <Workflow size={20} />, text: "Interactive Screen Exp" },
-                    { icon: <Search size={20} />, text: "Audience Analytics" },
-                  ].map((item) => (
-                    <div
-                      key={item.text}
-                      className="group flex items-center gap-3 bg-white/[0.06] backdrop-blur-md px-4 py-3.5 rounded-xl border border-white/10 hover:border-cyan-400/30 hover:bg-white/10 transition-all duration-300"
-                    >
-                      <div className="w-9 h-9 bg-cyan-400/10 flex items-center justify-center rounded-lg text-cyan-400 group-hover:bg-cyan-400 group-hover:text-black transition-all duration-300 shrink-0">
-                        {item.icon}
-                      </div>
-                      <span className="text-sm font-bold text-white/90">{item.text}</span>
+             <motion.div 
+               initial={{ opacity: 0, scale: 0.9 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               className="lg:w-1/2 relative"
+             >
+                <div className="relative rounded-3xl overflow-hidden aspect-video border border-white/10 group">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-transparent z-10" />
+                  <img 
+                    src="/home-img-7.jpg" 
+                    alt="DOOH Media Visual" 
+                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center z-20">
+                    <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                       <Sparkles className="w-10 h-10 text-cyan-400" />
                     </div>
-                  ))}
+                  </div>
                 </div>
+                {/* Decorative element */}
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-500/20 blur-3xl rounded-full" />
+             </motion.div>
+          </div>
+        </div>
+      </section>
 
-                {/* Premium CTA */}
-                <Link
-                  href="/contact"
-                  className="group relative inline-flex items-center gap-3 px-9 py-4 rounded-xl font-bold text-white overflow-hidden w-fit active:scale-95 transition-transform duration-200"
-                >
-                  {/* Gradient border effect */}
-                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 p-[1.5px]">
-                    <span className="block w-full h-full rounded-[10px] bg-black group-hover:bg-transparent transition-colors duration-500" />
-                  </span>
-                  <PhoneCall size={20} className="relative z-10 group-hover:rotate-12 transition-transform" />
-                  <span className="relative z-10 bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent group-hover:text-white transition-colors duration-500">Engage Audience</span>
-                </Link>
-              </div>
+      {/* ── Section 3: WHAT WE OFFER ── */}
+      <section className="bg-zinc-950 py-32 relative overflow-hidden">
+        <div className="container-page mx-auto relative z-10">
+          <div className="text-center mb-20 space-y-4">
+            <span className="text-cyan-400 font-black text-xs uppercase tracking-[0.3em]">Creative Engagement</span>
+            <h2 className="text-4xl md:text-6xl font-black text-white">What We Offer</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {offerings.map((item, idx) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-cyan-500/30 transition-all duration-500 flex flex-col h-full"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-500">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-white/60 leading-relaxed text-sm">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 4: WHY NEWEL ── */}
+      <section className="bg-black py-32 relative overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 blur-[180px] rounded-full pointer-events-none" />
+        
+        <div className="container-page mx-auto relative z-10">
+          <div className="max-w-5xl mx-auto bg-gradient-to-br from-white/[0.05] to-transparent p-12 md:p-20 rounded-[40px] border border-white/10 backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row gap-12 items-start">
+               <div className="md:w-1/3">
+                  <div className="space-y-4">
+                    <span className="text-cyan-400 font-black text-xs uppercase tracking-[0.3em]">Audience Precision</span>
+                    <h2 className="text-4xl font-black text-white leading-tight">Why Newel</h2>
+                  </div>
+               </div>
+               <div className="md:w-2/3 space-y-8">
+                  <p className="text-2xl font-medium text-white/90 leading-snug">
+                    We utilize programmatic ad serving and dynamic creative optimization to deliver highly relevant content across premium displays.
+                  </p>
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-cyan-400/20 flex items-center justify-center">
+                       <CheckCircle2 className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <p className="text-lg text-white/60 italic leading-relaxed">
+                      "Our focus is ensuring your brand message reaches the right audience at the right time, with measurable impact and deep engagement."
+                    </p>
+                  </div>
+                  
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 pt-4">
+                    {tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-white/40 font-bold uppercase tracking-widest">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>
