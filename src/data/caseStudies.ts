@@ -28,7 +28,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     image: "/Screenshot 2026-04-23 150653.png",
     video: "https://www.youtube.com/watch?v=Ivrky_y7LGg",
     location: "Mumbai, India",
-    overview: "Partnered with a major legal institution to automate Quality, Risk, and Compliance (QRC) using AI at scale.",
+    overview: "Partnered with a major NBFC to automate Query, Risk, and Compliance (QRC) using AI at scale.",
     subtitle: "AI-Driven QRC Classification at Scale:",
     input: "A leading NBFC's compliance and risk teams manually sampled emails and call recordings to classify them as Queries, Requests, or Complaints. As interaction volumes grew, this approach created inconsistent categorization, poor visibility into high-risk complaints, delayed compliance issue detection, and rising audit observations — posing serious regulatory risk.",
     reasoning: "Newel implemented an AI-powered QRC Classification Engine that continuously scans and classifies all customer interactions — not just samples. Using AI/ML and NLP, the platform transcribes calls and emails, detects discrepancies between system and business classifications, and provides explainable reasoning through dashboards built for compliance and risk teams.",
@@ -95,12 +95,13 @@ export const CASE_STUDIES: CaseStudy[] = [
     teaser: "Taking over end-to-end application management to free up internal IT teams for strategic growth.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
     location: "Berlin, Germany",
-    overview: "We took over end-to-end application managed services for 42 platforms, enabling the client's internal team to pivot toward high-value strategic initiatives.",
+    overview: "Financial institution offloads BAU application support to free up internal teams for strategic work",
     subtitle: "Orchestrating high-performance application environments through expert managed services and governance.",
     input: "The client's internal IT team managed 42 applications across multiple technology stacks — including legacy platforms — leaving senior engineers stretched across routine BAU tasks, with limited bandwidth for strategic initiatives, rising resource attrition risk, and gaps in after-hours support coverage.",
     reasoning: "Newel took over end-to-end application managed services with dedicated, stack-wise resources, weekly status reporting and monthly steering committees for governance, continuous skill upgrades driven by multi-client industry exposure, and a structured roadmap to modernize legacy technology applications in parallel.",
     outcomes: "• Internal IT team freed to focus on strategic business requirements, not BAU\n\n• Improved application performance through continuous monitoring and proactive optimization\n\n• Efficient change management with structured governance and reporting cadence\n\n• Access to broader technical expertise and skills across modern and legacy stacks"
   },
+/*
   {
     id: "6",
     slug: "customer-retention-telecom",
@@ -116,6 +117,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     reasoning: "Our team built a recurrent neural network (RNN) that analyzes behavioral sequences in real-time, assigning a 'churn probability' score to every user daily.",
     outcomes: "Reduced churn by 22% in the first year, resulting in an estimated $120M in retained annual revenue."
   },
+*/
   {
     id: "7",
     slug: "oracle-postgresql-migration",

@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, BarChart3, ShieldCheck, CircleDollarSign } from "lucide-react";
+import { Zap, BarChart3, ShieldCheck, CircleDollarSign, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface WhyItem {
   id: string;
@@ -64,23 +65,24 @@ export const WhyNewel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="w-full py-20 md:py-32 bg-[#E5E7EB]">
+    <section className="w-full py-16 md:py-24 bg-[#E5E7EB] overflow-hidden">
       <div className="container-page relative z-10">
         {/* Section Header */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="h-px w-8 bg-blue-500" />
+        <div className="max-w-3xl mb-12 space-y-4">
+          <div className="flex items-center gap-3">
+            <span className="w-8 h-[2px] bg-blue-500 rounded-full" />
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-blue-500">
               WHY NEWEL
             </p>
           </div>
-          <h2 className="max-w-4xl text-[2.5rem] md:text-[3.1rem] lg:text-[4.5rem] font-semibold leading-[1.06] tracking-[-0.03em] text-slate-950">
-            <span className="text-blue-500">Freedom</span> for data scientists, <br className="hidden md:block" /> <span className="text-blue-500">control</span> for IT
+          <h2 className="text-[2.5rem] md:text-[3.1rem] lg:text-[4rem] font-semibold leading-[1.06] tracking-[-0.03em] text-slate-950">
+            <span className="text-blue-500">Freedom</span> for data scientists, <br />
+            <span className="text-blue-500">control</span> for IT
           </h2>
         </div>
 
         {/* Tabbed Interface */}
-        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-8 lg:gap-12 items-start">
           
           {/* Tabs Navigation */}
           <div className="flex flex-col gap-3">
@@ -89,81 +91,98 @@ export const WhyNewel = () => {
                 key={item.id}
                 onClick={() => setActiveIndex(idx)}
                 className={cn(
-                  "group relative flex items-center gap-6 p-6 rounded-2xl text-left transition-all duration-500 overflow-hidden",
+                  "group relative flex items-center gap-5 p-5 rounded-[1.25rem] text-left transition-all duration-300",
                   activeIndex === idx
-                    ? "bg-white border border-blue-100 shadow-[0_20px_40px_rgba(51,76,149,0.08)] scale-[1.02] z-10"
-                    : "bg-transparent border border-transparent text-slate-500 hover:bg-slate-50 hover:border-slate-100"
+                    ? "bg-white shadow-lg border border-white"
+                    : "hover:bg-white/40 border border-transparent"
                 )}
               >
-                {/* Active Indicator Bar */}
-                {activeIndex === idx && (
-                  <motion.div
-                    layoutId="active-bar"
-                    className="absolute left-0 top-0 bottom-0 w-1.5 bg-blue-600"
-                  />
-                )}
-                
                 <div className={cn(
-                  "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-all duration-500",
+                  "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-all duration-300",
                   activeIndex === idx 
-                    ? "bg-blue-600 text-white shadow-lg shadow-blue-600/20" 
-                    : "bg-slate-100 text-slate-400 group-hover:bg-white group-hover:text-blue-500 group-hover:shadow-sm"
+                    ? "bg-blue-600 text-white shadow-md shadow-blue-600/20" 
+                    : "bg-white text-slate-400 group-hover:text-blue-600"
                 )}>
                   {item.icon}
                 </div>
                 
-                <span className={cn(
-                  "text-[1.05rem] font-bold tracking-tight leading-tight transition-colors duration-300",
-                  activeIndex === idx ? "text-[#002D72]" : "text-slate-500 group-hover:text-slate-700"
+                <div className="flex-1">
+                  <span className={cn(
+                    "text-[0.95rem] font-bold tracking-tight transition-colors duration-300",
+                    activeIndex === idx ? "text-[#002D72]" : "text-slate-500 group-hover:text-slate-800"
+                  )}>
+                    {item.label}
+                  </span>
+                </div>
+
+                <div className={cn(
+                  "opacity-0 group-hover:opacity-100 transition-all duration-300",
+                  activeIndex === idx && "opacity-100"
                 )}>
-                  {item.label}
-                </span>
+                  <ArrowRight size={16} className={activeIndex === idx ? "text-blue-600" : "text-slate-400"} />
+                </div>
               </button>
             ))}
           </div>
 
           {/* Content Panel */}
-          <div className="relative min-h-[540px] rounded-[32px] bg-white border border-slate-200 p-8 md:p-12 lg:p-16 overflow-hidden flex flex-col justify-center shadow-xl">
-            {/* Subtle Grid Pattern */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#002D72 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+          <div className="relative min-h-[450px] rounded-[2rem] bg-white border border-white p-8 md:p-12 overflow-hidden flex flex-col justify-center shadow-xl">
+            {/* Background Accent */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50/20 to-transparent pointer-events-none" />
             
             <AnimatePresence mode="wait">
               <motion.div
                 key={WHY_ITEMS[activeIndex].id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
                 className="relative z-10"
               >
-                <div className="flex flex-col gap-10">
-                  <div className="space-y-4">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-blue-600/5 border border-blue-600/10 text-[10px] font-black uppercase tracking-[0.3em] text-blue-600">
-                      Outcome Focus
-                    </span>
-                    <h3 className="text-3xl md:text-4xl font-bold text-[#002D72] tracking-tight">
+                <div className="space-y-8">
+                  <div className="space-y-3">
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="inline-block px-3 py-1 rounded-full bg-blue-600/5 border border-blue-600/10"
+                    >
+                      <span className="text-[9px] font-semibold uppercase tracking-[0.3em] text-blue-600">
+                        Outcome Focus
+                      </span>
+                    </motion.div>
+                    
+                    <h3 className="text-3xl md:text-[2.5rem] font-bold text-[#002D72] tracking-tight">
                       {WHY_ITEMS[activeIndex].title}
                     </h3>
                   </div>
 
-                  <ul className="grid gap-8">
+                  <div className="grid gap-4">
                     {WHY_ITEMS[activeIndex].bullets.map((bullet, idx) => (
-                      <motion.li
+                      <motion.div
                         key={bullet}
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: idx * 0.1 }}
-                        className="group/item flex items-start gap-6"
+                        transition={{ duration: 0.4, delay: idx * 0.05 }}
+                        className="group/item flex items-center gap-5 p-4 rounded-2xl hover:bg-slate-50 transition-colors"
                       >
-                        <div className="mt-1.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white shadow-md shadow-blue-600/20">
-                          <Zap size={12} fill="currentColor" />
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white shadow-md shadow-blue-600/20">
+                          <Zap size={14} className="fill-current" />
                         </div>
-                        <span className="text-lg md:text-xl font-medium text-slate-700 leading-snug tracking-tight">
+                        <p className="text-lg md:text-xl font-medium text-slate-700 leading-snug tracking-tight">
                           {bullet}
-                        </span>
-                      </motion.li>
+                        </p>
+                      </motion.div>
                     ))}
-                  </ul>
+                  </div>
+
+                  <div className="pt-4">
+                    <Link 
+                      href="/platform"
+                      className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-[#002D72] text-white font-bold text-[10px] uppercase tracking-widest hover:bg-blue-600 transition-colors shadow-lg"
+                    >
+                      Explore Platform <ArrowRight size={14} />
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>

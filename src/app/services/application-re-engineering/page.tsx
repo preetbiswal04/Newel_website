@@ -55,7 +55,7 @@ export default function ApplicationReEngineeringPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-cyan-500/30 selection:text-cyan-200">
+    <main className="min-h-screen bg-[#E5E7EB] selection:bg-blue-500/30 selection:text-blue-900">
       {/* ── Section 1: Full-page Hero ── */}
       <section
         className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden"
@@ -143,8 +143,8 @@ export default function ApplicationReEngineeringPage() {
         </div>
       </section>
 
-      {/* ── Section 2: Overview ── */}
-      <section className="bg-black py-24 relative overflow-hidden border-t border-white/5">
+      {/* ── Section 2: Overview (ONLY BLACK SECTION) ── */}
+      <section className="bg-black py-24 relative overflow-hidden border-t border-white/5 text-white">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 blur-[160px] rounded-full pointer-events-none" />
         
         <div className="container-page mx-auto relative z-10">
@@ -204,12 +204,12 @@ export default function ApplicationReEngineeringPage() {
         </div>
       </section>
 
-      {/* ── Section 3: WHAT WE OFFER ── */}
-      <section className="bg-zinc-950 py-32 relative overflow-hidden">
+      {/* ── Section 3: WHAT WE OFFER (LIGHT GREY) ── */}
+      <section className="bg-[#E5E7EB] py-32 relative overflow-hidden border-t border-slate-200">
         <div className="container-page mx-auto relative z-10">
           <div className="text-center mb-20 space-y-4">
-            <span className="text-cyan-400 font-black text-xs uppercase tracking-[0.3em]">Modernization</span>
-            <h2 className="text-4xl md:text-6xl font-black text-white">What We Offer</h2>
+            <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">Modernization</span>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-950">What We Offer</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -220,15 +220,15 @@ export default function ApplicationReEngineeringPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-cyan-500/30 transition-all duration-500 flex flex-col h-full"
+                className="group p-8 rounded-3xl bg-white shadow-sm border border-slate-200 hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-500/30 transition-all duration-500 flex flex-col h-full"
               >
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-blue-600/5 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-white/60 leading-relaxed text-sm">
+                <p className="text-slate-600 leading-relaxed text-sm">
                   {item.description}
                 </p>
               </motion.div>
@@ -237,28 +237,28 @@ export default function ApplicationReEngineeringPage() {
         </div>
       </section>
 
-      {/* ── Section 4: WHY NEWEL ── */}
-      <section className="bg-black py-32 relative overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 blur-[180px] rounded-full pointer-events-none" />
+      {/* ── Section 4: WHY NEWEL (LIGHT GREY) ── */}
+      <section className="bg-[#E5E7EB] py-32 relative overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-600/5 blur-[180px] rounded-full pointer-events-none" />
         
         <div className="container-page mx-auto relative z-10">
-          <div className="max-w-5xl mx-auto bg-gradient-to-br from-white/[0.05] to-transparent p-12 md:p-20 rounded-[40px] border border-white/10 backdrop-blur-sm">
+          <div className="max-w-5xl mx-auto bg-white p-12 md:p-20 rounded-[40px] border border-slate-200 shadow-xl shadow-blue-900/5">
             <div className="flex flex-col md:flex-row gap-12 items-start">
                <div className="md:w-1/3">
                   <div className="space-y-4">
-                    <span className="text-cyan-400 font-black text-xs uppercase tracking-[0.3em]">Proven Track Record</span>
-                    <h2 className="text-4xl font-black text-white leading-tight">Why Newel</h2>
+                    <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">Proven Track Record</span>
+                    <h2 className="text-4xl font-black text-slate-950 leading-tight">Why Newel</h2>
                   </div>
                </div>
                <div className="md:w-2/3 space-y-8">
-                  <p className="text-2xl font-medium text-white/90 leading-snug">
+                  <p className="text-2xl font-medium text-slate-800 leading-snug">
                     Newel has successfully modernised 20+ applications for financial services clients.
                   </p>
                   <div className="flex items-start gap-4">
-                    <div className="shrink-0 w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                       <CheckCircle2 className="w-6 h-6 text-cyan-400" />
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-blue-600/5 flex items-center justify-center">
+                       <CheckCircle2 className="w-6 h-6 text-blue-600" />
                     </div>
-                    <p className="text-lg text-white/60 italic leading-relaxed">
+                    <p className="text-lg text-slate-500 italic leading-relaxed">
                       "We know how to manage the complexity, risk, and business continuity requirements of re-engineering live systems."
                     </p>
                   </div>
@@ -266,7 +266,7 @@ export default function ApplicationReEngineeringPage() {
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 pt-4">
                     {tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-white/40 font-bold uppercase tracking-widest">
+                      <span key={tag} className="px-3 py-1 rounded-md bg-blue-600/5 border border-blue-600/20 text-xs text-blue-600 font-bold uppercase tracking-widest">
                         {tag}
                       </span>
                     ))}

@@ -60,7 +60,7 @@ export const PartnersSection = () => {
         <div className="grid grid-cols-1 gap-20 md:grid-cols-[40%_60%] md:gap-0">
 
           {/* Left Column: Sticky Content */}
-          <div className="md:sticky md:top-40 md:h-fit md:pr-24 md:border-r md:border-blue-600/10 z-10">
+          <div className="md:sticky md:top-40 md:h-fit md:pr-24 md:border-r-2 md:border-slate-400 z-10">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -93,7 +93,12 @@ export const PartnersSection = () => {
           {/* Right Column: Vertical List of Cards */}
           <div className="flex flex-col gap-16 md:gap-32 md:pl-24">
             {PARTNERS.map((partner, index) => (
-              <Card key={partner.id} partner={partner} index={index} />
+              <React.Fragment key={partner.id}>
+                <Card partner={partner} index={index} />
+                {index !== PARTNERS.length - 1 && (
+                  <div className="h-px w-full bg-slate-300 md:hidden" />
+                )}
+              </React.Fragment>
             ))}
           </div>
 
@@ -153,4 +158,3 @@ const Card = ({ partner, index }: { partner: Partner; index: number }) => {
     </motion.div>
   );
 };
-

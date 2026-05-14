@@ -22,8 +22,8 @@ export const SERVICES_DATA: ServiceCategory[] = [
         id: "ai-strategy",
         slug: "ai-strategy-consulting",
         title: "AI Strategy & Consulting",
-        tagline: "Strategic roadmaps and consulting to help you navigate the AI landscape successfully.",
-        icon: "Cpu"
+        tagline: "Strategic roadmap and advisory to unlock the full potential of AI in your business.",
+        icon: "Briefcase"
       },
       {
         id: "data-engineering-ai",
@@ -43,8 +43,8 @@ export const SERVICES_DATA: ServiceCategory[] = [
         id: "ml-solutions",
         slug: "machine-learning-solutions",
         title: "Machine Learning Solutions",
-        tagline: "Custom ML models that automate processes and provide intelligent predictions.",
-        icon: "Zap"
+        tagline: "Custom ML models and algorithms designed to solve specific business challenges.",
+        icon: "Cpu"
       },
       {
         id: "generative-ai",

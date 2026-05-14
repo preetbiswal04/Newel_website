@@ -4,59 +4,58 @@ import React from "react";
 import { motion } from "framer-motion";
 import { 
   PhoneCall, 
-  Zap, 
-  Share2, 
+  Users, 
+  Briefcase, 
   Search, 
   Workflow, 
-  Clock, 
-  Briefcase, 
-  Sparkles,
-  Users,
+  ShieldCheck, 
+  Layers, 
   CheckCircle2,
-  Activity
+  Sparkles,
+  Zap
 } from "lucide-react";
 import Link from "next/link";
 
-export default function StaffAugmentationPage() {
+export default function ITStaffAugmentationPage() {
   const offerings = [
     {
-      title: "Sprint-Ready Talent",
-      description: "Access high-performing engineers who are ready to hit the ground running and contribute to your current sprint cycles from day one.",
-      icon: <Zap className="w-6 h-6" />,
+      title: "Technology Specialists On-Demand",
+      description: "Access experienced professionals across databases (Oracle, MSSQL, PostgreSQL, MongoDB), cloud (AWS, Azure), middleware (WebLogic, JBoss, Tomcat), application development, RPA, and AI/ML.",
+      icon: <Users className="w-6 h-6" />,
     },
     {
-      title: "Senior Skillsets",
-      description: "Onboard senior-level professionals with deep expertise in specialized domains — including Cloud, AI, Security, and Enterprise Architecture.",
-      icon: <Share2 className="w-6 h-6" />,
+      title: "Project-Based Engagement",
+      description: "Bring in specialists for specific projects — migrations, modernisation programmes, audit remediations, performance tuning — with a defined scope, timeline, and deliverables.",
+      icon: <Briefcase className="w-6 h-6" />,
     },
     {
-      title: "Domain Specialists",
-      description: "Source experts who understand the specific regulatory and technical nuances of your industry — from Financial Services to E-commerce.",
-      icon: <Search className="w-6 h-6" />,
-    },
-    {
-      title: "Seamless Integration",
-      description: "Our professionals integrate directly into your internal teams, following your processes, tools, and communication channels without friction.",
+      title: "Embedded Team Augmentation",
+      description: "Augment your existing team with Newel resources who work alongside your people — bringing specialist skills while transferring knowledge and integrating with your ways of working.",
       icon: <Workflow className="w-6 h-6" />,
     },
     {
-      title: "Zero Lag Onboarding",
-      description: "Rapidly close skill gaps through our streamlined selection and onboarding process — reducing the time from requirement to deployment.",
-      icon: <Clock className="w-6 h-6" />,
+      title: "Managed Delivery Teams",
+      description: "For larger programmes, we provide complete delivery teams — project manager, architects, developers, QA, and support — operating under Newel's delivery governance and quality standards.",
+      icon: <Layers className="w-6 h-6" />,
     },
     {
-      title: "Flexible Engagement Models",
-      description: "Scale your workforce based on project-specific needs with flexible engagement models that align with your budget and delivery timelines.",
-      icon: <Briefcase className="w-6 h-6" />,
+      title: "Primary & Secondary Resource Coverage",
+      description: "Ensure continuity during leave, attrition, or peak demand without disruption to operations or delivery through our primary and secondary resource coverage for critical roles.",
+      icon: <ShieldCheck className="w-6 h-6" />,
+    },
+    {
+      title: "Skill-Specific Sourcing",
+      description: "We source and vet candidates for niche and specialist skills — reducing your sourcing overhead whether it's a specific database version or emerging AI technology.",
+      icon: <Search className="w-6 h-6" />,
     },
   ];
 
   const tags = [
-    "Staff Augmentation", "Team Scaling", "IT Outsourcing", "Managed Capacity", "Skill Gap Analysis", "Enterprise Engineering"
+    "IT Staff Augmentation", "Contract Staffing", "Technology Talent", "DBA", "Cloud", "DevOps", "React", "Python", "RPA", "AI/ML"
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-cyan-500/30 selection:text-cyan-200">
+    <main className="min-h-screen bg-[#E5E7EB] selection:bg-blue-500/30 selection:text-blue-900">
       {/* ── Section 1: Full-page Hero ── */}
       <section
         className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden"
@@ -88,13 +87,13 @@ export default function StaffAugmentationPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-cyan-300 text-sm font-bold tracking-wider uppercase"
             >
-              <Users size={16} className="animate-pulse" />
-              High-Velocity Team Scaling
+              <Zap size={16} className="animate-pulse" />
+              Agile Talent Solutions
             </motion.div>
 
             {/* Title */}
             <h1 className="text-5xl md:text-7xl font-black text-white leading-[1.05] tracking-tight">
-              Staff
+              IT Staff
               <br />
               <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                 Augmentation
@@ -103,7 +102,7 @@ export default function StaffAugmentationPage() {
 
             {/* Subtitle */}
             <p className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed max-w-2xl drop-shadow-md">
-              Boost your team's velocity. Expert IT professionals who seamlessly integrate with your existing teams to accelerate delivery.
+              The right skills, exactly when you need them — without the overhead of permanent hiring.
             </p>
 
             {/* Stats row */}
@@ -114,9 +113,9 @@ export default function StaffAugmentationPage() {
               className="flex flex-wrap justify-end gap-10 pt-4"
             >
               {[
-                { value: "3x", label: "Faster Delivery" },
-                { value: "100%", label: "Team Synergy" },
-                { value: "Instant", label: "Skill Matching" },
+                { value: "100+", label: "Tech Professionals" },
+                { value: "Rapid", label: "Onboarding" },
+                { value: "Flexible", label: "Engagements" },
               ].map((stat) => (
                 <div key={stat.label} className="text-right">
                   <p className="text-3xl md:text-4xl font-black text-white tracking-tighter">{stat.value}</p>
@@ -136,16 +135,16 @@ export default function StaffAugmentationPage() {
                 href="/contact"
                 className="group inline-flex items-center gap-3 bg-white text-slate-900 px-10 py-5 rounded-2xl font-black text-lg hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 shadow-2xl shadow-black/30 hover:shadow-cyan-400/20 active:scale-95"
               >
-                <Zap size={22} className="group-hover:rotate-12 transition-transform" />
-                Augment Your Team
+                <Users size={22} className="group-hover:rotate-12 transition-transform" />
+                Find Your Talent
               </Link>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Section 2: Overview ── */}
-      <section className="bg-black py-24 relative overflow-hidden border-t border-white/5">
+      {/* ── Section 2: Overview (ONLY BLACK SECTION) ── */}
+      <section className="bg-black py-24 relative overflow-hidden border-t border-white/5 text-white">
         <div className="absolute top-0 left-1/3 w-96 h-96 bg-blue-600/10 blur-[160px] rounded-full pointer-events-none" />
         
         <div className="container-page mx-auto relative z-10">
@@ -167,10 +166,10 @@ export default function StaffAugmentationPage() {
                 </div>
                 <div className="space-y-6 text-white/70 text-lg leading-relaxed font-medium">
                   <p>
-                    Boost your team's velocity. We provide expert IT professionals who seamlessly integrate with your existing teams to accelerate delivery and close critical skill gaps.
+                    Technology projects don't always align with your permanent headcount. You need a senior DBA for a six-month migration, a DevOps engineer for your CI/CD pipeline, or a full delivery team for a transformation programme.
                   </p>
                   <p>
-                    Our approach allows you to scale up for key projects without the friction of long-term hiring cycles. We specialize in providing senior-level engineers who understand your culture and sprint rhythm from day one.
+                    Newel's IT Staff Augmentation practice provides skilled, pre-vetted technology professionals on a flexible basis — allowing you to move fast without making permanent commitments you're not ready for.
                   </p>
                 </div>
              </motion.div>
@@ -201,12 +200,12 @@ export default function StaffAugmentationPage() {
         </div>
       </section>
 
-      {/* ── Section 3: WHAT WE OFFER ── */}
-      <section className="bg-zinc-950 py-32 relative overflow-hidden">
+      {/* ── Section 3: WHAT WE OFFER (LIGHT GREY) ── */}
+      <section className="bg-[#E5E7EB] py-32 relative overflow-hidden border-t border-slate-200">
         <div className="container-page mx-auto relative z-10">
           <div className="text-center mb-20 space-y-4">
-            <span className="text-cyan-400 font-black text-xs uppercase tracking-[0.3em]">Managed Capacity</span>
-            <h2 className="text-4xl md:text-6xl font-black text-white">What We Offer</h2>
+            <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">Managed Capacity</span>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-950">What We Offer</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -217,15 +216,15 @@ export default function StaffAugmentationPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-cyan-500/30 transition-all duration-500 flex flex-col h-full"
+                className="group p-8 rounded-3xl bg-white shadow-sm border border-slate-200 hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-500/30 transition-all duration-500 flex flex-col h-full"
               >
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-blue-600/5 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
                   {item.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-white/60 leading-relaxed text-sm">
+                <p className="text-slate-600 leading-relaxed text-sm">
                   {item.description}
                 </p>
               </motion.div>
@@ -234,36 +233,41 @@ export default function StaffAugmentationPage() {
         </div>
       </section>
 
-      {/* ── Section 4: WHY NEWEL ── */}
-      <section className="bg-black py-32 relative overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 blur-[180px] rounded-full pointer-events-none" />
+      {/* ── Section 4: WHY NEWEL (LIGHT GREY) ── */}
+      <section className="bg-[#E5E7EB] py-32 relative overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-600/5 blur-[180px] rounded-full pointer-events-none" />
         
         <div className="container-page mx-auto relative z-10">
-          <div className="max-w-5xl mx-auto bg-gradient-to-br from-white/[0.05] to-transparent p-12 md:p-20 rounded-[40px] border border-white/10 backdrop-blur-sm">
+          <div className="max-w-5xl mx-auto bg-white p-12 md:p-20 rounded-[40px] border border-slate-200 shadow-xl shadow-blue-900/5">
             <div className="flex flex-col md:flex-row gap-12 items-start">
                <div className="md:w-1/3">
                   <div className="space-y-4">
-                    <span className="text-cyan-400 font-black text-xs uppercase tracking-[0.3em]">Cultural Alignment</span>
-                    <h2 className="text-4xl font-black text-white leading-tight">Why Newel</h2>
+                    <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">Industry Depth</span>
+                    <h2 className="text-4xl font-black text-slate-950 leading-tight">Why Newel</h2>
                   </div>
                </div>
                <div className="md:w-2/3 space-y-8">
-                  <p className="text-2xl font-medium text-white/90 leading-snug">
-                    Newel's augmentation model is built on cultural and technical alignment.
+                  <p className="text-2xl font-medium text-slate-800 leading-snug">
+                    Newel has 100+ professionals across financial services technology disciplines.
                   </p>
                   <div className="flex items-start gap-4">
-                    <div className="shrink-0 w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
-                       <CheckCircle2 className="w-6 h-6 text-cyan-400" />
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-blue-600/5 flex items-center justify-center">
+                       <CheckCircle2 className="w-6 h-6 text-blue-600" />
                     </div>
-                    <p className="text-lg text-white/60 italic leading-relaxed">
-                      "Our professionals aren't just extra hands; they are senior engineers who understand enterprise sprint rhythms and delivery pressures from day one."
+                    <p className="text-lg text-slate-500 italic leading-relaxed">
+                      "We understand the domain, delivery standards, and compliance expectations — so resources integrate quickly and contribute from day one."
                     </p>
                   </div>
+                  
+                  {/* Client focus */}
+                  <p className="text-slate-500 text-sm font-medium">
+                    Our clients span NBFCs, broking firms, banks, and financial groups across India.
+                  </p>
                   
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 pt-4">
                     {tags.map((tag) => (
-                      <span key={tag} className="px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-white/40 font-bold uppercase tracking-widest">
+                      <span key={tag} className="px-3 py-1 rounded-md bg-blue-600/5 border border-blue-600/20 text-xs text-blue-600 font-bold uppercase tracking-widest">
                         {tag}
                       </span>
                     ))}

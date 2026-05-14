@@ -2,15 +2,62 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { PhoneCall, BrainCircuit, Sparkles, Bot, BarChart3, Cpu, Workflow } from "lucide-react";
+import { 
+  PhoneCall, 
+  BrainCircuit, 
+  Sparkles, 
+  Bot, 
+  BarChart3, 
+  Cpu, 
+  Workflow, 
+  CheckCircle2,
+  Activity
+} from "lucide-react";
 import Link from "next/link";
 
 export default function AISolutionsPage() {
+  const offerings = [
+    {
+      title: "Conversational AI & NLP",
+      description: "Build intelligent chatbots and virtual assistants that understand context, intent, and sentiment — providing 24/7 automated customer support.",
+      icon: <Bot className="w-6 h-6" />,
+    },
+    {
+      title: "Predictive Analytics",
+      description: "Leverage historical data to forecast future trends, customer behaviour, and business outcomes with high precision.",
+      icon: <BarChart3 className="w-6 h-6" />,
+    },
+    {
+      title: "Computer Vision",
+      description: "Implement automated image and video analysis for security, document processing, and quality control applications.",
+      icon: <Cpu className="w-6 h-6" />,
+    },
+    {
+      title: "Intelligent Process Automation",
+      description: "Combine AI with RPA to automate complex, decision-based workflows that previously required human intervention.",
+      icon: <Workflow className="w-6 h-6" />,
+    },
+    {
+      title: "Model Ops & Deployment",
+      description: "Streamline the lifecycle of your AI models — from training and validation to scalable production deployment and monitoring.",
+      icon: <Activity className="w-6 h-6" />,
+    },
+    {
+      title: "AI Strategy & Consulting",
+      description: "Define your AI roadmap, identify high-impact use cases, and establish governance frameworks for responsible AI adoption.",
+      icon: <BrainCircuit className="w-6 h-6" />,
+    },
+  ];
+
+  const tags = [
+    "Artificial Intelligence", "Machine Learning", "NLP", "Computer Vision", "Predictive Analytics", "Generative AI", "Enterprise AI"
+  ];
+
   return (
-    <main className="min-h-screen overflow-hidden" style={{ fontFamily: 'RecklessNeue, sans-serif' }}>
-      {/* ── Section 1: Full-page Hero with cloud-ai-img background ── */}
+    <main className="min-h-screen bg-[#E5E7EB] selection:bg-blue-500/30 selection:text-blue-900">
+      {/* ── Section 1: Full-page Hero ── */}
       <section
-        className="relative w-full min-h-screen flex items-center justify-center"
+        className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden"
         style={{
           backgroundImage: "url('/AI- img.jpg')",
           backgroundSize: "cover",
@@ -19,18 +66,18 @@ export default function AISolutionsPage() {
         }}
       >
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-black" />
 
         {/* Animated glow accents */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 blur-[150px] rounded-full animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-400/10 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-cyan-400/10 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
 
         <div className="relative z-10 container-page mx-auto py-32 flex w-full justify-end">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="space-y-8 w-full max-w-[520px] text-left"
+            className="space-y-8 w-full max-w-[720px] text-right flex flex-col items-end"
           >
             {/* Badge */}
             <motion.div
@@ -53,10 +100,8 @@ export default function AISolutionsPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-lg md:text-xl text-white/70 font-medium leading-relaxed max-w-2xl">
-              Transform your enterprise with cutting-edge AI solutions — from predictive 
-              analytics and intelligent automation to conversational AI and computer vision. 
-              We turn raw data into strategic advantage.
+            <p className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed max-w-2xl drop-shadow-md">
+              Transform your enterprise with cutting-edge AI solutions — from predictive analytics to conversational AI.
             </p>
 
             {/* Stats row */}
@@ -64,16 +109,16 @@ export default function AISolutionsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-wrap justify-start gap-8 pt-4"
+              className="flex flex-wrap justify-end gap-10 pt-4"
             >
               {[
                 { value: "10×", label: "Faster Insights" },
                 { value: "85%", label: "Accuracy Rate" },
                 { value: "60%", label: "Cost Reduction" },
               ].map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-3xl md:text-4xl font-black text-white">{stat.value}</p>
-                  <p className="text-sm text-white/50 font-bold uppercase tracking-wider mt-1">{stat.label}</p>
+                <div key={stat.label} className="text-right">
+                  <p className="text-3xl md:text-4xl font-black text-white tracking-tighter">{stat.value}</p>
+                  <p className="text-[10px] text-cyan-400 font-black uppercase tracking-widest mt-1 opacity-80">{stat.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -83,102 +128,151 @@ export default function AISolutionsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="pt-4"
+              className="pt-6"
             >
               <Link
                 href="/contact"
                 className="group inline-flex items-center gap-3 bg-white text-slate-900 px-10 py-5 rounded-2xl font-black text-lg hover:bg-cyan-400 hover:text-slate-900 transition-all duration-300 shadow-2xl shadow-black/30 hover:shadow-cyan-400/20 active:scale-95"
               >
                 <PhoneCall size={22} className="group-hover:rotate-12 transition-transform" />
-                Get Started
+                Contact Us
               </Link>
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Bottom fade to black */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black to-transparent" />
       </section>
 
-      {/* ── Section 2: Video + Content (Dark Premium) ── */}
-      <section className="bg-black py-24 relative">
-        {/* Subtle glow accents */}
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-blue-600/5 blur-[160px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-indigo-500/5 blur-[140px] rounded-full pointer-events-none" />
-
+      {/* ── Section 2: Overview (ONLY BLACK SECTION) ── */}
+      <section className="bg-black py-24 relative overflow-hidden border-t border-white/5 text-white">
+        <div className="absolute top-0 left-1/3 w-96 h-96 bg-blue-600/10 blur-[160px] rounded-full pointer-events-none" />
+        
         <div className="container-page mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-white/[0.04] backdrop-blur-xl rounded-3xl border border-white/10 shadow-2xl shadow-black/40 overflow-hidden"
-          >
-            <div className="flex flex-col lg:flex-row">
-              {/* Left: Video */}
-              <div className="lg:w-1/2">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover min-h-[400px] lg:min-h-[550px]"
-                >
-                  <source src="/AI-vd-1.mp4" type="video/mp4" />
-                </video>
-              </div>
-
-              {/* Right: Content */}
-              <div className="lg:w-1/2 p-10 md:p-14 flex flex-col justify-center space-y-8">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+             <motion.div 
+               initial={{ opacity: 0, x: -40 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               className="lg:w-1/2 space-y-8"
+             >
                 <div className="space-y-4">
-                  <span className="inline-flex items-center gap-2 text-cyan-400 font-bold text-sm uppercase tracking-widest">
-                    <BrainCircuit size={18} />
-                    Our AI Practice
-                  </span>
-                  <h2 className="text-3xl md:text-4xl font-black text-white leading-tight">
+                  <div className="flex items-center gap-3">
+                    <div className="h-[2px] w-8 bg-cyan-400" />
+                    <span className="text-cyan-400 font-black text-xs uppercase tracking-[0.3em]">Overview</span>
+                  </div>
+                  <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
                     Intelligent Solutions for the Modern Enterprise
                   </h2>
-                  <p className="text-white/60 text-base md:text-lg leading-relaxed font-medium">
-                    From strategy and consulting to model development, deployment, and ongoing 
-                    optimization — we deliver measurable ROI at every stage of your AI journey.
+                </div>
+                <div className="space-y-6 text-white/70 text-lg leading-relaxed font-medium">
+                  <p>
+                    AI is no longer just a buzzword; it's the engine for modern business competition. At Newel, we turn raw data into strategic advantage by building AI that solves real-world problems.
+                  </p>
+                  <p>
+                    From strategy and consulting to model development, deployment, and ongoing optimization — we deliver measurable ROI at every stage of your AI journey.
                   </p>
                 </div>
+             </motion.div>
 
-                {/* Capability list */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    { icon: <Bot size={20} />, text: "Conversational AI & NLP" },
-                    { icon: <BarChart3 size={20} />, text: "Predictive Analytics" },
-                    { icon: <Cpu size={20} />, text: "Computer Vision" },
-                    { icon: <Workflow size={20} />, text: "Process Automation" },
-                  ].map((item) => (
-                    <div
-                      key={item.text}
-                      className="group flex items-center gap-3 bg-white/[0.06] backdrop-blur-md px-4 py-3.5 rounded-xl border border-white/10 hover:border-cyan-400/30 hover:bg-white/10 transition-all duration-300"
-                    >
-                      <div className="w-9 h-9 bg-cyan-400/10 flex items-center justify-center rounded-lg text-cyan-400 group-hover:bg-cyan-400 group-hover:text-black transition-all duration-300 shrink-0">
-                        {item.icon}
-                      </div>
-                      <span className="text-sm font-bold text-white/90">{item.text}</span>
+             <motion.div 
+               initial={{ opacity: 0, scale: 0.9 }}
+               whileInView={{ opacity: 1, scale: 1 }}
+               viewport={{ once: true }}
+               className="lg:w-1/2 relative"
+             >
+                <div className="relative rounded-3xl overflow-hidden aspect-video border border-white/10 group">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-transparent z-10" />
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-700"
+                  >
+                    <source src="/AI-vd-1.mp4" type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 flex items-center justify-center z-20">
+                    <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                       <Sparkles className="w-10 h-10 text-cyan-400" />
                     </div>
-                  ))}
+                  </div>
                 </div>
+                {/* Decorative element */}
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-500/20 blur-3xl rounded-full" />
+             </motion.div>
+          </div>
+        </div>
+      </section>
 
-                {/* Premium CTA */}
-                <Link
-                  href="/contact"
-                  className="group relative inline-flex items-center gap-3 px-9 py-4 rounded-xl font-bold text-white overflow-hidden w-fit active:scale-95 transition-transform duration-200"
-                >
-                  {/* Gradient border effect */}
-                  <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 p-[1.5px]">
-                    <span className="block w-full h-full rounded-[10px] bg-black group-hover:bg-transparent transition-colors duration-500" />
-                  </span>
-                  <PhoneCall size={20} className="relative z-10 group-hover:rotate-12 transition-transform" />
-                  <span className="relative z-10 bg-gradient-to-r from-cyan-300 to-blue-300 bg-clip-text text-transparent group-hover:text-white transition-colors duration-500">Contact Us</span>
-                </Link>
-              </div>
+      {/* ── Section 3: WHAT WE OFFER (LIGHT GREY) ── */}
+      <section className="bg-[#E5E7EB] py-32 relative overflow-hidden border-t border-slate-200">
+        <div className="container-page mx-auto relative z-10">
+          <div className="text-center mb-20 space-y-4">
+            <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">AI Practice</span>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-950">What We Offer</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {offerings.map((item, idx) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group p-8 rounded-3xl bg-white shadow-sm border border-slate-200 hover:shadow-xl hover:shadow-blue-900/5 hover:border-blue-500/30 transition-all duration-500 flex flex-col h-full"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-blue-600/5 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 leading-relaxed text-sm">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Section 4: WHY NEWEL (LIGHT GREY) ── */}
+      <section className="bg-[#E5E7EB] py-32 relative overflow-hidden">
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-600/5 blur-[180px] rounded-full pointer-events-none" />
+        
+        <div className="container-page mx-auto relative z-10">
+          <div className="max-w-5xl mx-auto bg-white p-12 md:p-20 rounded-[40px] border border-slate-200 shadow-xl shadow-blue-900/5">
+            <div className="flex flex-col md:flex-row gap-12 items-start">
+               <div className="md:w-1/3">
+                  <div className="space-y-4">
+                    <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">Built for Impact</span>
+                    <h2 className="text-4xl font-black text-slate-950 leading-tight">Why Newel</h2>
+                  </div>
+               </div>
+               <div className="md:w-2/3 space-y-8">
+                  <p className="text-2xl font-medium text-slate-800 leading-snug">
+                    Newel combines deep domain expertise with cutting-edge AI engineering to deliver practical, production-grade intelligence.
+                  </p>
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 w-12 h-12 rounded-full bg-blue-600/5 flex items-center justify-center">
+                       <CheckCircle2 className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <p className="text-lg text-slate-500 italic leading-relaxed">
+                      "We don't just build models; we build business solutions that leverage AI to drive measurable results."
+                    </p>
+                  </div>
+                  
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 pt-4">
+                    {tags.map((tag) => (
+                      <span key={tag} className="px-3 py-1 rounded-md bg-blue-600/5 border border-blue-600/20 text-xs text-blue-600 font-bold uppercase tracking-widest">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </main>
