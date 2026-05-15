@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { User, ShieldCheck, ArrowRight, Cpu, Laptop, Users } from "lucide-react";
+import { User, ShieldCheck, ArrowRight, Cpu, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/Utils/Button";
@@ -22,7 +22,7 @@ const Card = ({ title, desc, icon, color, align = "left", className = "" }: Card
     viewport={{ once: true }}
     transition={{ duration: 0.8 }}
     className={cn(
-      "relative flex h-[340px] w-full max-w-[320px] flex-col lg:h-[280px] lg:max-w-[380px]",
+      "relative flex min-h-[320px] w-full max-w-[320px] flex-col lg:min-h-[300px] lg:max-w-[400px]",
       "rounded-[32px] border border-slate-200 bg-white p-8 pt-16",
       "shadow-[0_20px_50px_rgba(51,76,149,0.08)] transition-all duration-700",
       "hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(51,76,149,0.15)] group",
@@ -33,7 +33,7 @@ const Card = ({ title, desc, icon, color, align = "left", className = "" }: Card
     <div
       className="absolute -top-8 left-10 flex h-16 w-16 items-center justify-center 
       rounded-2xl text-white shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-2xl"
-      style={{ 
+      style={{
         background: `linear-gradient(135deg, ${color}, ${color}dd)`,
         boxShadow: `0 12px 24px ${color}33`
       }}
@@ -47,13 +47,13 @@ const Card = ({ title, desc, icon, color, align = "left", className = "" }: Card
         {title}
       </h3>
 
-      <p className="text-[15px] leading-relaxed text-slate-500 font-medium line-clamp-3">
+      <p className="text-[15px] leading-relaxed text-slate-500 font-medium">
         {desc}
       </p>
 
       <div className="mt-auto pt-4">
-        <Button variant="ghost" size="sm" className="px-0 hover:bg-transparent text-blue-600 group-hover:text-blue-800">
-          Learn more
+        <Button variant="ghost" size="sm" className="px-0 hover:bg-transparent text-blue-600 group-hover:text-blue-800 font-bold tracking-wider">
+          LEARN MORE →
         </Button>
       </div>
     </div>
@@ -75,23 +75,10 @@ export const OnePlatform = () => {
           <div className="grid w-full grid-cols-1 gap-8 lg:hidden">
             <div className="flex w-full justify-center">
               <Card
-                title="Data scientists"
-                desc="Newel gives you the flexibility and freedom to support what you do best - solve problems without technical hurdles."
-                icon={
-                  <span className="relative block h-7 w-7">
-                    <User
-                      size={20}
-                      strokeWidth={2.2}
-                      className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2"
-                    />
-                    <Laptop
-                      size={12}
-                      strokeWidth={2.2}
-                      className="absolute bottom-0 right-0"
-                    />
-                  </span>
-                }
-                color="#ff6b47"
+                title="CXOs & Business Leaders"
+                desc="Newel gives you AI-driven visibility and automation to make faster decisions, stay compliant, and scale operations — without adding headcount."
+                icon={<User size={28} />}
+                color="#3b82f6"
               />
             </div>
 
@@ -99,23 +86,23 @@ export const OnePlatform = () => {
               <div className="absolute inset-0 rounded-full border border-blue-300/55" />
               <div className="absolute inset-[16%] rounded-full border border-blue-300/50" />
               <div className="absolute inset-[32%] rounded-full border border-blue-300/45" />
-              <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border-2 border-blue-600/20 bg-white/60 shadow-lg backdrop-blur-lg">
-                <Cpu size={32} className="text-blue-600" />
+              <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border-2 border-white/10 bg-white/5 shadow-lg backdrop-blur-lg">
+                <Cpu size={32} className="text-blue-400" />
               </div>
             </div>
 
             <div className="flex w-full flex-col items-center gap-6">
               <Card
-                title="Data science leaders"
-                desc="Scale how you manage teams and projects, improve collaboration, and accelerate project delivery."
+                title="Compliance & Risk Teams"
+                desc="Automate your PIT compliance, QRC classification, and audit workflows — so your team manages exceptions, not processes."
                 icon={<Users size={28} />}
-                color="#c0a8e6"
+                color="#a855f7"
               />
               <Card
-                title="IT leaders"
-                desc="A single platform that delivers self-service access to tools and infrastructure that are secure and compliant."
+                title="IT & Infrastructure Leaders"
+                desc="One partner for your full stack — Cloud, Database, OS, Middleware, and Applications — with SLA-backed managed services and zero finger-pointing."
                 icon={<ShieldCheck size={28} />}
-                color="#9cb7eb"
+                color="#8b5cf6"
               />
             </div>
           </div>
@@ -130,52 +117,39 @@ export const OnePlatform = () => {
               <div className="absolute left-[-108px] top-1/2 h-px w-[108px] -translate-y-1/2 bg-blue-400/40" />
               <div className="absolute right-[-108px] top-[34%] h-px w-[108px] bg-blue-400/40" />
               <div className="absolute right-[-108px] top-[66%] h-px w-[108px] bg-blue-400/40" />
-              <div className="absolute left-[2%] top-1/2 h-3.5 w-3.5 -translate-y-1/2 rounded-full bg-[#ff6b47]" />
-              <div className="absolute right-[18%] top-[34%] h-3.5 w-3.5 -translate-y-1/2 rounded-full bg-[#c0a8e6]" />
-              <div className="absolute right-[15%] top-[66%] h-3.5 w-3.5 -translate-y-1/2 rounded-full bg-[#9cb7eb]" />
+              <div className="absolute left-[2%] top-1/2 h-3.5 w-3.5 -translate-y-1/2 rounded-full bg-[#3b82f6]" />
+              <div className="absolute right-[18%] top-[34%] h-3.5 w-3.5 -translate-y-1/2 rounded-full bg-[#a855f7]" />
+              <div className="absolute right-[15%] top-[66%] h-3.5 w-3.5 -translate-y-1/2 rounded-full bg-[#8b5cf6]" />
 
-              <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border-2 border-blue-600/20 bg-white/70 shadow-lg backdrop-blur-lg">
-                <Cpu size={32} className="text-blue-600" />
+              <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border-2 border-white/10 bg-white/5 shadow-lg backdrop-blur-lg">
+                <Cpu size={32} className="text-blue-400" />
               </div>
             </div>
 
             <div className="absolute left-0 top-1/2 z-10 -translate-y-1/2">
               <Card
-                title="Data scientists"
-                desc="Newel gives you the flexibility and freedom to support what you do best - solve problems without technical hurdles."
-                icon={
-                  <span className="relative block h-7 w-7">
-                    <User
-                      size={20}
-                      strokeWidth={2.2}
-                      className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2"
-                    />
-                    <Laptop
-                      size={12}
-                      strokeWidth={2.2}
-                      className="absolute bottom-0 right-0"
-                    />
-                  </span>
-                }
-                color="#ff6b47"
+                title="CXOs & Business Leaders"
+                desc="Newel gives you AI-driven visibility and automation to make faster decisions, stay compliant, and scale operations — without adding headcount."
+                icon={<User size={28} />}
+                color="#3b82f6"
               />
             </div>
 
             <div className="absolute right-0 top-12 z-10">
               <Card
-                title="Data science leaders"
-                desc="Scale how you manage teams and projects, improve collaboration, and accelerate project delivery."
+                title="Compliance & Risk Teams"
+                desc="Automate your PIT compliance, QRC classification, and audit workflows — so your team manages exceptions, not processes."
                 icon={<Users size={28} />}
-                color="#c0a8e6"
+                color="#a855f7"
               />
             </div>
 
             <div className="absolute right-0 bottom-12 z-10">
               <Card
-                title="IT leaders"
-                desc="A single platform that delivers self-service access to tools and infrastructure that are secure and compliant."
+                title="IT & Infrastructure Leaders"
+                desc="One partner for your full stack — Cloud, Database, OS, Middleware, and Applications — with SLA-backed managed services and zero finger-pointing."
                 icon={<ShieldCheck size={28} />}
-                color="#9cb7eb"
+                color="#8b5cf6"
               />
             </div>
           </div>

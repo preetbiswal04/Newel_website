@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Media: ignore video files to avoid large commits
+# Ignore all mp4 files anywhere in the repository
+*.mp4

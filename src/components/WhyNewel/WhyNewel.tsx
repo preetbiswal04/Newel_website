@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Zap, BarChart3, ShieldCheck, CircleDollarSign, ArrowRight } from "lucide-react";
+import { Zap, BarChart3, ShieldCheck, Database, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -18,45 +18,45 @@ const WHY_ITEMS: WhyItem[] = [
   {
     id: "accelerate",
     icon: <Zap size={18} />,
-    label: "Accelerate AI impact",
-    title: "Accelerate AI impact",
+    label: "Accelerate AI Adoption",
+    title: "Accelerate AI Adoption",
     bullets: [
-      "Easily access any tool, data, and infrastructure, on-demand",
-      "Harness latest open-source and commercial innovation",
-      "Deploy, monitor and manage models quickly",
+      "Move from AI pilot to production in weeks, not months",
+      "Purpose-built AI solutions grounded in your data and compliance requirements",
+      "From strategy to deployment — we own the outcome end to end",
     ],
   },
   {
-    id: "scale",
+    id: "automate",
     icon: <BarChart3 size={18} />,
-    label: "Scale AI across the organization",
-    title: "Scale AI across the organization",
+    label: "Automate What Slows You Down",
+    title: "Automate What Slows You Down",
     bullets: [
-      "Centralize and reuse knowledge across teams",
-      "Upskill and empower everyone to achieve more, together",
-      "Collaborate with all stakeholders on a global scale",
+      "Eliminate repetitive manual work across operations, compliance, and reporting",
+      "RPA bots and AI workflows that run 24x7 — without errors, without follow-ups",
+      "Free your team for decisions, not data entry",
     ],
   },
   {
-    id: "governance",
+    id: "compliant",
     icon: <ShieldCheck size={18} />,
-    label: "Manage AI risk and governance",
-    title: "Manage AI risk and governance",
+    label: "Stay Compliant. Stay Audit-Ready.",
+    title: "Stay Compliant. Stay Audit-Ready.",
     bullets: [
-      "Audit-ready platform with best-in-class reproducibility",
-      "Turnkey model governance, monitoring and remediation",
-      "Enforce compliance with robust controls and workflows",
+      "AI-powered compliance monitoring with real-time violation detection",
+      "Immutable audit trails and regulator-ready reports — always, not just at audit time",
+      "Built for RBI, SEBI, and DPDPA requirements",
     ],
   },
   {
-    id: "costs",
-    icon: <CircleDollarSign size={18} />,
-    label: "Reduce AI costs and complexity",
-    title: "Reduce AI costs and complexity",
+    id: "infrastructure",
+    icon: <Database size={18} />,
+    label: "Run Infrastructure That Never Fails",
+    title: "Run Infrastructure That Never Fails",
     bullets: [
-      "Optimize compute utilization and cloud costs",
-      "Intelligent cost management and controls",
-      "Minimize support costs with automated DevOps",
+      "SLA-backed managed services across Cloud, DB, OS, and Middleware",
+      "Single ownership from database to application — no finger pointing",
+      "24x7 coverage, proactive monitoring, zero surprises",
     ],
   },
 ];
@@ -65,7 +65,7 @@ export const WhyNewel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="w-full py-16 md:py-24 bg-[#E5E7EB] overflow-hidden">
+    <section className="w-full py-12 md:py-16 bg-[#E5E7EB] overflow-hidden">
       <div className="container-page relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-12 space-y-4">
@@ -75,14 +75,14 @@ export const WhyNewel = () => {
               WHY NEWEL
             </p>
           </div>
-          <h2 className="text-[2.5rem] md:text-[3.1rem] lg:text-[4rem] font-semibold leading-[1.06] tracking-[-0.03em] text-slate-950">
-            <span className="text-blue-500">Freedom</span> for data scientists, <br />
-            <span className="text-blue-500">control</span> for IT
+          <h2 className="text-[2.2rem] md:text-[2.8rem] lg:text-[3.2rem] font-semibold leading-[1.1] tracking-[-0.03em] text-slate-950">
+            <span className="text-blue-500">Intelligence</span> for your business, <br />
+            <span className="text-blue-500">control</span> for your operations
           </h2>
         </div>
 
         {/* Tabbed Interface */}
-        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-6 lg:gap-10 items-start">
           
           {/* Tabs Navigation */}
           <div className="flex flex-col gap-3">
@@ -98,7 +98,7 @@ export const WhyNewel = () => {
                 )}
               >
                 <div className={cn(
-                  "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-all duration-300",
+                  "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all duration-300",
                   activeIndex === idx 
                     ? "bg-blue-600 text-white shadow-md shadow-blue-600/20" 
                     : "bg-white text-slate-400 group-hover:text-blue-600"
@@ -126,7 +126,7 @@ export const WhyNewel = () => {
           </div>
 
           {/* Content Panel */}
-          <div className="relative min-h-[450px] rounded-[2rem] bg-white border border-white p-8 md:p-12 overflow-hidden flex flex-col justify-center shadow-xl">
+          <div className="relative min-h-[380px] rounded-[2rem] bg-white border border-white p-8 md:p-10 overflow-hidden flex flex-col justify-center shadow-xl">
             {/* Background Accent */}
             <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50/20 to-transparent pointer-events-none" />
             
@@ -139,7 +139,7 @@ export const WhyNewel = () => {
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 className="relative z-10"
               >
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div className="space-y-3">
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
@@ -151,7 +151,7 @@ export const WhyNewel = () => {
                       </span>
                     </motion.div>
                     
-                    <h3 className="text-3xl md:text-[2.5rem] font-bold text-[#002D72] tracking-tight">
+                    <h3 className="text-2xl md:text-[2rem] font-bold text-[#002D72] tracking-tight">
                       {WHY_ITEMS[activeIndex].title}
                     </h3>
                   </div>
@@ -163,12 +163,12 @@ export const WhyNewel = () => {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4, delay: idx * 0.05 }}
-                        className="group/item flex items-center gap-5 p-4 rounded-2xl hover:bg-slate-50 transition-colors"
+                        className="group/item flex items-center gap-4 p-3 rounded-2xl hover:bg-slate-50 transition-colors"
                       >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white shadow-md shadow-blue-600/20">
-                          <Zap size={14} className="fill-current" />
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white shadow-md shadow-blue-600/20">
+                          <Zap size={12} className="fill-current" />
                         </div>
-                        <p className="text-lg md:text-xl font-medium text-slate-700 leading-snug tracking-tight">
+                        <p className="text-base md:text-lg font-medium text-slate-700 leading-snug tracking-tight">
                           {bullet}
                         </p>
                       </motion.div>
