@@ -11,42 +11,44 @@ interface Partner {
   role: string;
   image: string;
   linkedin: string;
+  objectPosition?: string;
 }
 
 const PARTNERS: Partner[] = [
   {
     id: 1,
-    name: "Pravin Narhe",
-    role: "Chief AI Strategist",
+    name: "Mr. Pravin Narhe",
+    role: "CEO",
     image: "/Pravin-Narhe.jpg",
     linkedin: "#",
   },
   {
     id: 2,
-    name: "Y. W.",
-    role: "Head of ML Engineering",
+    name: "Mr. Yogesh Wadile",
+    role: "Delivery Head",
     image: "/YW.png",
     linkedin: "#",
   },
   {
     id: 3,
-    name: "S. S.",
-    role: "Data Ethics Director",
-    image: "/SS.png.crdownload",
+    name: "Mr. Sachin Shinde",
+    role: "COO",
+    image: "/SS.png",
     linkedin: "#",
   },
   {
     id: 4,
-    name: "V. P.",
-    role: "Lead Platform Architect",
-    image: "/VP.jpeg.crdownload",
+    name: "Mr. Vishwas Punekar",
+    role: "Business and Technologies Advisor",
+    image: "/VP.jpeg",
     linkedin: "#",
+    objectPosition: "object-top",
   },
   {
     id: 5,
-    name: "A. T.",
-    role: "AI Innovation Partner",
-    image: "/AT.png.crdownload",
+    name: "Mr. Atish Tambe",
+    role: "HR Head",
+    image: "/AT.png",
     linkedin: "#",
   },
 ];
@@ -121,7 +123,7 @@ const Card = ({ partner, index }: { partner: Partner; index: number }) => {
         <img
           src={partner.image}
           alt={partner.name}
-          className="h-full w-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105"
+          className={`h-full w-full object-cover grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-105 ${partner.objectPosition || "object-top"}`}
         />
 
         {/* Premium Gradient Overlay */}

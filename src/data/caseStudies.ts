@@ -101,23 +101,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     reasoning: "Newel took over end-to-end application managed services with dedicated, stack-wise resources, weekly status reporting and monthly steering committees for governance, continuous skill upgrades driven by multi-client industry exposure, and a structured roadmap to modernize legacy technology applications in parallel.",
     outcomes: "• Internal IT team freed to focus on strategic business requirements, not BAU\n\n• Improved application performance through continuous monitoring and proactive optimization\n\n• Efficient change management with structured governance and reporting cadence\n\n• Access to broader technical expertise and skills across modern and legacy stacks"
   },
-/*
-  {
-    id: "6",
-    slug: "customer-retention-telecom",
-    title: "Deep Learning for Real-Time Churn Prediction and Proactive Retention",
-    client: "GlobalTel",
-    industry: "Telecom",
-    teaser: "Analyzing petabytes of user interaction data to predict churn with high precision before it happens.",
-    image: "https://images.unsplash.com/photo-1543674892-7d64d45df18b?auto=format&fit=crop&q=80&w=1200",
-    location: "London, UK",
-    overview: "Developed a proactive retention engine for GlobalTel that identifies dissatisfied customers and automates personalized offers.",
-    subtitle: "Protecting market share through deep learning and automated customer journey optimization.",
-    input: "GlobalTel faced a 15% annual churn rate. Traditional rule-based alerts were too late, often triggering after a customer had already decided to switch.",
-    reasoning: "Our team built a recurrent neural network (RNN) that analyzes behavioral sequences in real-time, assigning a 'churn probability' score to every user daily.",
-    outcomes: "Reduced churn by 22% in the first year, resulting in an estimated $120M in retained annual revenue."
-  },
-*/
   {
     id: "7",
     slug: "oracle-postgresql-migration",
@@ -126,7 +109,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     client: "FinCore Solutions",
     industry: "Database Migration",
     teaser: "Eliminating vendor lock-in and reducing licensing costs through a structured Oracle to PostgreSQL migration.",
-    image: "/Oracle to Postgre DB.jpg",
+    image: "/Oracle%20to%20Postgre%20DB.jpg",
     location: "Global",
     overview: "We executed a zero-data-loss migration from Oracle to PostgreSQL, achieving significant cost savings and improved query performance.",
     subtitle: "Modernizing data infrastructure through automated schema conversion and performance optimization.",
@@ -158,7 +141,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     client: "EcoGrid Dynamics",
     industry: "Infrastructure Ops",
     teaser: "Ensuring 24/7 infrastructure stability and performance through expert OS and database managed services.",
-    image: "/Infrastructre Ops.jpg",
+    image: "/Infrastructre%20Ops.jpg",
     location: "Berlin, Germany",
     overview: "We took over the management of 100+ servers and diverse database stacks, enabling the client's IT team to pivot toward strategic growth.",
     subtitle: "Stabilizing critical infrastructure through proactive monitoring and 24/7 expert support.",
@@ -206,7 +189,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     client: "Industrial Global",
     industry: "Database Ops",
     teaser: "Consolidating multi-plant database infrastructure to eliminate licensing waste and reduce hardware footprint.",
-    image: "/Data Consolidation.jpg",
+    image: "/Data%20Consolidation.jpg",
     location: "USA / Europe",
     overview: "We consolidated a fragmented multi-plant database infrastructure, achieving up to 50% licensing cost reduction and a significantly smaller hardware footprint.",
     subtitle: "Standardizing enterprise data through structured consolidation and license rationalization.",

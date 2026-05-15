@@ -8,6 +8,7 @@ import { ExitIntentPopup } from "@/components/Utils/ExitIntentPopup";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: 'swap',
 });
 
 const roboto = Roboto({
