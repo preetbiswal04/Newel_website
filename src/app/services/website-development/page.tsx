@@ -56,7 +56,7 @@ export default function WebsiteDevelopmentPage() {
       <section
         className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: "url('/AI- img.jpg')",
+          backgroundImage: "url('/Web-Development Page.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -179,16 +179,16 @@ export default function WebsiteDevelopmentPage() {
              >
                 <div className="relative rounded-3xl overflow-hidden aspect-video border border-white/10 group">
                   <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-transparent z-10" />
-                  <img 
-                    src="/home-img-7.jpg" 
-                    alt="Website Development" 
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    poster="/Web-Development Page.png"
                     className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-700"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center z-20">
-                    <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                       <Globe className="w-10 h-10 text-cyan-400" />
-                    </div>
-                  </div>
+                  >
+                    <source src="/Web-Development vd.mp4" type="video/mp4" />
+                  </video>
                 </div>
                 {/* Decorative element */}
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-500/20 blur-3xl rounded-full" />

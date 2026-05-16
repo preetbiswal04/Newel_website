@@ -42,7 +42,7 @@ const PARTNERS: Partner[] = [
     role: "Business and Technologies Advisor",
     image: "/VP.jpeg",
     linkedin: "#",
-    objectPosition: "object-top",
+    objectPosition: "object-[50%_35%]",
   },
   {
     id: 5,

@@ -14,8 +14,6 @@ import {
   Cpu,
   Activity,
   Briefcase,
-  Search,
-  Globe,
   ArrowUpRight
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -235,25 +233,6 @@ export const Navbar = () => {
                 </div>
               ))}
             </nav>
-
-            {/* Action Icons */}
-            <div className={cn(
-              "flex items-center gap-6 ml-6 border-l pl-8",
-              isScrolled || isLightPage ? "border-black/10" : "border-white/10"
-            )}>
-              <button className={cn(
-                "transition-colors",
-                isScrolled || isLightPage ? "text-slate-600 hover:text-blue-600" : "text-white/70 hover:text-white"
-              )}>
-                <Globe size={18} />
-              </button>
-              <button className={cn(
-                "transition-colors",
-                isScrolled || isLightPage ? "text-slate-600 hover:text-blue-600" : "text-white/70 hover:text-white"
-              )}>
-                <Search size={18} />
-              </button>
-            </div>
           </div>
 
           {/* Full-width Mega Menu */}

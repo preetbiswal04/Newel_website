@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export const Logo = ({ isScrolled = false }: { isScrolled?: boolean }) => {
   return (
-    <div className="flex flex-col items-center gap-0 group cursor-pointer scale-90 origin-center">
-      {/* Animated Icon */}
-      <div className="relative w-10 h-6 flex items-center justify-center">
+    <div className="flex flex-col items-center gap-0 group cursor-pointer origin-center">
+      {/* Icon */}
+      <div className="relative w-10 h-7 flex items-center justify-center">
         <svg
           viewBox="0 0 100 60"
           className="w-full h-full overflow-visible"
@@ -20,9 +20,7 @@ export const Logo = ({ isScrolled = false }: { isScrolled?: boolean }) => {
             stroke="url(#logo-gradient)"
             strokeWidth="3"
             strokeLinecap="round"
-            initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
-            transition={{ duration: 2, ease: "easeInOut" }}
           />
 
           {/* Inner Connecting Arcs/Lines */}
@@ -32,8 +30,7 @@ export const Logo = ({ isScrolled = false }: { isScrolled?: boolean }) => {
             strokeWidth="2"
             strokeLinecap="round"
             strokeDasharray="4 4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 1, 0.5, 1] }}
+            animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 3, repeat: Infinity }}
           />
 
@@ -76,9 +73,7 @@ export const Logo = ({ isScrolled = false }: { isScrolled?: boolean }) => {
           {["N", "E", "W", "E", "L"].map((char, i) => (
             <motion.span
               key={i}
-              initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 + i * 0.1, ease: "easeOut" }}
               className={`text-lg font-black tracking-tighter inline-block ${isScrolled ? 'text-black' : 'text-white'}`}
             >
               {char === "E" ? (
@@ -108,10 +103,9 @@ export const Logo = ({ isScrolled = false }: { isScrolled?: boolean }) => {
 
         {/* TECHNOLOGIES Subtext */}
         <motion.span
-          initial={{ opacity: 0, letterSpacing: "0.2em" }}
-          animate={{ opacity: 0.6, letterSpacing: "0.4em" }}
-          transition={{ duration: 1.5, delay: 1.5 }}
-          className={`text-[6px] font-bold uppercase tracking-[0.4em] -mt-1 ${isScrolled ? 'text-black/80' : 'text-white/80'}`}
+          animate={{ opacity: 1, letterSpacing: "0.4em" }}
+          transition={{ duration: 1 }}
+          className={`text-[6px] font-bold uppercase tracking-[0.4em] -mt-1 ${isScrolled ? 'text-black' : 'text-white'}`}
         >
           TECHNOLOGIES
         </motion.span>

@@ -86,8 +86,14 @@ export const Footer = () => {
           {/* Column 1: Contact Info */}
           <div className="flex flex-col gap-8">
             <div>
-              <div className="text-3xl font-black tracking-tighter text-white mb-2">
-                NEWEL<span className="text-[#3b82f6]">.</span>
+              <div className="mb-6">
+                <div className="bg-white p-2 rounded-2xl inline-block shadow-xl">
+                  <img 
+                    src="/newel_technologies_pvt_ltd_logo.jpg" 
+                    alt="Newel Technologies" 
+                    className="h-14 w-auto object-contain" 
+                  />
+                </div>
               </div>
               <p className="text-sm text-white/60 font-medium tracking-wide uppercase">Newel Technologies Pvt Ltd.</p>
             </div>

@@ -7,7 +7,7 @@ import { PlatformSection } from "@/components/Platform/PlatformSection";
 import { IndustriesSection } from "@/components/Industries/IndustriesSection";
 import { WhyNewel } from "@/components/WhyNewel/WhyNewel";
 
-import { DemoSection } from "@/components/CTA/DemoSection";
+
 import { OnePlatform } from "@/components/WhyNewel/OnePlatform";
 import { PartnersSection } from "@/components/Partners/PartnersSection";
 
@@ -32,7 +32,7 @@ export default function Home() {
         <OnePlatform />
         <PartnersSection />
 
-        <DemoSection />
+
       </div>
     </main>
   );

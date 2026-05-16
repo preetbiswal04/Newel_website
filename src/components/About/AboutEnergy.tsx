@@ -6,24 +6,17 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const CATEGORIES = [
-  { id: "society", name: "Society" },
   { id: "workplace", name: "Work Place" },
 ];
 
 const IMAGES = {
-  society: [
-    "/society-1.jpg",
-    "/society-2.jpg",
-    "/society-3.jpg",
-    "/society-4.jpg",
-    "/society-5.jpg",
-  ],
   workplace: [
-    "/workplace-1.jpg",
-    "/workplace-2.jpg",
-    "/workplace-3.jpg",
-    "/workplace-4.jpg",
-    "/workplace-5.jpg",
+    "/1.jpeg",
+    "/culture-2.jpeg",
+    "/culture-3.jpeg",
+    "/culture-4.jpeg",
+    "/culture-5.jpeg",
+    "/culture-6.jpeg",
   ],
 };
 
@@ -45,31 +38,11 @@ export const AboutEnergy = () => {
             opportunities to better our
           </motion.h2>
 
-          {/* Custom Tabs */}
+          {/* Static Display for Work Place */}
           <div className="inline-flex p-1 bg-zinc-100 rounded-full mb-20 relative">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveTab(cat.id)}
-                className={cn(
-                  "px-8 md:px-16 py-3 md:py-4 rounded-full text-sm md:text-base font-bold transition-all relative z-10",
-                  activeTab === cat.id ? "text-white" : "text-zinc-500 hover:text-black"
-                )}
-              >
-                {cat.name}
-              </button>
-            ))}
-            {/* Sliding Background */}
-            <motion.div
-              layoutId="tab-bg"
-              className="absolute inset-y-1 bg-black rounded-full z-0"
-              initial={false}
-              animate={{
-                left: activeTab === "society" ? "4px" : "50%",
-                right: activeTab === "society" ? "50%" : "4px",
-              }}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            />
+            <div className="px-8 md:px-16 py-3 md:py-4 rounded-full text-sm md:text-base font-bold bg-black text-white relative z-10">
+              Work Place
+            </div>
           </div>
 
           <div className="text-left max-w-5xl">
@@ -96,10 +69,14 @@ export const AboutEnergy = () => {
 
       {/* Auto-sliding Image Carousel */}
       <div className="mt-12 relative w-full overflow-hidden">
+        {/* Side Fades for Premium Look */}
+        <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none" />
+
         <div className="flex whitespace-nowrap animate-marquee-infinite py-4">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-6 px-3">
-              {(activeTab === "society" ? IMAGES.society : IMAGES.workplace).map((src, idx) => (
+              {IMAGES.workplace.map((src, idx) => (
                 <div 
                   key={idx} 
                   className="w-[300px] md:w-[450px] aspect-[4/3] rounded-2xl md:rounded-3xl overflow-hidden bg-zinc-100 flex-shrink-0 relative border border-zinc-200"

@@ -24,14 +24,14 @@ export const AboutDivisions = () => {
 
             <div className="relative z-10 flex-grow">
               <h3 className="text-3xl md:text-4xl lg:text-[2.5rem] font-medium text-white mb-6 leading-tight tracking-tight">
-                Pioneer the AI Revolution <br className="hidden lg:block" /> through <span className="font-bold italic">InventivAI</span>
+                Pioneer the AI Revolution <br className="hidden lg:block" /> through <span className="font-bold">Newel Technologies</span>
               </h3>
               <p className="text-white/90 text-sm md:text-[1.05rem] leading-relaxed mb-10 max-w-[90%]">
-                While others just build software, we build intelligent ecosystems. InventivAI is our AI Center of Excellence that represents our commitment to embedding mission-critical AI into the core of enterprise operations.
+                While others just build software, we build intelligent ecosystems. Newel Technologies is our AI Center of Excellence that represents our commitment to embedding mission-critical AI into the core of enterprise operations.
               </p>
               
               <Link href="/services/generative-ai" className="inline-flex items-center justify-center bg-white text-black px-6 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform duration-300">
-                Explore Our InventivAI Services
+                Explore Our Newel Technologies Services
               </Link>
             </div>
 

@@ -54,7 +54,7 @@ export const ValueCards = () => {
               }}
             >
               <div className="mb-6 p-3 rounded-xl bg-purple-50 group-hover:bg-purple-100 transition-all duration-300">
-                {React.cloneElement(value.icon as React.ReactElement, { className: "w-6 h-6 text-purple-600" })}
+                {React.cloneElement(value.icon as React.ReactElement, { className: "w-6 h-6 text-purple-600" } as any)}
               </div>
               <h3 className="text-[18px] font-bold text-[#1a1a1a] mb-4 leading-tight tracking-tight group-hover:text-purple-700 transition-colors">
                 {value.title}

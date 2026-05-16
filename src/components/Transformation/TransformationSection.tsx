@@ -10,8 +10,8 @@ import { useEffect } from "react";
 const CARDS = [
   {
     id: 1,
-    title: "Strategic Technology Consulting",
-    desc: "From architecture audits to digital transformation strategy, we help leaders align technology with business goals for measurable ROI.",
+    title: "AI Strategy & Consulting",
+    desc: "Strategic roadmap and advisory to unlock the full potential of AI in your business.",
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop",
     color: "bg-blue-600",
     href: "/services/ai-strategy-consulting"

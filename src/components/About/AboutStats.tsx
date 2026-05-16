@@ -5,26 +5,26 @@ import { motion } from "framer-motion";
 
 const stats = [
   {
-    number: "35+",
-    label: "Industries Mastered",
+    number: "10+",
+    label: "Years in Financial Services",
     bgColor: "bg-[#E9D5FF]", // Light Purple
     textColor: "text-[#581C87]",
   },
   {
-    number: "15+",
-    label: "Global Recognitions and Awards",
+    number: "20+",
+    label: "Active Clients",
     bgColor: "bg-[#ECFCCB]", // Light Lime/Green
     textColor: "text-[#365314]",
   },
   {
-    number: "70+",
-    label: "Countries Powered by Tech Innovation",
+    number: "40+",
+    label: "Custom Solutions Delivered",
     bgColor: "bg-[#CFFAFE]", // Light Cyan/Blue
     textColor: "text-[#164E63]",
   },
   {
-    number: "5+",
-    label: "Global Excellence Centers",
+    number: "25+",
+    label: "Automation Projects Deployed in Production",
     bgColor: "bg-[#FEF9C3]", // Light Yellow
     textColor: "text-[#713F12]",
   },

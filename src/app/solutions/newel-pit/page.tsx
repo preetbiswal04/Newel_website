@@ -139,7 +139,7 @@ export default function NewelPITPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-cyan-500/30 selection:text-cyan-200 overflow-hidden">
+    <main className="min-h-screen bg-black selection:bg-cyan-500/30 selection:text-cyan-200 overflow-hidden">
       {/* ── Section 1: Hero (Matching SS Layout) ── */}
       <section className="relative w-full min-h-screen flex items-center pt-20">
         <div className="absolute inset-0 z-0">
@@ -171,21 +171,6 @@ export default function NewelPITPage() {
               <p className="text-xl md:text-2xl text-white/70 font-medium leading-relaxed max-w-xl">
                 End-to-end SEBI PIT Compliance — automated, audit-ready, and built for NBFCs.
               </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-6"
-            >
-               <div className="p-1 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 shadow-2xl shadow-cyan-500/20">
-                  <div className="bg-white text-black px-10 py-5 rounded-xl font-black text-lg flex items-center gap-3 hover:bg-transparent hover:text-white transition-all duration-300">
-                    <Link href="/contact" className="flex items-center gap-3">
-                      Request Demo <ChevronRight size={20} />
-                    </Link>
-                  </div>
-               </div>
             </motion.div>
           </div>
 
@@ -228,7 +213,7 @@ export default function NewelPITPage() {
       </section>
 
       {/* ── Section 2: The Problem ── */}
-      <section className="py-32 bg-zinc-950/50">
+      <section className="py-32 bg-black">
         <div className="container-page mx-auto">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="lg:w-1/2 space-y-6">
@@ -264,14 +249,14 @@ export default function NewelPITPage() {
       </section>
 
       {/* ── Section 3: The Solution / Modules ── */}
-      <section className="py-32 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-cyan-500/5 blur-[200px] rounded-full pointer-events-none" />
+      <section className="py-32 relative bg-[#F3F4F6] text-slate-900">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-cyan-500/10 blur-[200px] rounded-full pointer-events-none" />
         
         <div className="container-page mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-24 space-y-4">
-            <span className="text-cyan-400 font-black text-xs uppercase tracking-[0.3em]">Platform Modules</span>
-            <h2 className="text-4xl md:text-6xl font-black text-white leading-tight">One Platform. <br /> Zero Guesswork.</h2>
-            <p className="text-white/50 text-lg">Everything you need to manage exceptions, not processes.</p>
+            <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">Platform Modules</span>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-950 leading-tight">One Platform. <br /> Zero Guesswork.</h2>
+            <p className="text-slate-500 text-lg">Everything you need to manage exceptions, not processes.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -282,18 +267,18 @@ export default function NewelPITPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="p-10 rounded-3xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] transition-all duration-500 h-full flex flex-col"
+                className="p-10 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:border-cyan-500/30 transition-all duration-500 h-full flex flex-col group"
               >
                 <div className="flex items-center justify-between mb-8">
-                  <span className="text-4xl font-black text-white/10 group-hover:text-cyan-400/20 transition-colors">{mod.id}</span>
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400">
+                  <span className="text-4xl font-black text-slate-100 group-hover:text-cyan-400/20 transition-colors">{mod.id}</span>
+                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/5 flex items-center justify-center text-cyan-600 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-500">
                     {mod.icon}
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-6 text-white leading-tight">{mod.title}</h3>
+                <h3 className="text-2xl font-bold mb-6 text-slate-900 leading-tight">{mod.title}</h3>
                 <ul className="space-y-4 flex-1">
                   {mod.points.map((p, i) => (
-                    <li key={i} className="flex gap-3 text-white/50 text-sm leading-relaxed">
+                    <li key={i} className="flex gap-3 text-slate-500 text-sm leading-relaxed">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
                       {p}
                     </li>
@@ -308,16 +293,16 @@ export default function NewelPITPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
-              className="p-10 rounded-3xl bg-gradient-to-br from-cyan-500/10 to-indigo-500/10 border border-cyan-500/20 flex flex-col justify-center text-center space-y-6"
+              className="p-10 rounded-3xl bg-gradient-to-br from-white to-slate-50 border border-slate-200 shadow-sm flex flex-col justify-center text-center space-y-6"
             >
-               <div className="w-20 h-20 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 mx-auto">
+               <div className="w-20 h-20 rounded-full bg-cyan-500/5 flex items-center justify-center text-cyan-600 mx-auto">
                  <Shield size={40} />
                </div>
-               <h3 className="text-2xl font-bold text-white">Audit & Training</h3>
-               <p className="text-white/60 text-sm leading-relaxed">
+               <h3 className="text-2xl font-bold text-slate-900">Audit & Training</h3>
+               <p className="text-slate-500 text-sm leading-relaxed">
                  Immutable logs with cryptographic integrity and mandatory insider training with 98% completion tracking.
                </p>
-               <button className="text-cyan-400 font-bold flex items-center gap-2 justify-center hover:gap-4 transition-all">
+               <button className="text-cyan-600 font-bold flex items-center gap-2 justify-center hover:gap-4 transition-all">
                   Full Feature List <ChevronRight size={18} />
                </button>
             </motion.div>
@@ -373,28 +358,28 @@ export default function NewelPITPage() {
       </section>
 
       {/* ── Section 5: Roadmap ── */}
-      <section className="py-32 relative">
+      <section className="py-32 relative bg-[#F3F4F6]">
         <div className="container-page mx-auto">
            <div className="text-center mb-20 space-y-4">
-              <span className="text-indigo-400 font-black text-xs uppercase tracking-[0.3em]">Future Vision</span>
-              <h2 className="text-4xl md:text-6xl font-black text-white">What's Coming</h2>
+              <span className="text-blue-600 font-black text-xs uppercase tracking-[0.3em]">Future Vision</span>
+              <h2 className="text-4xl md:text-6xl font-black text-slate-950">What's Coming</h2>
            </div>
 
            <div className="relative">
               {/* Line */}
-              <div className="absolute left-0 lg:left-1/2 top-0 bottom-0 w-[1px] bg-white/10 hidden lg:block" />
+              <div className="absolute left-0 lg:left-1/2 top-0 bottom-0 w-[1px] bg-slate-200 hidden lg:block" />
 
               <div className="space-y-20">
                  {roadmap.map((item, idx) => (
                    <div key={item.period} className={`flex flex-col lg:flex-row gap-10 items-center ${idx % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
                       <div className="lg:w-1/2 flex justify-center lg:justify-end">
-                         <div className={`p-8 rounded-[40px] bg-white/[0.02] border border-white/5 max-w-md space-y-4 ${idx % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                            <span className="text-cyan-400 font-black text-sm uppercase tracking-widest">{item.period}</span>
-                            <h3 className="text-2xl font-bold">{item.title}</h3>
-                            <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+                         <div className={`p-8 rounded-[40px] bg-white border border-slate-200 shadow-sm max-w-md space-y-4 ${idx % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
+                            <span className="text-cyan-600 font-black text-sm uppercase tracking-widest">{item.period}</span>
+                            <h3 className="text-2xl font-bold text-slate-900">{item.title}</h3>
+                            <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
                          </div>
                       </div>
-                      <div className="relative z-10 w-12 h-12 rounded-full bg-black border-2 border-cyan-400 flex items-center justify-center hidden lg:flex">
+                      <div className="relative z-10 w-12 h-12 rounded-full bg-white border-2 border-cyan-400 flex items-center justify-center hidden lg:flex">
                          <div className="w-3 h-3 rounded-full bg-cyan-400 animate-ping" />
                       </div>
                       <div className="lg:w-1/2" />

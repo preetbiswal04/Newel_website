@@ -16,19 +16,19 @@ interface VideoAsset {
 const VIDEOS: VideoAsset[] = [
   {
     id: 1,
-    url: "/18069701-uhd_3840_2160_24fps.mp4",
-    poster: "/18069701-uhd_3840_2160_24fps.mp4",
+    url: "/18069232-uhd_3840_2160_24fps.mp4",
+    poster: "/18069232-uhd_3840_2160_24fps.mp4",
     title: "Your Path to Agentic AI Starts Here",
     highlight: "Agentic AI",
     description: "Newel Technologies is a leading AI consultancy that delivers transformation services to guide organizations into the new era of AI.."
   },
   {
     id: 2,
-    url: "https://websitesapi.dataart.com/media/pbgfimzl/partners-for-data-11-24.mp4",
-    poster: "https://websitesapi.dataart.com/media/pbgfimzl/partners-for-data-11-24.mp4",
-    title: "Quantum Intelligence",
-    highlight: "Intelligence",
-    description: "Leveraging quantum computing and advanced analytics to solve complex problems."
+    url: "/18069701-uhd_3840_2160_24fps.mp4",
+    poster: "/18069701-uhd_3840_2160_24fps.mp4",
+    title: "AI-Centric Innovation",
+    highlight: "Innovation",
+    description: "Putting AI at the heart of every technological breakthrough we engineer."
   },
   {
     id: 3,
@@ -40,19 +40,19 @@ const VIDEOS: VideoAsset[] = [
   },
   {
     id: 4,
-    url: "/18069232-uhd_3840_2160_24fps.mp4",
-    poster: "/18069232-uhd_3840_2160_24fps.mp4",
-    title: "Human-Centric Innovation",
-    highlight: "Innovation",
-    description: "Putting people at the heart of every technological breakthrough we engineer."
+    url: "https://websitesapi.dataart.com/media/pbgfimzl/partners-for-data-11-24.mp4",
+    poster: "https://websitesapi.dataart.com/media/pbgfimzl/partners-for-data-11-24.mp4",
+    title: "Cloud Solutions Built for the Age of Intelligence",
+    highlight: "Intelligence",
+    description: "Harness the combined power of cloud computing and AI to transform how your enterprise operates, innovates, and grows."
   },
   {
     id: 5,
     url: "/7774450-uhd_3840_2160_30fps (1).mp4",
     poster: "/7774450-uhd_3840_2160_30fps (1).mp4",
-    title: "Agile Excellence",
-    highlight: "Excellence",
-    description: "Mastering the art of rapid iteration and seamless deployment at scale."
+    title: "From Data Chaos to Cloud Clarity",
+    highlight: "Cloud Clarity",
+    description: "Modern data platforms, cloud migration, and governance — all under one roof."
   }
 ];
 
