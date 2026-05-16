@@ -44,13 +44,6 @@ const PARTNERS: Partner[] = [
     linkedin: "#",
     objectPosition: "object-[50%_35%]",
   },
-  {
-    id: 5,
-    name: "Mr. Atish Tambe",
-    role: "HR Head",
-    image: "/AT.png",
-    linkedin: "#",
-  },
 ];
 
 export const PartnersSection = () => {
