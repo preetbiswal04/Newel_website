@@ -150,7 +150,7 @@ export const Navbar = () => {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const isLightPage = pathname === "/contact";
+  const isLightPage = pathname === "/contact" || pathname === "/services";
 
   // Close menu when route changes
   useEffect(() => {

@@ -157,7 +157,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     client: "Nexus Global",
     industry: "Cloud Managed Services",
     teaser: "Streamlining operations across 27 AWS accounts to deliver high-performance cloud governance and 24/7 support.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1200",
+    image: "/Cloud-Growth.jpg",
     location: "USA / Global",
     overview: "We assumed management of 27 AWS accounts, hundreds of instances, and over 1,000 Lambda functions, providing consistent governance and expert cloud support.",
     subtitle: "Orchestrating complex AWS environments through dedicated expertise and proactive governance.",

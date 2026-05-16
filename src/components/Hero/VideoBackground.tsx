@@ -11,6 +11,7 @@ interface VideoAsset {
   title: string;
   highlight: string;
   description: string;
+  href: string;
 }
 
 const VIDEOS: VideoAsset[] = [
@@ -20,7 +21,8 @@ const VIDEOS: VideoAsset[] = [
     poster: "/18069232-uhd_3840_2160_24fps.mp4",
     title: "Your Path to Agentic AI Starts Here",
     highlight: "Agentic AI",
-    description: "Newel Technologies is a leading AI consultancy that delivers transformation services to guide organizations into the new era of AI.."
+    description: "Newel Technologies is a leading AI consultancy that delivers transformation services to guide organizations into the new era of AI..",
+    href: "/services/ai-strategy-consulting"
   },
   {
     id: 2,
@@ -28,7 +30,8 @@ const VIDEOS: VideoAsset[] = [
     poster: "/18069701-uhd_3840_2160_24fps.mp4",
     title: "AI-Centric Innovation",
     highlight: "Innovation",
-    description: "Putting AI at the heart of every technological breakthrough we engineer."
+    description: "Putting AI at the heart of every technological breakthrough we engineer.",
+    href: "/services/generative-ai"
   },
   {
     id: 3,
@@ -36,7 +39,8 @@ const VIDEOS: VideoAsset[] = [
     poster: "https://websitesapi.dataart.com/media/whqffkoo/trends-2026-video-main-page.mp4",
     title: "Defining the Future",
     highlight: "Future",
-    description: "Driving digital transformation across global enterprises with AI-first strategies."
+    description: "Driving digital transformation across global enterprises with AI-first strategies.",
+    href: "/services/ai-strategy-consulting"
   },
   {
     id: 4,
@@ -44,7 +48,8 @@ const VIDEOS: VideoAsset[] = [
     poster: "https://websitesapi.dataart.com/media/pbgfimzl/partners-for-data-11-24.mp4",
     title: "Cloud Solutions Built for the Age of Intelligence",
     highlight: "Intelligence",
-    description: "Harness the combined power of cloud computing and AI to transform how your enterprise operates, innovates, and grows."
+    description: "Harness the combined power of cloud computing and AI to transform how your enterprise operates, innovates, and grows.",
+    href: "/services/cloud-services"
   },
   {
     id: 5,
@@ -52,7 +57,8 @@ const VIDEOS: VideoAsset[] = [
     poster: "/7774450-uhd_3840_2160_30fps (1).mp4",
     title: "From Data Chaos to Cloud Clarity",
     highlight: "Cloud Clarity",
-    description: "Modern data platforms, cloud migration, and governance — all under one roof."
+    description: "Modern data platforms, cloud migration, and governance — all under one roof.",
+    href: "/services/cloud-strategy-migration"
   }
 ];
 

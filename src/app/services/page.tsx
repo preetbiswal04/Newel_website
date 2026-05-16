@@ -42,9 +42,9 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 
 export default function AllServicesPage() {
   return (
-    <main className="min-h-screen bg-black overflow-hidden">
-      {/* ── Hero Section (Dark) ── */}
-      <section className="pt-48 pb-32 bg-black text-white relative">
+    <main className="min-h-screen bg-[#F3F4F6] overflow-hidden">
+      {/* ── Hero Section (Light Grey) ── */}
+      <section className="pt-48 pb-32 bg-[#F3F4F6] text-slate-900 relative">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 blur-[140px] rounded-full -translate-y-1/2 translate-x-1/4" />
         <div className="container-page mx-auto relative z-10">
           <div className="max-w-4xl space-y-6">
@@ -54,14 +54,14 @@ export default function AllServicesPage() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-md"
             >
               <Sparkles size={16} className="text-blue-400" />
-              <span className="text-xs font-black uppercase tracking-[0.2em] text-blue-400">Our Expertise</span>
+              <span className="text-xs font-black uppercase tracking-[0.2em] text-blue-600">Our Expertise</span>
             </motion.div>
             
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-8xl font-black text-white tracking-tighter leading-none"
+              className="text-6xl md:text-8xl font-black text-slate-950 tracking-tighter leading-none"
             >
               Our <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Services & Solutions</span>
             </motion.h1>
@@ -70,7 +70,7 @@ export default function AllServicesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-white/50 max-w-2xl font-medium"
+              className="text-xl text-slate-500 max-w-2xl font-medium"
             >
               Comprehensive technology solutions designed to power your digital transformation journey with precision and scale.
             </motion.p>
@@ -79,15 +79,15 @@ export default function AllServicesPage() {
       </section>
 
       {/* ── Enterprise Solutions ── */}
-      <section className="py-24 bg-black">
+      <section className="py-24 bg-[#F3F4F6]">
         <div className="container-page mx-auto">
           <div className="flex items-center gap-6 mb-16">
-            <h2 className="text-2xl font-black text-white uppercase tracking-[0.3em] whitespace-nowrap">Enterprise Solutions</h2>
+            <h2 className="text-2xl font-black text-slate-950 uppercase tracking-[0.3em] whitespace-nowrap">Enterprise Solutions</h2>
             <div className="h-px flex-1 bg-gradient-to-r from-blue-500/50 to-transparent" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {SOLUTIONS_DATA[0].items.map((item, idx) => (
-              <ServiceCard key={item.id} item={item} type="solutions" index={idx} isDark={true} />
+              <ServiceCard key={item.id} item={item} type="solutions" index={idx} isDark={false} />
             ))}
           </div>
         </div>

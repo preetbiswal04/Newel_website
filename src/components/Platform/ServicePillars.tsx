@@ -96,7 +96,7 @@ export const ServicePillars = () => {
 
       {/* BUTTON */}
       <div className="flex justify-center pb-8">
-        <Button variant="primary" size="lg">
+        <Button variant="primary" size="lg" href="/services">
           Explore the platform
         </Button>
       </div>

@@ -61,7 +61,7 @@ export const ContentOverlay: React.FC<ContentOverlayProps> = ({ currentVideo }) 
               transition={{ delay: 0.4, duration: 0.6 }}
               className="mt-4 md:mt-6"
             >
-              <Button variant="primary" size="lg" href="/services/ai-strategy-consulting">
+              <Button variant="primary" size="lg" href={currentVideo.href}>
                 Read More
               </Button>
             </motion.div>
