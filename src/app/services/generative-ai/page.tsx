@@ -185,7 +185,7 @@ export default function GenerativeAIPage() {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-700"
+                    className="w-full h-full object-cover grayscale brightness-50"
                   />
                 </div>
                 {/* Decorative element */}

@@ -22,8 +22,8 @@ const Card = ({ title, desc, icon, color, align = "left", className = "" }: Card
     viewport={{ once: true }}
     transition={{ duration: 0.8 }}
     className={cn(
-      "relative flex min-h-[320px] w-full max-w-[320px] flex-col lg:min-h-[300px] lg:max-w-[400px]",
-      "rounded-[32px] border border-slate-200 bg-white p-8 pt-16",
+      "relative flex min-h-[240px] w-full max-w-[290px] flex-col lg:min-h-[220px] lg:max-w-[320px]",
+      "rounded-[24px] border border-slate-200 bg-white p-5 pt-12 md:p-6 md:pt-14",
       "shadow-[0_20px_50px_rgba(51,76,149,0.08)] transition-all duration-700",
       "hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(51,76,149,0.15)] group",
       className
@@ -42,12 +42,12 @@ const Card = ({ title, desc, icon, color, align = "left", className = "" }: Card
     </div>
 
     {/* Card Content */}
-    <div className="flex h-full flex-col gap-5 text-left">
-      <h3 className="text-2xl font-bold leading-tight text-[#002D72] group-hover:text-blue-600 transition-colors">
+    <div className="flex h-full flex-col gap-4 text-left">
+      <h3 className="text-lg md:text-xl font-bold leading-tight text-[#002D72] group-hover:text-blue-600 transition-colors">
         {title}
       </h3>
 
-      <p className="text-[15px] leading-relaxed text-slate-500 font-medium">
+      <p className="text-[13px] md:text-[14px] leading-relaxed text-slate-500 font-medium">
         {desc}
       </p>
 
@@ -62,9 +62,9 @@ const Card = ({ title, desc, icon, color, align = "left", className = "" }: Card
 
 export const OnePlatform = () => {
   return (
-    <section className="w-full py-20 md:py-32">
+    <section className="w-full py-16 md:py-24">
       <div className="container-page">
-        <div className="mb-16 px-4 text-center sm:px-6 md:mb-20">
+        <div className="mb-12 px-4 text-center sm:px-6 md:mb-16">
           <h2 className="text-[2.5rem] md:text-[3.1rem] lg:text-[4.5rem] font-semibold leading-[1.06] tracking-[-0.03em] text-slate-950">
             <span className="text-blue-500">One platform</span> across teams
           </h2>
@@ -108,8 +108,8 @@ export const OnePlatform = () => {
           </div>
 
           {/* Desktop - cards around center ring */}
-          <div className="relative mx-auto hidden h-[750px] w-full max-w-[1300px] lg:block">
-            <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 flex h-[440px] w-[440px] -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+          <div className="relative mx-auto hidden h-[680px] w-full max-w-[1100px] lg:block">
+            <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 flex h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 items-center justify-center">
               <div className="absolute inset-0 rounded-full border border-blue-400/45" />
               <div className="absolute inset-[16%] rounded-full border border-blue-400/42" />
               <div className="absolute inset-[32%] rounded-full border border-blue-400/38" />
@@ -135,7 +135,7 @@ export const OnePlatform = () => {
               />
             </div>
 
-            <div className="absolute right-0 top-12 z-10">
+            <div className="absolute right-0 top-[4%] z-10">
               <Card
                 title="Compliance & Risk Teams"
                 desc="Automate your PIT compliance, QRC classification, and audit workflows — so your team manages exceptions, not processes."
@@ -144,7 +144,7 @@ export const OnePlatform = () => {
               />
             </div>
 
-            <div className="absolute right-0 bottom-12 z-10">
+            <div className="absolute right-0 bottom-[4%] z-10">
               <Card
                 title="IT & Infrastructure Leaders"
                 desc="One partner for your full stack — Cloud, Database, OS, Middleware, and Applications — with SLA-backed managed services and zero finger-pointing."

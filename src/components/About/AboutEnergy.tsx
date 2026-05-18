@@ -24,23 +24,23 @@ export const AboutEnergy = () => {
   const [activeTab, setActiveTab] = useState("workplace");
 
   return (
-    <section className="py-24 md:py-32 bg-white text-black overflow-hidden">
+    <section className="py-16 md:py-20 bg-white text-black overflow-hidden">
       <div className="container-page">
         {/* Header Section */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-medium tracking-tight mb-12 leading-tight"
+            className="text-3xl md:text-5xl font-medium tracking-tight mb-8 leading-tight"
           >
             We, Newelites actively seek <br className="hidden md:block" /> 
             opportunities to better our
           </motion.h2>
 
           {/* Static Display for Work Place */}
-          <div className="inline-flex p-1 bg-zinc-100 rounded-full mb-20 relative">
-            <div className="px-8 md:px-16 py-3 md:py-4 rounded-full text-sm md:text-base font-bold bg-black text-white relative z-10">
+          <div className="inline-flex p-1 bg-zinc-100 rounded-full mb-12 relative">
+            <div className="px-8 md:px-12 py-2.5 md:py-3 rounded-full text-sm md:text-base font-bold bg-black text-white relative z-10">
               Work Place
             </div>
           </div>

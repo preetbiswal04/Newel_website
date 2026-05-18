@@ -150,7 +150,7 @@ export const Navbar = () => {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const isLightPage = pathname === "/contact" || pathname === "/services";
+  const isLightPage = pathname === "/contact" || pathname === "/services" || pathname === "/careers";
 
   // Close menu when route changes
   useEffect(() => {
@@ -191,9 +191,8 @@ export const Navbar = () => {
         className={cn(
           "fixed left-0 right-0 z-50 transition-all duration-500",
           (isScrolled || isLightPage)
-            ? "bg-white/95 backdrop-blur-xl border-b border-black/5 py-4"
-            : "bg-[#0c0c1d]/95 backdrop-blur-xl border-b border-white/5 py-4",
-          !isScrolled && !isLightPage && "bg-transparent py-8"
+            ? "bg-white/95 backdrop-blur-xl border-b border-black/5 py-3 shadow-sm"
+            : "bg-transparent border-b border-transparent py-4"
         )}
         onMouseLeave={handleMouseLeave}
       >

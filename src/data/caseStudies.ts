@@ -77,7 +77,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     client: "BioGenix Lab",
     industry: "AWS Cloud",
     teaser: "Migrating a legacy monolithic application to a modular, cloud-native AWS microservices architecture.",
-    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=1200",
+    image: "/aws-cloud.png",
     location: "San Francisco, USA",
     overview: "The legacy monolithic system was transformed into a scalable, cloud-native architecture on AWS using microservices, containers, and automated deployments.",
     subtitle: "Modernizing legacy applications with cloud-native AWS transformations and containerized workloads.",

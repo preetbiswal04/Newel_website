@@ -6,12 +6,10 @@ import { ServicePillars } from "./ServicePillars";
 
 export const PlatformSection = () => {
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#E5E7EB] pt-4 md:pt-6 flex flex-col gap-8 md:gap-10 pb-4">
       <PowerBlock />
-      <div className="bg-[#E5E7EB] py-20 md:py-32">
-        <div className="container-page">
-          <ServicePillars />
-        </div>
+      <div className="container-page">
+        <ServicePillars />
       </div>
     </div>
   );

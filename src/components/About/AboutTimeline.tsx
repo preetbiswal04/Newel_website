@@ -9,7 +9,7 @@ const timelineData = [
     year: "2015",
     label: "Inception",
     description: "It started with one person, one client, and one belief — that great technology partnerships are built on trust, not transactions. Newel took its first step with Edelweiss as its founding client, delivering a Commodity Warehouse project that set the tone for everything that followed. A one-person LLP with a big vision.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000",
+    image: "/culture-2.jpeg",
   },
   {
     year: "2016",
@@ -21,19 +21,19 @@ const timelineData = [
     year: "2017–20",
     label: "Augmentation",
     description: "Newel formalised into a Private Limited Company, stabilised at 20+ employees, and deepened relationships with 3 anchor clients. Headquartered in Mumbai, the foundation was being laid — delivery rigour, technical depth, and a culture of ownership that would define the company's identity.",
-    image: "https://images.unsplash.com/photo-1579389083046-e3df9c2b3325?auto=format&fit=crop&q=80&w=1000",
+    image: "/culture-5.jpeg",
   },
   {
-    year: "2020–23",
+    year: "2020-2024",
     label: "Focus & Growth",
     description: "This is where Newel found its stride. Power Automate, AI/ML, and RPA became core capabilities. Product development began. Transformation projects replaced transactional ones. Managed Services and Data Warehouse offerings took shape — moving Newel from a staffing-adjacent firm to a full-stack technology partner.",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000",
   },
   {
-    year: "2024–25",
-    label: "Today",
-    description: "Newel is an AI-first technology company with 100+ professionals, 20+ active clients, and a portfolio spanning 25+ RPA projects, 20+ app modernisation engagements, 50+ managed services contracts, and 5+ live AI/ML deployments. Partners include AWS, UiPath, GoTrust, PostgresPro, Ingram, and OutSystems. Recognised at the Enqube Industry Event for AI-Driven Risk & Compliance Innovation — Newel is no longer just growing, it's leading.",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
+    year: "2024-2026",
+    label: "Recognition",
+    description: "Recognized at the Enqube Industry Event for AI-Driven Risk & Compliance Innovation. Our platform enables lending and financial enterprises to improve compliance accuracy, accelerate decision-making, and reduce manual workloads. At Newel, we believe compliance should be smart, seamless, and effortless. Our focus remains unwavering — building responsible AI systems that help organizations navigate evolving regulatory landscapes with confidence.",
+    image: "/award-2026.png",
   },
 ];
 

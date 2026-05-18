@@ -6,30 +6,25 @@ import Image from "next/image";
 
 const LEADERS = [
   {
-    name: "Saurabh Singh",
-    role: "CEO & Director",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop",
+    name: "Mr. Pravin Narhe",
+    role: "CEO",
+    image: "/Pravin-Narhe.jpg",
   },
   {
-    name: "Sudeep Srivastava",
-    role: "Director & Co-founder",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop",
+    name: "Mr. Yogesh Wadile",
+    role: "Delivery Head",
+    image: "/YW.png",
   },
   {
-    name: "Prateek Saxena",
-    role: "Director & Co-founder",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop",
+    name: "Mr. Sachin Shinde",
+    role: "COO",
+    image: "/SS.png",
   },
   {
-    name: "Peeyush Singh",
-    role: "Director & Co-founder",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop",
+    name: "Mr. Vishwas Punekar",
+    role: "Director",
+    image: "/VP.jpeg",
   },
-  {
-    name: "Dileep Gupta",
-    role: "Director & Co-founder",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop",
-  }
 ];
 
 export const AboutLeadership = () => {
@@ -60,7 +55,7 @@ export const AboutLeadership = () => {
         </div>
 
         {/* Leaders Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-6 xl:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {LEADERS.map((leader, index) => (
             <motion.div 
               key={leader.name}
@@ -76,7 +71,7 @@ export const AboutLeadership = () => {
                   src={leader.image}
                   alt={leader.name}
                   fill
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
               </div>

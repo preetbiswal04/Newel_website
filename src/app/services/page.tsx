@@ -63,7 +63,7 @@ export default function AllServicesPage() {
               transition={{ delay: 0.1 }}
               className="text-6xl md:text-8xl font-black text-slate-950 tracking-tighter leading-none"
             >
-              Our <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Services & Solutions</span>
+              Our <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Services</span>
             </motion.h1>
             
             <motion.p 
@@ -78,26 +78,11 @@ export default function AllServicesPage() {
         </div>
       </section>
 
-      {/* ── Enterprise Solutions ── */}
-      <section className="py-24 bg-[#F3F4F6]">
-        <div className="container-page mx-auto">
-          <div className="flex items-center gap-6 mb-16">
-            <h2 className="text-2xl font-black text-slate-950 uppercase tracking-[0.3em] whitespace-nowrap">Enterprise Solutions</h2>
-            <div className="h-px flex-1 bg-gradient-to-r from-blue-500/50 to-transparent" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {SOLUTIONS_DATA[0].items.map((item, idx) => (
-              <ServiceCard key={item.id} item={item} type="solutions" index={idx} isDark={false} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Services Categories ── */}
-      {SERVICES_DATA.map((category, catIdx) => {
+      {SERVICES_DATA.filter(category => category.id !== "ai-data-solutions").map((category, catIdx) => {
         const isWhiteSection = catIdx % 2 === 0;
         return (
-          <section key={category.id} className={`py-32 ${isWhiteSection ? "bg-white text-black" : "bg-[#0c0c1d] text-white"}`}>
+          <section key={category.id} className={`py-16 ${isWhiteSection ? "bg-white text-black" : "bg-[#0c0c1d] text-white"}`}>
             <div className="container-page mx-auto">
               <div className="flex items-center gap-6 mb-16">
                 <h2 className={`text-2xl font-black uppercase tracking-[0.3em] whitespace-nowrap ${isWhiteSection ? "text-slate-900" : "text-white"}`}>
@@ -150,7 +135,7 @@ function ServiceCard({ item, type, index, isDark }: { item: any; type: string; i
     >
       <Link
         href={`/${type}/${item.slug}`}
-        className={`block h-full p-10 rounded-[40px] border transition-all duration-500 hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm ${
+        className={`block h-full p-6 rounded-[20px] border transition-all duration-500 hover:-translate-y-1 relative overflow-hidden backdrop-blur-sm ${
           isDark 
             ? "bg-white/[0.03] border-white/5 hover:bg-white/[0.07] hover:border-blue-500/30" 
             : "bg-slate-50 border-slate-200 hover:bg-white hover:shadow-2xl hover:shadow-black/5 hover:border-blue-600/30"
@@ -159,20 +144,20 @@ function ServiceCard({ item, type, index, isDark }: { item: any; type: string; i
         <div className={`absolute top-8 right-8 p-3 rounded-full transition-all duration-500 scale-75 group-hover:scale-100 opacity-0 group-hover:opacity-100 ${
           isDark ? "bg-blue-500/10 text-blue-400" : "bg-blue-600/10 text-blue-600"
         }`}>
-          <ArrowUpRight size={24} />
+          <ArrowUpRight size={18} />
         </div>
 
-        <div className="flex flex-col h-full gap-8 relative z-10">
-          <div className={`w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 shadow-2xl ${
+        <div className="flex flex-col h-full gap-4 relative z-10">
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-500 shadow-lg ${
             isDark 
               ? "bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white shadow-blue-500/10" 
               : "bg-blue-600/10 text-blue-600 group-hover:bg-blue-600 group-hover:text-white shadow-blue-600/10"
           }`}>
-            {ICON_MAP[item.icon] ?? <Layers size={32} />}
+            {ICON_MAP[item.icon] ? React.cloneElement(ICON_MAP[item.icon] as React.ReactElement, { size: 20 }) : <Layers size={20} />}
           </div>
           
           <div className="space-y-4">
-            <h3 className={`text-2xl font-bold transition-colors ${
+            <h3 className={`text-base font-bold transition-colors ${
               isDark ? "text-white group-hover:text-blue-400" : "text-slate-900 group-hover:text-blue-600"
             }`}>
               {item.title}
@@ -180,7 +165,7 @@ function ServiceCard({ item, type, index, isDark }: { item: any; type: string; i
             
             {/* Tagline */}
             <p className={`leading-relaxed font-medium text-sm ${
-              isDark ? "text-white/40" : "text-slate-500"
+              isDark ? "text-white/75" : "text-slate-500"
             }`}>
               {item.tagline}
             </p>
@@ -200,7 +185,7 @@ function ServiceCard({ item, type, index, isDark }: { item: any; type: string; i
             )}
           </div>
           
-          <div className={`mt-auto pt-8 flex items-center gap-3 font-black text-xs uppercase tracking-[0.2em] group-hover:gap-5 transition-all ${
+          <div className={`mt-auto pt-4 flex items-center gap-2 font-black text-xs uppercase tracking-[0.2em] group-hover:gap-4 transition-all ${
             isDark ? "text-blue-400" : "text-blue-600"
           }`}>
             Learn More

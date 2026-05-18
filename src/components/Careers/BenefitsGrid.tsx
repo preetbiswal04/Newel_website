@@ -34,27 +34,9 @@ const BENEFITS = [
       "Employees can easily save for the future through simple, automatic contributions.",
   },
   {
-    icon: <MapPin size={18} />,
-    title: "Hybrid work",
-    description:
-      "Most teams are in the office four days a week and work from home for the remaining day.",
-  },
-  {
     icon: <Users2 size={18} />,
     title: "Company events",
     description: "We're driven and we enjoy the ride — with year-round team events.",
-  },
-  {
-    icon: <Calendar size={18} />,
-    title: "Flexible PTO",
-    description:
-      "Flexible hours, PTO, and company-wide winter break shutdown.",
-  },
-  {
-    icon: <Eye size={18} />,
-    title: "Transparent culture",
-    description:
-      "By default, we keep things open and accessible to make better decisions together, faster.",
   },
   {
     icon: <Rocket size={18} />,
@@ -63,10 +45,10 @@ const BENEFITS = [
       "We offer a learning stipend to help you grow and achieve your goals.",
   },
   {
-    icon: <Coffee size={18} />,
-    title: "Free meals",
+    icon: <Eye size={18} />,
+    title: "Transparent culture",
     description:
-      "With lunch options every day, no need to work while you're hungry.",
+      "By default, we keep things open and accessible to make better decisions together, faster.",
   },
 ];
 

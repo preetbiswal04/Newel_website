@@ -56,21 +56,21 @@ export const TransformationSection = () => {
   }, [index]);
 
   return (
-    <section className="relative w-full py-24 bg-[#E5E7EB] overflow-hidden">
+    <section className="relative w-full py-12 md:py-16 bg-[#E5E7EB] overflow-hidden">
       <div className="container-page relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[2.5rem] md:text-[3.1rem] lg:text-[4.5rem] font-bold leading-[1.06] tracking-[-0.03em] text-slate-950"
+            className="text-[2rem] md:text-[2.5rem] lg:text-[3.5rem] font-bold leading-[1.1] tracking-[-0.02em] text-slate-950"
           >
             <span className="font-medium text-slate-900">Beyond Development.</span><br />
             <span className="text-blue-600">We Deliver Transformation.</span>
           </motion.h2>
         </div>
 
-        <div className="relative flex items-center justify-center min-h-[500px] md:min-h-[650px]">
+        <div className="relative flex items-center justify-center">
           {/* Navigation Arrows */}
           <button 
             onClick={prev}
@@ -87,7 +87,7 @@ export const TransformationSection = () => {
           </button>
 
           {/* Stacked Cards Container */}
-          <div className="relative w-full max-w-4xl h-[450px] md:h-[550px] flex items-center justify-center">
+          <div className="relative w-full max-w-5xl h-[320px] md:h-[380px] flex items-center justify-center">
             <AnimatePresence mode="popLayout">
               {CARDS.map((card, i) => {
                 const isCenter = i === index;
@@ -99,17 +99,17 @@ export const TransformationSection = () => {
                 return (
                   <motion.div
                     key={card.id}
-                    initial={{ opacity: 0, scale: 0.8, x: isLeft ? -200 : isRight ? 200 : 0 }}
+                    initial={{ opacity: 0, scale: 0.8, x: isLeft ? -250 : isRight ? 250 : 0 }}
                     animate={{
                       opacity: isCenter ? 1 : 0.4,
                       scale: isCenter ? 1 : 0.85,
-                      x: isCenter ? 0 : isLeft ? -150 : 150,
+                      x: isCenter ? 0 : isLeft ? -220 : 220,
                       zIndex: isCenter ? 30 : 10,
-                      rotateY: isCenter ? 0 : isLeft ? 15 : -15,
+                      rotateY: isCenter ? 0 : isLeft ? 12 : -12,
                     }}
                     exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.3 } }}
                     transition={{ type: "spring", stiffness: 260, damping: 25 }}
-                    className="absolute w-[85%] md:w-[600px] h-full"
+                    className="absolute w-[85%] md:w-[500px] h-full"
                   >
                     <Link href={card.href} className="block w-full h-full">
                       <div className="w-full h-full rounded-[2.5rem] bg-white shadow-[0_40px_100px_rgba(0,0,0,0.12)] border border-white overflow-hidden flex flex-col group cursor-pointer">
@@ -147,7 +147,7 @@ export const TransformationSection = () => {
         </div>
 
         {/* Indicator Dots */}
-        <div className="flex justify-center gap-3 mt-12">
+        <div className="flex justify-center gap-3 mt-8">
           {CARDS.map((_, i) => (
             <button
               key={i}
@@ -159,7 +159,7 @@ export const TransformationSection = () => {
           ))}
         </div>
 
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-8">
           <Link href="/services">
             <Button variant="primary" size="lg" className="min-w-[240px] bg-[#002D72] text-white">
               View All Services

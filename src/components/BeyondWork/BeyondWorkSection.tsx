@@ -16,8 +16,7 @@ export const BeyondWorkSection = () => {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-start gap-8"
         >
-          <span className="text-blue-500 font-bold tracking-[0.2em] uppercase text-sm">Our Culture</span>
-          
+
           <div className="flex flex-col w-full gap-4 md:gap-6">
             <h2 className="text-[18vw] md:text-[22vw] font-black text-white leading-[0.85] tracking-[-0.05em] uppercase">
               BEYOND

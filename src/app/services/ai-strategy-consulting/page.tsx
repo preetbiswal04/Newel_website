@@ -183,7 +183,7 @@ export default function AIStrategyPage() {
                   <img 
                     src="/Ai-Strategy-ANd-Consulting.png" 
                     alt="AI Strategy" 
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-700"
+                    className="w-full h-full object-cover grayscale brightness-50"
                   />
                   <div className="absolute inset-0 flex items-center justify-center z-20">
                     <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">

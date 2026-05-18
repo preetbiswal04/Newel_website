@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const BottomCTA = () => {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-8 md:py-12">
       <div className="container-page">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

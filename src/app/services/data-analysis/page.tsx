@@ -186,7 +186,7 @@ export default function DataAnalysisPage() {
                   <img 
                     src="/Data-Analysis.png" 
                     alt="Data Analysis" 
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-700"
+                    className="w-full h-full object-cover grayscale brightness-50"
                   />
 
                 </div>

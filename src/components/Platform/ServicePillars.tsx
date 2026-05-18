@@ -20,7 +20,7 @@ const Pillar = ({ icon, title, description, index }: PillarProps) => (
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
     whileHover={{ y: -8, scale: 1.02 }}
-    className="group flex flex-col gap-6 p-8 rounded-[24px] bg-white border border-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.03)] transition-all duration-500 cursor-pointer hover:bg-white hover:border-blue-400 hover:shadow-[0_40px_80px_rgba(51,76,149,0.12)]"
+    className="group flex flex-col gap-5 p-6 rounded-[20px] bg-white border border-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.03)] transition-all duration-500 cursor-pointer hover:bg-white hover:border-blue-400 hover:shadow-[0_40px_80px_rgba(51,76,149,0.12)]"
   >
     {/* ICON */}
     <motion.div
@@ -34,17 +34,17 @@ const Pillar = ({ icon, title, description, index }: PillarProps) => (
         duration: 0.5,
         ease: "easeInOut",
       }}
-      className="w-14 h-14 flex items-center justify-center rounded-2xl bg-blue-50 border border-blue-100 text-blue-600 shadow-sm"
+      className="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-50 border border-blue-100 text-blue-600 shadow-sm"
     >
       {icon}
     </motion.div>
 
     {/* TEXT */}
-    <div className="flex flex-col gap-3">
-      <h3 className="text-xl font-bold text-[#002D72] tracking-tight group-hover:text-blue-700 transition-colors duration-300">
+    <div className="flex flex-col gap-2">
+      <h3 className="text-lg font-bold text-[#002D72] tracking-tight group-hover:text-blue-700 transition-colors duration-300">
         {title}
       </h3>
-      <p className="text-slate-600 text-[0.95rem] font-medium leading-relaxed">
+      <p className="text-slate-600 text-[0.85rem] font-medium leading-relaxed">
         {description}
       </p>
     </div>
@@ -80,7 +80,7 @@ export const ServicePillars = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-6">
       {/* GRID */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
         {PILLARS.map((pillar, idx) => (
@@ -95,8 +95,8 @@ export const ServicePillars = () => {
       </div>
 
       {/* BUTTON */}
-      <div className="flex justify-center pb-8">
-        <Button variant="primary" size="lg" href="/services">
+      <div className="flex justify-center">
+        <Button variant="primary" size="md" href="/services">
           Explore the platform
         </Button>
       </div>

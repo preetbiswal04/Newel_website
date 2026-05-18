@@ -8,29 +8,30 @@ import { ArrowLeft, ArrowRight, Quote } from "lucide-react";
 const TESTIMONIALS = [
   {
     id: 1,
-    name: "Sumit Kumar",
-    role: "Frontend Developer",
-    quote: "The organisation-wide policies have helped me plan my personal life better, which, in return, motivates me to do more at work.",
-    smallImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop",
-    largeImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+    name: "Alekhya",
+    role: "Business Analyst",
+    quote: "Joining Newel Technologies as a fresher has been a great learning experience for me. The organization has provided the right guidance, opportunities, and exposure that helped me grow professionally and build confidence as a Business Analyst.",
+    smallImage: "/Alekhya-emp.jpg",
+    largeImage: "/Alekhya-emp.jpg",
     tech: [
-      { name: "H5", bg: "bg-[#E34F26]", color: "text-white" },
-      { name: "C3", bg: "bg-[#1572B6]", color: "text-white" },
-      { name: "JS", bg: "bg-[#F7DF1E]", color: "text-black" },
-      { name: "⚛", bg: "bg-[#282C34]", color: "text-[#61DAFB]", textClass: "text-xl" }
+      { name: "SQL", bg: "bg-[#E34F26]", color: "text-white", textClass: "text-xs md:text-sm" },
+      { name: "Jira", bg: "bg-[#1572B6]", color: "text-white", textClass: "text-xs md:text-sm" },
+      { name: "PBI", bg: "bg-[#F7DF1E]", color: "text-black", textClass: "text-xs md:text-sm" },
+      { name: "Agile", bg: "bg-[#282C34]", color: "text-[#61DAFB]", textClass: "text-xs" }
     ]
   },
   {
     id: 2,
-    name: "Priya Sharma",
-    role: "Cloud Architect",
-    quote: "Newel provides an environment where innovation isn't just encouraged, it's expected. I've had the freedom to architect solutions that truly make an impact.",
-    smallImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop",
-    largeImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
+    name: "Junaid",
+    role: "Developer",
+    quote: "Newel Technologies didn't just give me a role it gave me a career. Every project, every challenge, every late night is building the engineer I'm becoming.",
+    smallImage: "/janaid-emp.jpg",
+    largeImage: "/janaid-emp.jpg",
     tech: [
-      { name: "AWS", bg: "bg-[#FF9900]", color: "text-black", textClass: "text-xs" },
-      { name: "K8s", bg: "bg-[#326CE5]", color: "text-white", textClass: "text-xs" },
-      { name: "TF", bg: "bg-[#844FBA]", color: "text-white", textClass: "text-xs" }
+      { name: "Next", bg: "bg-[#000000]", color: "text-white", textClass: "text-xs md:text-sm" },
+      { name: "React", bg: "bg-[#61DAFB]", color: "text-black", textClass: "text-xs md:text-sm" },
+      { name: "Node", bg: "bg-[#339933]", color: "text-white", textClass: "text-xs md:text-sm" },
+      { name: "PSQL", bg: "bg-[#336791]", color: "text-white", textClass: "text-xs" }
     ]
   }
 ];

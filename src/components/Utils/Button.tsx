@@ -51,7 +51,7 @@ export const Button: React.FC<ButtonProps> = ({
       whileHover={disabled ? {} : { y: -2, scale: 1.02 }}
       whileTap={disabled ? {} : { scale: 0.98 }}
       className={cn(
-        "group relative inline-flex items-center justify-center gap-3 rounded-xl font-bold transition-all duration-300 overflow-hidden cursor-pointer whitespace-nowrap",
+        "group relative inline-flex items-center justify-center gap-3 rounded-xl font-bold transition-all duration-300 overflow-hidden cursor-pointer whitespace-nowrap border-none outline-none focus:outline-none focus:ring-0",
         variantStyles[variant],
         sizeStyles[size],
         disabled && "opacity-50 cursor-not-allowed grayscale",
@@ -88,7 +88,7 @@ export const Button: React.FC<ButtonProps> = ({
   );
 
   if (href && !disabled) {
-    return <Link href={href} className="inline-block">{content}</Link>;
+    return <Link href={href} className="inline-block border-none outline-none focus:outline-none focus:ring-0">{content}</Link>;
   }
 
   return (

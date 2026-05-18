@@ -186,7 +186,7 @@ export default function AISolutionsPage() {
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-75 transition-all duration-700"
+                    className="w-full h-full object-cover grayscale brightness-50"
                   >
                     <source src="/AI-vd-1.mp4" type="video/mp4" />
                   </video>

@@ -26,9 +26,9 @@ export default function AboutUs() {
       <AboutResponsibilities />
       <AboutDivisions />
       <AboutEmployeeTestimonials />
+      <BeyondWorkSection />
       <AboutEnergy />
       <AboutLeadership />
-      <BeyondWorkSection />
     </main>
   );
 }
