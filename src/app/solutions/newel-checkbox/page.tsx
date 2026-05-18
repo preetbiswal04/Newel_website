@@ -97,7 +97,7 @@ export default function NewelCheckBoxPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black text-white selection:bg-cyan-500/30 selection:text-cyan-200 overflow-hidden">
+    <main className="min-h-screen bg-zinc-800 text-white selection:bg-cyan-500/30 selection:text-cyan-200 overflow-hidden">
       {/* ── Section 1: Hero ── */}
       <section className="relative w-full min-h-screen flex items-center pt-20">
         <div className="absolute inset-0">
@@ -130,40 +130,47 @@ export default function NewelCheckBoxPage() {
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-6"
-            >
-               <div className="p-1 rounded-2xl bg-gradient-to-r from-cyan-500 to-emerald-500 shadow-2xl shadow-cyan-500/20">
-                  <div className="bg-white text-black px-10 py-5 rounded-xl font-black text-lg flex items-center gap-3 hover:bg-transparent hover:text-white transition-all duration-300">
-                    <Link href="/contact" className="flex items-center gap-3">
-                      Start Your Trial <ChevronRight size={20} />
-                    </Link>
-                  </div>
-               </div>
-            </motion.div>
+
           </div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotateX: 10 }}
-            animate={{ opacity: 1, scale: 1, rotateX: 0 }}
+            initial={{ opacity: 0, scale: 0.8, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="lg:w-1/2"
+            className="lg:w-1/2 relative"
           >
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-3xl blur opacity-20 group-hover:opacity-30 transition"></div>
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/60">
+            <div className="relative w-full max-w-[550px] mx-auto lg:ml-auto">
+              {/* Outer Glow Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-3xl blur opacity-25" />
+
+              {/* Main Underlying Mockup (checkbox-1.png) */}
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/80 w-[90%] z-10 bg-zinc-900">
                 <img 
-                  src="/newel-checkbox-dashboard.png" 
-                  alt="Newel CheckBox Dashboard" 
-                  className="w-full h-auto"
+                  src="/checkbox-1.png" 
+                  alt="Newel CheckBox Interface" 
+                  className="w-full h-auto object-cover"
                   onError={(e) => {
                     e.currentTarget.src = "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&q=80&w=1000";
                   }}
                 />
               </div>
+
+              {/* Overlapping Mockup (checkbox-2 (2).png) */}
+              <motion.div 
+                initial={{ opacity: 0, x: 50, y: 50 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="absolute -bottom-10 right-0 w-[55%] z-20 rounded-2xl overflow-hidden border border-white/15 shadow-2xl shadow-black/90 bg-zinc-800"
+              >
+                <img 
+                  src="/checkbox-2 (2).png" 
+                  alt="Newel CheckBox Details" 
+                  className="w-full h-auto object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=1000";
+                  }}
+                />
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -178,7 +185,7 @@ export default function NewelCheckBoxPage() {
                 <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mt-6">
                   Operational Tasks Are <br /> Falling Through <br /> the Cracks
                 </h2>
-                <p className="text-white/50 text-lg mt-8 leading-relaxed max-w-lg">
+                <p className="text-white/80 text-lg mt-8 leading-relaxed max-w-lg">
                   Most teams run on WhatsApp and Excel. Tasks get missed. Deadlines slip. No one knows who owns what. Newel CheckBox brings order to the chaos.
                 </p>
              </div>
@@ -199,7 +206,7 @@ export default function NewelCheckBoxPage() {
                      </div>
                      <div>
                        <h3 className="text-xl font-bold mb-3">{prob.title}</h3>
-                       <p className="text-white/40 text-sm leading-relaxed">{prob.desc}</p>
+                       <p className="text-white/75 text-sm leading-relaxed">{prob.desc}</p>
                      </div>
                    </div>
                  </motion.div>
@@ -231,7 +238,7 @@ export default function NewelCheckBoxPage() {
                   {feat.icon}
                 </div>
                 <h3 className="text-lg font-bold mb-4">{feat.title}</h3>
-                <p className="text-white/40 text-xs leading-relaxed">{feat.desc}</p>
+                <p className="text-white/70 text-xs leading-relaxed">{feat.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -258,7 +265,7 @@ export default function NewelCheckBoxPage() {
                {targets.map((target, idx) => (
                  <div key={idx} className="p-10 rounded-[32px] bg-white/[0.05] border border-white/10 hover:bg-cyan-500 hover:text-black transition-all duration-500 group">
                     <h4 className="text-2xl font-black mb-4">{target.title}</h4>
-                    <p className="text-white/40 group-hover:text-black/70 text-sm leading-relaxed">{target.desc}</p>
+                    <p className="text-white/70 group-hover:text-black/70 text-sm leading-relaxed">{target.desc}</p>
                  </div>
                ))}
             </div>
@@ -290,7 +297,7 @@ export default function NewelCheckBoxPage() {
                       <ShieldCheck size={24} />
                    </div>
                    <h3 className="text-xl font-bold">{item.title}</h3>
-                   <p className="text-white/40 text-sm leading-relaxed">{item.desc}</p>
+                   <p className="text-white/75 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               ))}
            </div>

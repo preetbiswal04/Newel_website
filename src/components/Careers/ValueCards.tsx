@@ -33,8 +33,14 @@ const VALUES = [
 
 export const ValueCards = () => {
   return (
-    <section className="pb-24 md:pb-32">
+    <section className="py-16 md:py-24">
       <div className="container-page">
+        {/* Section Heading */}
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-[32px] font-bold text-gray-900 tracking-tight">
+            Our values
+          </h2>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {VALUES.map((value, idx) => (
             <motion.div

@@ -15,15 +15,15 @@ export default function CareersPage() {
     <main className="w-full min-h-screen relative overflow-hidden">
       <section className="relative pt-12 md:pt-16">
         <CareersHero />
-        <div className="h-[100px] w-full" />
-        <ValueCards />
-        <div className="h-[100px] w-full" />
-        <BenefitsGrid />
-        <div className="h-[100px] w-full" />
+        <div className="h-[60px] w-full" />
         <JobBoard />
-        <div className="h-[100px] w-full" />
+        <div className="h-[60px] w-full" />
+        <ValueCards />
+        <div className="h-[60px] w-full" />
+        <BenefitsGrid />
+        <div className="h-[60px] w-full" />
         <BottomCTA />
-        <div className="h-[100px] w-full" />
+        <div className="h-[60px] w-full" />
       </section>
     </main>
   );

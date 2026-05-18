@@ -48,20 +48,8 @@ export const Footer = () => {
       "Home",
       "About Us",
       "Services",
-      "Industries",
       "Careers",
       "Contact Us"
-    ],
-    industries: [
-      "BFSI",
-      "Retails",
-      "EPC (Engineering, Procurement & Construction)",
-      "Oil & GAS",
-      "Infrastructure",
-      "Chemical",
-      "Healthcare",
-      "Defence",
-      "Renewable Energy"
     ]
   };
 
@@ -81,7 +69,7 @@ export const Footer = () => {
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-600/[0.05] blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container-page relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 mb-20">
           
           {/* Column 1: Contact Info */}
           <div className="flex flex-col gap-8">
@@ -178,19 +166,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Industries */}
-          <div>
-            <h4 className="text-lg font-bold text-white border-white/20 mb-8 uppercase tracking-widest border-b-2 pb-2 inline-block">Industries</h4>
-            <ul className="space-y-4">
-              {footerLinks.industries.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-white/60 hover:text-white hover:translate-x-1 flex items-center gap-2 transition-all text-sm font-medium">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+
 
         </div>
 

@@ -69,7 +69,6 @@ const GridCard = ({ item }: { item: any }) => {
 
         {/* Content that slides up on hover */}
         <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-          <p className="text-white/50 text-[11px] font-medium mb-1">{item.client}</p>
           <h3 className="font-poppins font-semibold text-white text-[15px] leading-snug">
             {item.innerTitle || item.title}
           </h3>

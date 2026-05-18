@@ -13,7 +13,7 @@ export const CareersHero = () => {
   };
 
   return (
-    <section className="relative pt-24 pb-8 md:pt-28 md:pb-12">
+    <section className="relative pt-24 pb-0 md:pt-28 md:pb-0">
       <div className="container-page">
         {/* Main Hero Card Container */}
         <div className="relative w-full aspect-[21/9] md:aspect-[2.8/1] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl flex items-center justify-center">
@@ -66,13 +66,6 @@ export const CareersHero = () => {
               </button>
             </motion.div>
           </div>
-        </div>
-
-        {/* Section Heading Below Hero (Matches Screenshot) */}
-        <div className="mt-20 mb-10">
-          <h2 className="text-2xl md:text-[32px] font-bold text-gray-900 tracking-tight">
-            Our values
-          </h2>
         </div>
       </div>
     </section>

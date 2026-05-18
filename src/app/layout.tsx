@@ -42,6 +42,8 @@ export const metadata: Metadata = {
   description: "Replicating the premium feel of McKinsey/QuantumBlack for the next generation of enterprises.",
 };
 
+import { ScrollToTop } from "@/components/Utils/ScrollToTop";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,6 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full scroll-smooth">
       <body className={`${inter.variable} ${roboto.variable} ${dmSerif.variable} ${poppins.variable} ${plusJakarta.variable} font-sans antialiased relative bg-white`}>
+        <ScrollToTop />
         <Navbar />
         {children}
         <Footer />

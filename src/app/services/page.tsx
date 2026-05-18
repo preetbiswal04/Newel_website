@@ -43,25 +43,36 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 export default function AllServicesPage() {
   return (
     <main className="min-h-screen bg-[#F3F4F6] overflow-hidden">
-      {/* ── Hero Section (Light Grey) ── */}
-      <section className="pt-48 pb-32 bg-[#F3F4F6] text-slate-900 relative">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 blur-[140px] rounded-full -translate-y-1/2 translate-x-1/4" />
+      {/* ── Hero Section (BG Image) ── */}
+      <section
+        className="pt-48 pb-32 text-white relative overflow-hidden"
+        style={{
+          backgroundImage: "url('/service-bg-img.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-[#030b1a]/75 z-0" />
+        {/* Subtle blue glow */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 blur-[140px] rounded-full -translate-y-1/2 translate-x-1/4 z-0" />
+
         <div className="container-page mx-auto relative z-10">
           <div className="max-w-4xl space-y-6">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 border border-blue-400/30 backdrop-blur-md"
             >
               <Sparkles size={16} className="text-blue-400" />
-              <span className="text-xs font-black uppercase tracking-[0.2em] text-blue-600">Our Expertise</span>
+              <span className="text-xs font-black uppercase tracking-[0.2em] text-blue-300">Our Expertise</span>
             </motion.div>
             
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-8xl font-black text-slate-950 tracking-tighter leading-none"
+              className="text-6xl md:text-8xl font-black text-white tracking-tighter leading-none"
             >
               Our <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Services</span>
             </motion.h1>
@@ -70,7 +81,7 @@ export default function AllServicesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-500 max-w-2xl font-medium"
+              className="text-xl text-white/70 max-w-2xl font-medium"
             >
               Comprehensive technology solutions designed to power your digital transformation journey with precision and scale.
             </motion.p>

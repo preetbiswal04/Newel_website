@@ -15,15 +15,15 @@ export default function SolutionsPage() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/solutions-home-page (2).jpg"
+          src="/solutions-home-page (3).jpg"
           alt="Solutions Background"
           fill
           className="object-cover object-center"
           priority
         />
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-slate-950/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
+        <div className="absolute inset-0 bg-slate-950/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-75" />
       </div>
 
       <div className="container-page mx-auto relative z-10">
@@ -35,7 +35,7 @@ export default function SolutionsPage() {
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight drop-shadow-xl text-white">
             Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 font-bold">Solutions</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/80 leading-relaxed max-w-2xl font-light drop-shadow-md">
+          <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-2xl font-medium drop-shadow-md">
             Scalable, secure, and purpose-built platforms designed to transform complex operational and compliance workflows for modern enterprises.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function SolutionsPage() {
                     <Sparkles size={28} />
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white drop-shadow-sm">{item.title}</h2>
-                  <p className="text-white/70 text-lg leading-relaxed max-w-sm font-light">
+                  <p className="text-white/90 text-lg leading-relaxed max-w-sm font-medium">
                     {item.tagline}
                   </p>
                   <Link 

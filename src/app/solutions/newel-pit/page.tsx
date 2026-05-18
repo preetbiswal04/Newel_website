@@ -139,7 +139,7 @@ export default function NewelPITPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-black selection:bg-cyan-500/30 selection:text-cyan-200 overflow-hidden">
+    <main className="min-h-screen bg-zinc-800 selection:bg-cyan-500/30 selection:text-cyan-200 overflow-hidden text-white">
       {/* ── Section 1: Hero (Matching SS Layout) ── */}
       <section className="relative w-full min-h-screen flex items-center pt-20">
         <div className="absolute inset-0 z-0">
@@ -174,46 +174,52 @@ export default function NewelPITPage() {
             </motion.div>
           </div>
 
-          {/* Right: Dashboard Image */}
+          {/* Right: Overlapping Mockups */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, rotateY: -10 }}
-            animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+            initial={{ opacity: 0, scale: 0.8, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="lg:w-1/2 relative perspective-1000"
+            className="lg:w-1/2 relative"
           >
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
+            <div className="relative w-full max-w-[550px] mx-auto lg:ml-auto">
+              {/* Outer Glow Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-3xl blur opacity-25" />
+
+              {/* Main Underlying Mockup (PIT_NEWEL.png) */}
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/80 w-[90%] z-10 bg-zinc-900">
                 <img 
-                  src="/newel-pit-dashboard.png" 
-                  alt="Newel PIT Dashboard" 
-                  className="w-full h-auto shadow-inner"
+                  src="/PIT_NEWEL.png" 
+                  alt="Newel PIT Interface" 
+                  className="w-full h-auto object-cover"
                   onError={(e) => {
-                    // Fallback to a placeholder if the image fails
                     e.currentTarget.src = "https://images.unsplash.com/photo-1551288049-bbda38a5f452?auto=format&fit=crop&q=80&w=1000";
                   }}
                 />
               </div>
-              
-              {/* Floating badges */}
-              <div className="absolute -top-6 -right-6 p-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl hidden md:block">
-                 <div className="flex items-center gap-3">
-                   <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
-                      <CheckCircle2 size={24} />
-                   </div>
-                   <div>
-                      <p className="text-[10px] font-black uppercase text-white/50">Status</p>
-                      <p className="text-sm font-bold">100% Compliant</p>
-                   </div>
-                 </div>
-              </div>
+
+              {/* Overlapping Mockup (PIT_Newel-2.png) */}
+              <motion.div 
+                initial={{ opacity: 0, x: 50, y: 50 }}
+                animate={{ opacity: 1, x: 0, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="absolute -bottom-10 right-0 w-[55%] z-20 rounded-2xl overflow-hidden border border-white/15 shadow-2xl shadow-black/90 bg-zinc-800"
+              >
+                <img 
+                  src="/PIT_Newel-2.png" 
+                  alt="Newel PIT Details" 
+                  className="w-full h-auto object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1000";
+                  }}
+                />
+              </motion.div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* ── Section 2: The Problem ── */}
-      <section className="py-32 bg-black">
+      <section className="py-32 bg-zinc-950/50">
         <div className="container-page mx-auto">
           <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="lg:w-1/2 space-y-6">
@@ -221,7 +227,7 @@ export default function NewelPITPage() {
               <h2 className="text-4xl md:text-6xl font-black text-white leading-tight">
                 PIT Compliance Is Broken <br /> When It's Manual
               </h2>
-              <p className="text-white/60 text-lg leading-relaxed">
+              <p className="text-white/80 text-lg leading-relaxed">
                 SEBI's PIT Regulations carry penalties of up to ₹25 Cr. Yet most manage it through spreadsheets — leaving them exposed to operational blind spots.
               </p>
             </div>
@@ -240,7 +246,7 @@ export default function NewelPITPage() {
                     {point.icon}
                   </div>
                   <h3 className="text-xl font-bold mb-3">{point.title}</h3>
-                  <p className="text-white/40 text-sm leading-relaxed">{point.desc}</p>
+                  <p className="text-white/75 text-sm leading-relaxed">{point.desc}</p>
                 </motion.div>
               ))}
             </div>

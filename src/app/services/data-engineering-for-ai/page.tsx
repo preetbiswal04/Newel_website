@@ -183,11 +183,7 @@ export default function DataEngineeringPage() {
                     alt="Data Engineering" 
                     className="w-full h-full object-cover grayscale brightness-50"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center z-20">
-                    <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                       <Database className="w-10 h-10 text-cyan-400" />
-                    </div>
-                  </div>
+
                 </div>
                 {/* Decorative element */}
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500/20 blur-3xl rounded-full" />

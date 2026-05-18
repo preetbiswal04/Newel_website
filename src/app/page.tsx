@@ -15,6 +15,10 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center w-full bg-transparent">
       <HeroSection />
+      
+      <div className="w-full">
+        <OnePlatform />
+      </div>
 
       <div className="w-full">
         <div className="w-full">
@@ -29,7 +33,6 @@ export default function Home() {
         <PlatformSection />
         <IndustriesSection />
         <WhyNewel />
-        <OnePlatform />
         <PartnersSection />
 
 

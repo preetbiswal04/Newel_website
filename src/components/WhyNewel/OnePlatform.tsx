@@ -1,63 +1,66 @@
 "use client";
 
 import React from "react";
-import { User, ShieldCheck, ArrowRight, Cpu, Users } from "lucide-react";
+import { User, ShieldCheck, Cpu, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/Utils/Button";
+import Link from "next/link";
 
 type CardProps = {
   title: string;
   desc: string;
   icon: React.ReactNode;
   color: string;
+  href: string;
   align?: "left" | "right";
   className?: string;
 };
 
-const Card = ({ title, desc, icon, color, align = "left", className = "" }: CardProps) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
-    className={cn(
-      "relative flex min-h-[240px] w-full max-w-[290px] flex-col lg:min-h-[220px] lg:max-w-[320px]",
-      "rounded-[24px] border border-slate-200 bg-white p-5 pt-12 md:p-6 md:pt-14",
-      "shadow-[0_20px_50px_rgba(51,76,149,0.08)] transition-all duration-700",
-      "hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(51,76,149,0.15)] group",
-      className
-    )}
-  >
-    {/* ICON Container with premium gradient */}
-    <div
-      className="absolute -top-8 left-10 flex h-16 w-16 items-center justify-center 
-      rounded-2xl text-white shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-2xl"
-      style={{
-        background: `linear-gradient(135deg, ${color}, ${color}dd)`,
-        boxShadow: `0 12px 24px ${color}33`
-      }}
+const Card = ({ title, desc, icon, color, href, align = "left", className = "" }: CardProps) => (
+  <Link href={href} className="block w-full max-w-[290px] lg:max-w-[320px]">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className={cn(
+        "relative flex min-h-[240px] w-full flex-col lg:min-h-[220px]",
+        "rounded-[24px] border border-slate-200 bg-white p-5 pt-12 md:p-6 md:pt-14",
+        "shadow-[0_20px_50px_rgba(51,76,149,0.08)] transition-all duration-700",
+        "hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(51,76,149,0.15)] group cursor-pointer",
+        className
+      )}
     >
-      {icon}
-    </div>
-
-    {/* Card Content */}
-    <div className="flex h-full flex-col gap-4 text-left">
-      <h3 className="text-lg md:text-xl font-bold leading-tight text-[#002D72] group-hover:text-blue-600 transition-colors">
-        {title}
-      </h3>
-
-      <p className="text-[13px] md:text-[14px] leading-relaxed text-slate-500 font-medium">
-        {desc}
-      </p>
-
-      <div className="mt-auto pt-4">
-        <Button variant="ghost" size="sm" className="px-0 hover:bg-transparent text-blue-600 group-hover:text-blue-800 font-bold tracking-wider">
-          LEARN MORE →
-        </Button>
+      {/* ICON Container with premium gradient */}
+      <div
+        className="absolute -top-8 left-10 flex h-16 w-16 items-center justify-center 
+        rounded-2xl text-white shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-2xl"
+        style={{
+          background: `linear-gradient(135deg, ${color}, ${color}dd)`,
+          boxShadow: `0 12px 24px ${color}33`
+        }}
+      >
+        {icon}
       </div>
-    </div>
-  </motion.div>
+
+      {/* Card Content */}
+      <div className="flex h-full flex-col gap-4 text-left">
+        <h3 className="text-lg md:text-xl font-bold leading-tight text-[#002D72] group-hover:text-blue-600 transition-colors">
+          {title}
+        </h3>
+
+        <p className="text-[13px] md:text-[14px] leading-relaxed text-slate-500 font-medium">
+          {desc}
+        </p>
+
+        <div className="mt-auto pt-4">
+          <div className="inline-flex items-center gap-1 text-sm font-bold tracking-wider text-blue-600 group-hover:text-blue-800 transition-colors">
+            LEARN MORE →
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  </Link>
 );
 
 export const OnePlatform = () => {
@@ -79,6 +82,7 @@ export const OnePlatform = () => {
                 desc="Newel gives you AI-driven visibility and automation to make faster decisions, stay compliant, and scale operations — without adding headcount."
                 icon={<User size={28} />}
                 color="#3b82f6"
+                href="/case-studies/qrc-classification-ai"
               />
             </div>
 
@@ -97,12 +101,14 @@ export const OnePlatform = () => {
                 desc="Automate your PIT compliance, QRC classification, and audit workflows — so your team manages exceptions, not processes."
                 icon={<Users size={28} />}
                 color="#a855f7"
+                href="/case-studies/qrc-classification-ai"
               />
               <Card
                 title="IT & Infrastructure Leaders"
                 desc="One partner for your full stack — Cloud, Database, OS, Middleware, and Applications — with SLA-backed managed services and zero finger-pointing."
                 icon={<ShieldCheck size={28} />}
                 color="#8b5cf6"
+                href="/case-studies/aws-cloud"
               />
             </div>
           </div>
@@ -132,6 +138,7 @@ export const OnePlatform = () => {
                 desc="Newel gives you AI-driven visibility and automation to make faster decisions, stay compliant, and scale operations — without adding headcount."
                 icon={<User size={28} />}
                 color="#3b82f6"
+                href="/case-studies/qrc-classification-ai"
               />
             </div>
 
@@ -141,6 +148,7 @@ export const OnePlatform = () => {
                 desc="Automate your PIT compliance, QRC classification, and audit workflows — so your team manages exceptions, not processes."
                 icon={<Users size={28} />}
                 color="#a855f7"
+                href="/case-studies/qrc-classification-ai"
               />
             </div>
 
@@ -150,6 +158,7 @@ export const OnePlatform = () => {
                 desc="One partner for your full stack — Cloud, Database, OS, Middleware, and Applications — with SLA-backed managed services and zero finger-pointing."
                 icon={<ShieldCheck size={28} />}
                 color="#8b5cf6"
+                href="/case-studies/aws-cloud"
               />
             </div>
           </div>
