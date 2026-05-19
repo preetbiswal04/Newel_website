@@ -23,21 +23,22 @@ import {
   ChevronRight,
   Check
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 
-const ICON_MAP: Record<string, React.ReactNode> = {
-  Cloud: <Cloud size={32} />,
-  Shield: <Shield size={32} />,
-  Network: <Network size={32} />,
-  Layers: <Layers size={32} />,
-  Zap: <Zap size={32} />,
-  Database: <Database size={32} />,
-  Cpu: <Cpu size={32} />,
-  Activity: <Activity size={32} />,
-  Briefcase: <Briefcase size={32} />,
-  Search: <Search size={32} />,
-  CheckCircle: <CheckCircle size={32} />,
-  Sparkles: <Sparkles size={32} />,
+const ICON_MAP: Record<string, LucideIcon> = {
+  Cloud,
+  Shield,
+  Network,
+  Layers,
+  Zap,
+  Database,
+  Cpu,
+  Activity,
+  Briefcase,
+  Search,
+  CheckCircle,
+  Sparkles,
 };
 
 export default function AllServicesPage() {
@@ -136,6 +137,8 @@ export default function AllServicesPage() {
 }
 
 function ServiceCard({ item, type, index, isDark }: { item: any; type: string; index: number, isDark: boolean }) {
+  const Icon = ICON_MAP[item.icon] ?? Layers;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -164,7 +167,7 @@ function ServiceCard({ item, type, index, isDark }: { item: any; type: string; i
               ? "bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white shadow-blue-500/10" 
               : "bg-blue-600/10 text-blue-600 group-hover:bg-blue-600 group-hover:text-white shadow-blue-600/10"
           }`}>
-            {ICON_MAP[item.icon] ? React.cloneElement(ICON_MAP[item.icon] as React.ReactElement, { size: 20 }) : <Layers size={20} />}
+            <Icon size={20} />
           </div>
           
           <div className="space-y-4">
