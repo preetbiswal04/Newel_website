@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[70283,["/_next/static/chunks/133rq7uo7d2_0.js","/_next/static/chunks/0z_8x7jii1i-y.js","/_next/static/chunks/0ks10v7qe852l.js","/_next/static/chunks/0nfw1hf06zc~w.js","/_next/static/chunks/0l5s68az7cg9y.js"],"CaseStudyHero"]
+3:I[72319,["/_next/static/chunks/133rq7uo7d2_0.js","/_next/static/chunks/0z_8x7jii1i-y.js","/_next/static/chunks/0ks10v7qe852l.js","/_next/static/chunks/0nfw1hf06zc~w.js","/_next/static/chunks/0l5s68az7cg9y.js"],"CaseStudyGrid"]
+4:I[36528,["/_next/static/chunks/133rq7uo7d2_0.js","/_next/static/chunks/0z_8x7jii1i-y.js","/_next/static/chunks/0ks10v7qe852l.js","/_next/static/chunks/0nfw1hf06zc~w.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"className":"min-h-screen bg-[#050505] text-white","children":[["$","$L2",null,{}],["$","$L3",null,{}],["$","div",null,{"className":"h-[100px] w-full"}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/0l5s68az7cg9y.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"kmqw39YcQLCBH5Nz2obH3"}
+6:null

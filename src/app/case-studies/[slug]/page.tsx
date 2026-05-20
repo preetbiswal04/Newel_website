@@ -13,6 +13,14 @@ interface PageProps {
   };
 }
 
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return CASE_STUDIES.map((caseStudy) => ({
+    slug: caseStudy.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const caseStudy = getCaseStudyBySlug(slug);

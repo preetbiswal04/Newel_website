@@ -19,6 +19,13 @@ const InstagramIcon = ({ size = 20 }) => (
 );
 
 export default function ContactPage() {
+  // Use the backend URL from env so local and production can point to different servers.
+  const contactApiBase = (
+    process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"
+  )
+    .trim()
+    .replace(/\/$/, "");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,16 +52,13 @@ export default function ContactPage() {
     setErrorMessage("");
 
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"}/api/contact`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(`${contactApiBase}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       if (!response.ok) {
         const error = await response.json();
