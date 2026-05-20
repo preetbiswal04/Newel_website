@@ -14,9 +14,8 @@ const normalizeOrigin = (value) => value.trim().replace(/\/$/, "");
 const allowedOrigins = new Set(
   [
     "http://localhost:3000",
+    "https://kendeck.com",
     process.env.CLIENT_ORIGIN,
-    process.env.CLIENT_ORIGINS,
-    process.env.FRONTEND_URL,
   ]
     .filter(Boolean)
     .flatMap((value) => value.split(","))
