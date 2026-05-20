@@ -1,61 +1,64 @@
-// require('dotenv').config();
+require("dotenv").config();
 
-// const cors = require('cors');
-// const express = require('express');
-// const morgan = require('morgan');
+const cors = require("cors");
+const express = require("express");
+const morgan = require("morgan");
 
-// const authRoutes = require('./routes/authRoutes');
-// const contactRoutes = require('./routes/contactRoutes');
-// const errorHandler = require('./middleware/errorHandler');
-
-// const app = express();
-
-// app.use(cors({ origin: process.env.CLIENT_ORIGIN || '*', credentials: true }));
-// app.use(express.json());
-// app.use(morgan('dev'));
-
-// app.get('/api/health', (req, res) => {
-//   res.json({ status: 'ok' });
-// });
-
-// app.use('/api/auth', authRoutes);
-// app.use('/api/contact', contactRoutes);
-
-// app.use((req, res) => {
-//   res.status(404).json({ message: 'Route not found' });
-// });
-
-// app.use(errorHandler);
-
-// module.exports = app;
-
-
-//  15 may
-
-
-require('dotenv').config();
-
-const cors = require('cors');
-const express = require('express');
-const morgan = require('morgan');
-
-const contactRoutes = require('./routes/contactRoutes');
-const errorHandler = require('./middleware/errorHandler');
+const contactRoutes = require("./routes/contactRoutes");
+const errorHandler = require("./middleware/errorHandler");
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || '*', credentials: true }));
-app.use(express.json());
-app.use(morgan('dev'));
+const normalizeOrigin = (value) => value.trim().replace(/\/$/, "");
 
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok' });
+const allowedOrigins = new Set(
+  [
+    "http://localhost:3000",
+    process.env.CLIENT_ORIGIN,
+    process.env.CLIENT_ORIGINS,
+    process.env.FRONTEND_URL,
+  ]
+    .filter(Boolean)
+    .flatMap((value) => value.split(","))
+    .map(normalizeOrigin)
+    .filter(Boolean)
+);
+
+const corsOptions = {
+  origin(origin, callback) {
+    // Allow direct tools like Postman/curl and browser calls from trusted origins.
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    const requestOrigin = normalizeOrigin(origin);
+
+    if (allowedOrigins.has(requestOrigin)) {
+      return callback(null, true);
+    }
+
+    return callback(
+      new Error(`CORS policy: Origin ${requestOrigin} is not allowed`)
+    );
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
+app.use(express.json());
+app.use(morgan("dev"));
+
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok" });
 });
 
-app.use('/api/contact', contactRoutes);
+app.use("/api/contact", contactRoutes);
 
 app.use((req, res) => {
-  res.status(404).json({ message: 'Route not found' });
+  res.status(404).json({ message: "Route not found" });
 });
 
 app.use(errorHandler);
