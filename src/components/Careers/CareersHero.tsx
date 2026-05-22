@@ -1,10 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MoveDown } from "lucide-react";
+import { getMediaUrl } from "@/lib/s3";
 
 export const CareersHero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const scrollToJobs = () => {
     const element = document.getElementById("open-positions");
     if (element) {
@@ -12,22 +15,32 @@ export const CareersHero = () => {
     }
   };
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch((err) => {
+        console.log("Autoplay interrupted:", err);
+      });
+    }
+  }, []);
+
   return (
     <section className="relative pt-24 pb-0 md:pt-28 md:pb-0">
       <div className="container-page">
         {/* Main Hero Card Container */}
-        <div className="relative w-full aspect-[21/9] md:aspect-[2.8/1] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl flex items-center justify-center">
+        <div className="relative w-full aspect-[16/10] md:aspect-[2.8/1] rounded-[24px] md:rounded-[40px] overflow-hidden shadow-2xl flex items-center justify-center">
 
           {/* Background Video Container */}
           <div className="absolute inset-0 z-0 bg-white">
             <video
+              ref={videoRef}
               autoPlay
               muted
               loop
               playsInline
               className="w-full h-full object-cover opacity-100"
             >
-              <source src="/careers-vd-1.mp4" type="video/mp4" />
+              <source src={getMediaUrl("careers-vd-1.mp4")} type="video/mp4" />
             </video>
 
             {/* Subtle Gradient for Readability */}

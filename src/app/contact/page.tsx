@@ -20,12 +20,9 @@ const InstagramIcon = ({ size = 20 }) => (
 
 export default function ContactPage() {
   // Use the backend URL from env so local and production can point to different servers.
-  const contactApiBase = (
-    process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000"
-  )
-    .trim()
-    .replace(/\/$/, "");
-
+  const contactApiBase = 
+    process.env.NEXT_PUBLIC_API_URL
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -87,22 +84,22 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white pt-24 pb-16 selection:bg-blue-600/10 selection:text-blue-600">
-      <div className="container-page">
+    <main className="min-h-screen bg-white pt-20 pb-8 flex flex-col justify-center selection:bg-blue-600/10 selection:text-blue-600">
+      <div className="container-page py-6">
         {/* ── Header ── */}
-        <div className="text-center mb-10 md:mb-16">
+        <div className="text-center mb-8 md:mb-10">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-4xl lg:text-5xl font-black text-[#0c0c1d] tracking-tight leading-tight"
           >
-            Why To Wait, Lets Connect <br className="hidden md:block" /> Now
+            Why To Wait, Lets Connect Now
           </motion.h1>
           <motion.div 
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="h-1.5 w-24 bg-blue-600 mx-auto mt-8 rounded-full"
+            className="h-1.5 w-24 bg-blue-600 mx-auto mt-4 rounded-full"
           />
         </div>
 
@@ -111,11 +108,11 @@ export default function ContactPage() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="max-w-6xl mx-auto bg-white rounded-[40px] shadow-[0_40px_100px_rgba(0,0,0,0.06)] border border-slate-100 overflow-hidden flex flex-col lg:flex-row"
+          className="max-w-6xl mx-auto bg-white rounded-[32px] shadow-[0_40px_100px_rgba(0,0,0,0.06)] border border-slate-100 overflow-hidden flex flex-col lg:flex-row"
         >
           {/* Left Side: Info */}
-          <div className="lg:w-[40%] bg-white p-8 md:p-12 border-r border-slate-100 flex flex-col justify-between">
-            <div className="space-y-8">
+          <div className="lg:w-[40%] bg-white p-8 md:p-10 border-r border-slate-100 flex flex-col justify-between">
+            <div className="space-y-6">
               <div className="flex gap-6 group">
                 <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center text-blue-600 shrink-0 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                   <MapPin size={22} />
@@ -153,21 +150,21 @@ export default function ContactPage() {
             </div>
 
             {/* Social Links */}
-            <div className="pt-10 border-t border-slate-200/60 mt-10 lg:mt-0">
-              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-6">Follow Us on</p>
+            <div className="pt-6 border-t border-slate-200/60 mt-6 lg:mt-0">
+              <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4">Follow Us on</p>
               <div className="flex gap-4">
-                <a href="#" className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-900 hover:bg-[#0c0c1d] hover:text-white transition-all duration-300">
-                  <FacebookIcon size={20} />
+                <a href="#" className="w-11 h-11 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-900 hover:bg-[#0c0c1d] hover:text-white transition-all duration-300">
+                  <FacebookIcon size={19} />
                 </a>
-                <a href="#" className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-900 hover:bg-[#0c0c1d] hover:text-white transition-all duration-300">
-                  <InstagramIcon size={20} />
+                <a href="#" className="w-11 h-11 rounded-full bg-white shadow-sm border border-slate-100 flex items-center justify-center text-slate-900 hover:bg-[#0c0c1d] hover:text-white transition-all duration-300">
+                  <InstagramIcon size={19} />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Right Side: Form */}
-          <div className="flex-1 p-8 md:p-12 bg-white">
+          <div className="flex-1 p-8 md:p-10 bg-white">
             <form className="space-y-4" onSubmit={handleSubmit}>
               {submitStatus === "success" && (
                 <div className="p-4 mb-6 bg-green-50 border border-green-200 rounded-2xl">
@@ -185,7 +182,7 @@ export default function ContactPage() {
                 </div>
               )}
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input 
                   type="text" 
                   name="name"
@@ -206,7 +203,7 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input 
                   type="tel" 
                   name="phone"
@@ -227,11 +224,11 @@ export default function ContactPage() {
                 />
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1">
                 <textarea 
                   name="message"
                   placeholder="Your Message" 
-                  rows={4}
+                  rows={3}
                   value={formData.message}
                   onChange={handleInputChange}
                   required
@@ -242,7 +239,7 @@ export default function ContactPage() {
               <button 
                 type="submit"
                 disabled={isLoading}
-                className="group relative w-full md:w-auto bg-[#0c0c1d] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition-all duration-300 shadow-xl shadow-blue-900/10 flex items-center justify-center gap-3 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="group relative w-full md:w-auto bg-[#0c0c1d] text-white px-8 py-3.5 rounded-xl font-bold text-lg hover:bg-blue-600 transition-all duration-300 shadow-xl shadow-blue-900/10 flex items-center justify-center gap-3 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 {isLoading ? "Sending..." : "Send Message"}

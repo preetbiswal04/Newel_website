@@ -14,7 +14,9 @@ import {
   Cpu,
   Activity,
   Briefcase,
-  ArrowUpRight
+  ArrowUpRight,
+  Menu,
+  X
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
@@ -150,11 +152,28 @@ export const Navbar = () => {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const isLightPage = pathname === "/contact" || pathname === "/services" || pathname === "/careers";
+  const cleanPathname = pathname?.replace(/\/$/, "");
+  const isLightPage = !pathname || cleanPathname === "/contact" || cleanPathname === "/services" || cleanPathname === "/careers";
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expandedMobileLink, setExpandedMobileLink] = useState<string | null>(null);
+
+  // Lock scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 
   // Close menu when route changes
   useEffect(() => {
     setHoveredLink(null);
+    setMobileMenuOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -190,7 +209,7 @@ export const Navbar = () => {
       <header
         className={cn(
           "fixed left-0 right-0 z-50 transition-all duration-500",
-          (isScrolled || isLightPage)
+          (isScrolled || isLightPage || mobileMenuOpen)
             ? "bg-white/95 backdrop-blur-xl border-b border-black/5 py-3 shadow-sm"
             : "bg-transparent border-b border-transparent py-4"
         )}
@@ -199,7 +218,7 @@ export const Navbar = () => {
         <div className="container-page flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <Logo isScrolled={isScrolled || isLightPage} />
+            <Logo isScrolled={isScrolled || isLightPage || mobileMenuOpen} />
           </Link>
 
           {/* Right-aligned Navigation */}
@@ -234,7 +253,20 @@ export const Navbar = () => {
             </nav>
           </div>
 
-          {/* Full-width Mega Menu */}
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 rounded-xl text-slate-800 hover:bg-black/5 active:scale-95 transition-all z-50 shrink-0"
+            aria-label="Toggle Menu"
+          >
+            {mobileMenuOpen ? (
+              <X size={24} className="text-slate-800" />
+            ) : (
+              <Menu size={24} className={isLightPage || isScrolled ? "text-slate-800" : "text-white"} />
+            )}
+          </button>
+
+          {/* Full-width Mega Menu (Desktop Only) */}
           <AnimatePresence>
             {hoveredLink && NAV_LINKS.find(l => l.name === hoveredLink)?.hasDropdown && (
               <MegaMenu
@@ -245,6 +277,86 @@ export const Navbar = () => {
                 onMouseLeave={handleMouseLeave}
                 onItemClick={() => setHoveredLink(null)}
               />
+            )}
+          </AnimatePresence>
+
+          {/* Mobile Navigation Drawer */}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="fixed inset-0 top-0 left-0 right-0 z-40 bg-white/98 backdrop-blur-3xl flex flex-col pt-24 px-6 pb-8 overflow-y-auto min-h-screen"
+              >
+                <nav className="flex flex-col gap-y-1">
+                  {NAV_LINKS.map((link) => {
+                    const hasSubMenu = link.hasDropdown;
+                    const isExpanded = expandedMobileLink === link.name;
+                    
+                    return (
+                      <div key={link.name} className="border-b border-slate-100/80 py-2">
+                        {hasSubMenu ? (
+                          <div>
+                            <button
+                              onClick={() => setExpandedMobileLink(isExpanded ? null : link.name)}
+                              className="w-full flex items-center justify-between py-3 text-base font-black uppercase tracking-[0.1em] text-slate-800 transition-colors"
+                            >
+                              <span>{link.name}</span>
+                              <ChevronDown
+                                size={18}
+                                className={cn("transition-transform duration-300 text-slate-500", isExpanded && "rotate-180 text-blue-600")}
+                              />
+                            </button>
+                            
+                            <AnimatePresence initial={false}>
+                              {isExpanded && (
+                                <motion.div
+                                  initial={{ height: 0, opacity: 0 }}
+                                  animate={{ height: "auto", opacity: 1 }}
+                                  exit={{ height: 0, opacity: 0 }}
+                                  transition={{ duration: 0.3 }}
+                                  className="overflow-hidden bg-slate-50/50 rounded-2xl px-4 py-2 mt-1 mb-3 space-y-3"
+                                >
+                                  {link.data.map((cat: any) => (
+                                    <div key={cat.id} className="space-y-1 pt-2 first:pt-0">
+                                      <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">
+                                        {cat.name}
+                                      </p>
+                                      <div className="flex flex-col gap-y-2.5 pl-2 pt-1">
+                                        {(cat.services || cat.items || []).map((subItem: any) => (
+                                          <Link
+                                            key={subItem.id}
+                                            href={`/${link.type}/${subItem.slug}`}
+                                            onClick={() => setMobileMenuOpen(false)}
+                                            className="text-[13px] font-bold text-slate-700 hover:text-blue-600 transition-colors flex items-center justify-between"
+                                          >
+                                            <span>{subItem.title}</span>
+                                            <ChevronRight size={14} className="text-slate-400" />
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  ))}
+                                </motion.div>
+                              )}
+                            </AnimatePresence>
+                          </div>
+                        ) : (
+                          <Link
+                            href={link.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-3 text-base font-black uppercase tracking-[0.1em] text-slate-800 hover:text-blue-600 transition-colors"
+                          >
+                            {link.name}
+                          </Link>
+                        )}
+                      </div>
+                    );
+                  })}
+                </nav>
+              </motion.div>
             )}
           </AnimatePresence>
         </div>

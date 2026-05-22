@@ -90,25 +90,7 @@ export const VideoBackground: React.FC<VideoBackgroundProps> = ({ currentIdx, is
     }
   }, [isIdle]);
 
-  if (isMobile) {
-    return (
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <motion.div
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1.05 }}
-          transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-          className="w-full h-full"
-        >
-          <img
-            src={VIDEOS[currentIdx].poster}
-            alt="Hero Background"
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-        <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px]" />
-      </div>
-    );
-  }
+
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden">

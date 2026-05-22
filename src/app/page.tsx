@@ -17,12 +17,11 @@ export default function Home() {
       <HeroSection />
       
       <div className="w-full">
-        <OnePlatform />
+        <TransformationSection />
       </div>
 
       <div className="w-full">
         <div className="w-full">
-          <TransformationSection />
           <InventivAISection />
         </div>
 
@@ -31,6 +30,11 @@ export default function Home() {
         </div>
 
         <PlatformSection />
+
+        <div className="w-full">
+          <OnePlatform />
+        </div>
+
         <IndustriesSection />
         <WhyNewel />
         <PartnersSection />
