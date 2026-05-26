@@ -5,22 +5,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export const AboutHero = () => {
-  const marqueeText = "Uncover proof of Newel's impact across 3000+ digital deliveries for 35+ industries. EXPLORE NOW! ✦ ";
-
   return (
     <section className="bg-black text-white pt-24 pb-12 overflow-hidden relative">
-      {/* Announcement Bar */}
-      <div className="absolute top-0 left-0 w-full bg-[#d9f99d] py-1.5 overflow-hidden z-[60]">
-        <div className="flex whitespace-nowrap animate-marquee">
-          {[...Array(6)].map((_, i) => (
-            <span key={i} className="text-black text-[10px] font-bold uppercase tracking-widest px-4 flex items-center">
-              {marqueeText}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="container-page mt-8">
+      <div className="container-page mt-4">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

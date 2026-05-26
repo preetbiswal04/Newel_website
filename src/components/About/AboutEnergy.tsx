@@ -11,7 +11,6 @@ const CATEGORIES = [
 
 const IMAGES = {
   workplace: [
-    "/1.jpeg",
     "/culture-2.jpeg",
     "/culture-3.jpeg",
     "/culture-4.jpeg",

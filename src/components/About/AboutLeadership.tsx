@@ -7,23 +7,43 @@ import Image from "next/image";
 const LEADERS = [
   {
     name: "Mr. Pravin Narhe",
-    role: "CEO",
-    image: "/Pravin-Narhe.jpg",
+    role: "Founder and CEO",
+    image: "/Pravin.png",
   },
   {
     name: "Mr. Yogesh Wadile",
     role: "Delivery Head",
-    image: "/YW.png",
+    image: "/yogesh.png",
   },
   {
     name: "Mr. Sachin Shinde",
     role: "COO",
-    image: "/SS.png",
+    image: "/sachin.png",
   },
   {
     name: "Mr. Vishwas Punekar",
+    role: "Advisor",
+    image: "/Vishwas.png",
+  },
+  {
+    name: "Mr. Vinayak",
     role: "Director",
-    image: "/VP.jpeg",
+    image: "/Vinayak.png",
+  },
+  {
+    name: "Sanket Vartak",
+    role: "Technical Architect & Lead",
+    image: "/Sanket.png",
+  },
+  {
+    name: "Shushma Gaikar",
+    role: "Delivery Head - Infra",
+    image: "/shushmita.png",
+  },
+  {
+    name: "Ritesh Chauhan",
+    role: "Solution Architect",
+    image: "/Ritesh.png",
   },
 ];
 

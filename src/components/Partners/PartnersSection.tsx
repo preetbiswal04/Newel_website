@@ -18,7 +18,7 @@ const PARTNERS: Partner[] = [
   {
     id: 1,
     name: "Mr. Pravin Narhe",
-    role: "CEO",
+    role: "Founder and CEO",
     image: "/Pravin-Narhe.jpg",
     linkedin: "https://www.linkedin.com/in/pravin-narhe-ba62b821/",
   },
